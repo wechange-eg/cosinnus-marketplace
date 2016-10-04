@@ -2,19 +2,19 @@
 from __future__ import unicode_literals
 
 from cosinnus.utils.renderer import BaseRenderer
-from cosinnus_poll.models import Poll
+from cosinnus_marketplace.models import Marketplace
 
 
-class PollRenderer(BaseRenderer):
+class MarketplaceRenderer(BaseRenderer):
     """
-    PollRenderer for Cosinnus attached objects
+    MarketplaceRenderer for Cosinnus attached objects
     """
-    model = Poll
+    model = Marketplace
     
-    template = 'cosinnus_poll/attached_polls.html'
-    template_single = 'cosinnus_poll/single_poll.html'
-    template_list = 'cosinnus_poll/poll_list_standalone.html'
+    template = 'cosinnus_marketplace/attached_marketplaces.html'
+    template_single = 'cosinnus_marketplace/single_marketplace.html'
+    template_list = 'cosinnus_marketplace/marketplace_list_standalone.html'
     
     @classmethod
     def render(cls, context, myobjs):
-        return super(PollRenderer, cls).render(context, polls=myobjs)
+        return super(MarketplaceRenderer, cls).render(context, marketplaces=myobjs)

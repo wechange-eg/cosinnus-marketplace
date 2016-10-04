@@ -1,8 +1,8 @@
 {% load i18n static cosinnus_tags widget_tweaks %}
 
-<div class="btn btn-emphasized w100 {% if poll.attached_image %}button-with-title-image{% endif %}">
-    {% if poll.attached_image %}
-        <img src="{{ poll.attached_image.static_image_url }}" />
+<div class="btn btn-emphasized w100 {% if marketplace.attached_image %}button-with-title-image{% endif %}">
+    {% if marketplace.attached_image %}
+        <img src="{{ marketplace.attached_image.static_image_url }}" />
         <div></div> <!-- Gradient overlay -->
     {% endif %}
     <ul class="media-list">
@@ -10,24 +10,24 @@
             <a class="pull-left square-date-icon" href="#">
                 <i class="fa fa-bar-chart"></i>
             </a>
-            <a class="pull-right" href="{{ poll.get_absolute_url }}">
+            <a class="pull-right" href="{{ marketplace.get_absolute_url }}">
                 <i class="fa fa-chain"></i>
             </a>
             <div class="media-body">
-                {% with creator=poll.creator %}
+                {% with creator=marketplace.creator %}
                     <span class="annotation">{% trans "by" %} <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a></span>
                 {% endwith %}
-                <a href="{{ poll.get_absolute_url }}">
-                    {{ poll.title }}
+                <a href="{{ marketplace.get_absolute_url }}">
+                    {{ marketplace.title }}
                 </a>
             </div>
         </li>
     </ul>
 </div>
 
-{% include 'cosinnus/media_tags_readonly.html' with object=poll hide_attached=True %}
+{% include 'cosinnus/media_tags_readonly.html' with object=marketplace hide_attached=True %}
     
-<div class="btn btn-white w100 {% if not poll.url %}{% if not poll.attached_objects.exists %}large-space{% endif %}{% endif %}">
+<div class="btn btn-white w100 {% if not marketplace.url %}{% if not marketplace.attached_objects.exists %}large-space{% endif %}{% endif %}">
     <ul class="media-list">
         <li class="media">
             <a class="pull-left" href="#">
@@ -35,8 +35,8 @@
             </a>
             <div class="media-body">
                 <p>
-                {% if poll.description and poll.description|length > 0 %}
-                    {{ poll.description|textfield }}
+                {% if marketplace.description and marketplace.description|length > 0 %}
+                    {{ marketplace.description|textfield }}
                 {% else %}
                     {% trans "(No description set)" %}
                 {% endif %}
@@ -46,16 +46,16 @@
     </ul>
 </div>
 
-{% if poll.attached_objects.exists %}
-    {% cosinnus_render_attached_objects poll %}
+{% if marketplace.attached_objects.exists %}
+    {% cosinnus_render_attached_objects marketplace %}
 {% endif %}
 
 {# announce winning option #}
-{% if poll.state != 1 %}
-    {% if poll.winning_option %}
+{% if marketplace.state != 1 %}
+    {% if marketplace.winning_option %}
         <div class="large-space">
             <h2>{% trans "The Winner is" %}:</h2>
-            {% include 'cosinnus_poll/single_poll_option.html' with option=poll.winning_option %}
+            {% include 'cosinnus_marketplace/single_marketplace_option.html' with option=marketplace.winning_option %}
         </div>
         <h2>{% trans "Available options were" %}:</h2>
     {% else %}
@@ -69,15 +69,15 @@
     
     <div class="large-space"> <!-- options panel -->
         {% for option in options %}
-            {% include 'cosinnus_poll/single_poll_option.html' with option=option option_counter=forloop.counter %}
+            {% include 'cosinnus_marketplace/single_marketplace_option.html' with option=option option_counter=forloop.counter %}
         {% endfor %}
     </div>
 
 
 {% else %}
     {% comment %} No options were added {% endcomment %}
-    <!-- {% trans "There are no options for this poll yet!" %} -->
-    {% include 'cosinnus/common/empty_button.html' with message="There are no options for this poll yet!" %}
+    <!-- {% trans "There are no options for this marketplace yet!" %} -->
+    {% include 'cosinnus/common/empty_button.html' with message="There are no options for this marketplace yet!" %}
 {% endif %}
 
 

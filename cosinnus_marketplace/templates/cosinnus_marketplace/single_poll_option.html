@@ -3,28 +3,28 @@
 {# this expects {{ option }} in its context as parameter #}
 {# If we are in vote mode, we expect a ``option_formsets_dict`` context variable, which has a mapping of { option_id --> VoteForm } #}
 {% with form=option_formsets_dict|dict_lookup:option.id vote_counts=options_votes_dict|dict_lookup:option.id %}
-    <div class="btn btn-emphasized w100 large-space poll-option {% if mode == 'vote' %}{% if form.choice.value == 2 %}poll-option-yes{% elif form.choice.value == 1 %}poll-option-maybe{% else %}poll-option-no{% endif %}{% endif %}"
+    <div class="btn btn-emphasized w100 large-space marketplace-option {% if mode == 'vote' %}{% if form.choice.value == 2 %}marketplace-option-yes{% elif form.choice.value == 1 %}marketplace-option-maybe{% else %}marketplace-option-no{% endif %}{% endif %}"
         {% if mode == 'vote' and form %}
-            data-poll-option-vote-id="id_{{ form.choice.html_name }}" 
-            data-poll-can-vote-maybe="{% if poll.can_vote_maybe %}1{% else %}0{% endif %}"
-            data-poll-multiple-votes="{% if poll.multiple_votes %}1{% else %}0{% endif %}"
+            data-marketplace-option-vote-id="id_{{ form.choice.html_name }}" 
+            data-marketplace-can-vote-maybe="{% if marketplace.can_vote_maybe %}1{% else %}0{% endif %}"
+            data-marketplace-multiple-votes="{% if marketplace.multiple_votes %}1{% else %}0{% endif %}"
         {% endif %}>
         <ul class="media-list">
             <li class="media">
                 
                 {# The inputs here are only for display; they don't carry data in the form. All data handling is done in the JS script #}
-                <a class="pull-left poll-option-display poll-option-display-yes poll-option-display-color" href="#">
-                	{% if poll.multiple_votes %}
+                <a class="pull-left marketplace-option-display marketplace-option-display-yes marketplace-option-display-color" href="#">
+                	{% if marketplace.multiple_votes %}
                     	<input type="checkbox" class="noselect vote-control" checked="true">
                     {% else %}
                     	<input type="radio" class="noselect vote-control" checked="true">
                     {% endif %}
                 </a>
-                <a class="pull-left poll-option-display poll-option-display-maybe poll-option-display-color" href="#">
+                <a class="pull-left marketplace-option-display marketplace-option-display-maybe marketplace-option-display-color" href="#">
                 	(<input type="checkbox" class="noselect vote-control" checked="true">) 	
                 </a>
-                <a class="pull-left poll-option-display poll-option-display-no poll-option-display-color" href="#">
-                	{% if poll.multiple_votes %}
+                <a class="pull-left marketplace-option-display marketplace-option-display-no marketplace-option-display-color" href="#">
+                	{% if marketplace.multiple_votes %}
 	                	<input type="checkbox"class="noselect vote-control"> 	
                     {% else %}
                     	<input type="radio" class="noselect vote-control">
@@ -32,29 +32,29 @@
                 </a>
                 
                 
-                {% if user|has_write_access:poll and mode == 'vote' %}
-                    {% captureas close_poll_modal %}close_poll_modal_option_{{ option.pk }}{% endcaptureas %}
-                    <a class="pull-right vote-trophy" data-toggle="modal" data-target="#{{ close_poll_modal }}" title="{% trans "Make winner and complete poll" %}">
+                {% if user|has_write_access:marketplace and mode == 'vote' %}
+                    {% captureas close_marketplace_modal %}close_marketplace_modal_option_{{ option.pk }}{% endcaptureas %}
+                    <a class="pull-right vote-trophy" data-toggle="modal" data-target="#{{ close_marketplace_modal }}" title="{% trans "Make winner and complete marketplace" %}">
                         {# Complete dialog is outside of element #}
                         <i class="fa fa-trophy"></i>
                     </a>
                 {% endif %}
                 
-                <span class="pull-right vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if poll.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
+                <span class="pull-right vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if marketplace.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
 					<span class="vote-count-no">
 						{% trans "No" %}: <b>{{ vote_counts.0 }}</b>
 					</span>
             	</span>
                 <span class="vote-count-divider"></span>
-                {% if poll.can_vote_maybe and poll.multiple_votes %}
-                <span class="pull-right vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if poll.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
+                {% if marketplace.can_vote_maybe and marketplace.multiple_votes %}
+                <span class="pull-right vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if marketplace.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
 					<span class="vote-count-maybe">
 						{% trans "Maybe" %}: <b>{{ vote_counts.1 }}</b>
 					</span>
                 </span>
                 <span class="vote-count-divider"></span>
                 {% endif %}
-                <span class="pull-right vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if poll.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
+                <span class="pull-right vote-count" title="{% trans "Votes" %}: {% trans "Yes" %}: {{ vote_counts.2 }} {% if marketplace.can_vote_maybe %} {% trans "Maybe" %}: {{ vote_counts.1 }} {% endif %} {% trans "No" %}: {{ vote_counts.0 }}">
                     <span class="vote-count-yes">
                         {% trans "Yes" %}: <b>{{ vote_counts.2 }}</b>
                     </span>
@@ -62,13 +62,13 @@
                 <span class="vote-count-divider"></span>
                 
                 <div class="media-body">
-                    <span class="annotation poll-option-display poll-option-display-yes">
+                    <span class="annotation marketplace-option-display marketplace-option-display-yes">
                           <b><em>{% trans "Yes" %}</em></b>
                     </span>
-                    <span class="annotation poll-option-display poll-option-display-maybe">
+                    <span class="annotation marketplace-option-display marketplace-option-display-maybe">
                           <b><em>{% trans "Maybe" %}</em></b>
                     </span>
-                    <span class="annotation poll-option-display poll-option-display-no">
+                    <span class="annotation marketplace-option-display marketplace-option-display-no">
                           <b><em>{% trans "No" %}</em></b>
                     </span>
                     
@@ -78,11 +78,11 @@
         </ul>
     </div>
     
-    {% if mode == 'vote' and user|has_write_access:poll %}
-        {% captureas label %}{% blocktrans with description=option.description %}Do you really want to complete the poll and select "{{ description }}" as winner?{% endblocktrans %}{% endcaptureas %}
-        {% captureas title %}{% trans "Complete poll" %}{% endcaptureas %}
-        {% captureas action %}{% group_url "cosinnus:poll:complete" group=group slug=poll.slug option_id=option.pk %}{% endcaptureas %}
-        {% include "cosinnus/modal_box.html" with id=close_poll_modal label=label title=title form_action=action %}
+    {% if mode == 'vote' and user|has_write_access:marketplace %}
+        {% captureas label %}{% blocktrans with description=option.description %}Do you really want to complete the marketplace and select "{{ description }}" as winner?{% endblocktrans %}{% endcaptureas %}
+        {% captureas title %}{% trans "Complete marketplace" %}{% endcaptureas %}
+        {% captureas action %}{% group_url "cosinnus:marketplace:complete" group=group slug=marketplace.slug option_id=option.pk %}{% endcaptureas %}
+        {% include "cosinnus/modal_box.html" with id=close_marketplace_modal label=label title=title form_action=action %}
     {% endif %}
 
 {% endwith %}
@@ -98,7 +98,7 @@ Disabled items
 
 {% if option.image %}
     <div class="regular-space">
-        <a href="{{ option.image.static_image_url }}" data-lightbox="poll-option-gallery" data-title="{% if option.description %}{{ option.description }}{% endif %}">
+        <a href="{{ option.image.static_image_url }}" data-lightbox="marketplace-option-gallery" data-title="{% if option.description %}{{ option.description }}{% endif %}">
             <img class="image" src="{% thumbnail option.image 300x300 crop=1 upscale=1 %}" title='{% if option.description %}{{ option.description }}{% endif %}'/>
         </a>
     </div>

@@ -7,14 +7,14 @@ from django.utils.translation import ugettext_lazy as _
 
 from cosinnus.views.mixins.filters import CosinnusFilterSet
 from cosinnus.forms.filters import AllObjectsFilter, SelectCreatorWidget
-from cosinnus_poll.models import Poll
+from cosinnus_marketplace.models import Marketplace
 
 
-class PollFilter(CosinnusFilterSet):
+class MarketplaceFilter(CosinnusFilterSet):
     creator = AllObjectsFilter(label=_('Created By'), widget=SelectCreatorWidget)
     
     class Meta:
-        model = Poll
+        model = Marketplace
         fields = ['creator']
         order_by = (
             ('-created', _('Newest Created')),
@@ -22,5 +22,5 @@ class PollFilter(CosinnusFilterSet):
         )
     
     def get_order_by(self, order_value):
-        return super(PollFilter, self).get_order_by(order_value)
+        return super(MarketplaceFilter, self).get_order_by(order_value)
     

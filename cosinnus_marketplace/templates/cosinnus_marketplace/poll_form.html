@@ -1,11 +1,11 @@
-{% extends "cosinnus_poll/base.html" %}
+{% extends "cosinnus_marketplace/base.html" %}
 {% load i18n static cosinnus_tags widget_tweaks thumbnail %}
 
 {% block page_title %}
     {% if form_view == "add" %}
-      {% trans "Add poll" %}
+      {% trans "Add marketplace" %}
     {% elif form_view == "edit" %}
-      {% trans "Edit" %} {{ poll.title }}
+      {% trans "Edit" %} {{ marketplace.title }}
     {% endif %}
 {{ block.super }}
 {% endblock page_title %}
@@ -14,15 +14,15 @@
         {{ block.super }}
         <li class="active">
             {% if form_view == "add" %}
-              {% trans "Add poll" %}
+              {% trans "Add marketplace" %}
             {% elif form_view == "edit" %}
-              {% trans "Edit" %} {{ poll.title }}
+              {% trans "Edit" %} {{ marketplace.title }}
             {% endif %}
         </li>
 {% endblock %}
 
 {% block leftnav %}
-    {% include "cosinnus_poll/leftnav.html" with return_to="polls"%}
+    {% include "cosinnus_marketplace/leftnav.html" with return_to="marketplaces"%}
 {% endblock leftnav %}
 
 {% block content %}
@@ -45,7 +45,7 @@
                             {{ form.forms.media_tag.non_field_errors }}
                             
                             {{ form.forms.obj.title.errors }}
-                            {% captureas placeholder %}{% trans "Enter a title for the new poll." %}{% endcaptureas %}
+                            {% captureas placeholder %}{% trans "Enter a title for the new marketplace." %}{% endcaptureas %}
                             {% if request.GET.title %}
                                 {% render_field form.forms.obj.title class+="form-control" placeholder=placeholder value=request.GET.title %}
                             {% else %}
@@ -55,7 +55,7 @@
                             <ol class="input-area">
                                 <li class="w100">
                                     {{ form.forms.obj.description.errors }}
-                                    {% captureas placeholder %}{% trans "Enter a description for the poll (optional)." %}{% endcaptureas %}
+                                    {% captureas placeholder %}{% trans "Enter a description for the marketplace (optional)." %}{% endcaptureas %}
                                     {% render_field form.forms.obj.description class+="form-control" placeholder=placeholder %}
                                 </li>
                             </ol>
@@ -85,7 +85,7 @@
                                 <li class="w100">
                                     {{ form.forms.obj.anyone_can_vote.errors }}
                                     {% render_field form.forms.obj.anyone_can_vote %}
-                                    <label for="{{ form.forms.obj.anyone_can_vote.auto_id }}" style="white-space: normal;">{% trans "Public voting" %} - <small>{% trans "Any logged in user who can see this poll can vote on it. If disabled, only group/project members can vote on it." %}</small></label>
+                                    <label for="{{ form.forms.obj.anyone_can_vote.auto_id }}" style="white-space: normal;">{% trans "Public voting" %} - <small>{% trans "Any logged in user who can see this marketplace can vote on it. If disabled, only group/project members can vote on it." %}</small></label>
                                 </li>
                             </ol>
                             {% endif %}
@@ -98,7 +98,7 @@
                                     <li class="w100">
                                         <p style="padding: 5px;">
                                             <i class="fa fa-warning"></i> 
-                                            {% trans "Note: You cannot edit the options for this poll because someone has already cast their vote or the poll has been completed!" %}
+                                            {% trans "Note: You cannot edit the options for this marketplace because someone has already cast their vote or the marketplace has been completed!" %}
                                         </p>
                                     </li>
                                 </ol>
@@ -129,7 +129,7 @@
                                                         <label for="{{ inlineform.DELETE.id_for_label }}"><i class="fa fa-trash"></i> {% trans "Remove" %}:</label>
                                                         {{ inlineform.DELETE }}
                                                     </span>
-                                                    <label style="padding: 5px;">{% trans "Edit Poll Option" %}&nbsp;{{ forloop.counter }}&nbsp;&nbsp;&nbsp;<em>{% trans "Describe this option" %}</em></label>
+                                                    <label style="padding: 5px;">{% trans "Edit Marketplace Option" %}&nbsp;{{ forloop.counter }}&nbsp;&nbsp;&nbsp;<em>{% trans "Describe this option" %}</em></label>
                                                 </div>
                                                 <a class="pull-left">
                                                      <i class="fa fa-edit"></i>
@@ -160,7 +160,7 @@
                                                 
                                                 
                                             </div>
-                                            {{ inlineform.poll }}
+                                            {{ inlineform.marketplace }}
                                             {{ inlineform.id }}
                                         </div>
                                     </li>
@@ -190,7 +190,7 @@
                 {% endif %}
             {% endwith %}
         
-            <button type="submit" class="btn btn-emphasized" id="createPollButton">
+            <button type="submit" class="btn btn-emphasized" id="createMarketplaceButton">
                 <ul class="media-list">
                     <li class="media">
                         <a class="pull-left" href="#">

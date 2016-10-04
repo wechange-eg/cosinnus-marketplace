@@ -30,7 +30,7 @@ packages, data_files = [], []
 root_dir = os.path.dirname(__file__)
 if root_dir != '':
     os.chdir(root_dir)
-pkgdir = 'cosinnus_poll'
+pkgdir = 'cosinnus_marketplace'
 
 for dirpath, dirnames, filenames in os.walk(pkgdir):
     # Ignore PEP 3147 cache dirs and those whose names start with '.'
@@ -40,12 +40,12 @@ for dirpath, dirnames, filenames in os.walk(pkgdir):
     elif filenames:
         data_files.append([dirpath, [os.path.join(dirpath, f) for f in filenames]])
 
-from cosinnus_poll import get_version
+from cosinnus_marketplace import get_version
 
 setup(
-    name='cosinnus-poll',
+    name='cosinnus-marketplace',
     version=get_version(),
-    description='cosinnus poll application',
+    description='cosinnus marketplace application',
     long_description=read('README'),
     author='Sinnwerkstatt Medienagentur GmbH Berlin',
     author_email='web@sinnwerkstatt.com',

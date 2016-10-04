@@ -12,11 +12,11 @@ from cosinnus.forms.tagged import get_form
 from cosinnus.forms.user import UserKwargModelFormMixin
 from cosinnus.forms.widgets import DateTimeL10nPicker, SplitHiddenDateWidget
 
-from cosinnus_poll.models import Poll, Option, Vote, Comment
+from cosinnus_marketplace.models import Marketplace, Option, Vote, Comment
 from cosinnus.forms.attached_object import FormAttachable
 
 
-class _PollForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
+class _MarketplaceForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
                  FormAttachable):
     
     LOCKED_FIELDS_WHILE_ACTIVE_VOTES = ('multiple_votes', 'can_vote_maybe', 'anyone_can_vote')
@@ -24,23 +24,23 @@ class _PollForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
     url = forms.URLField(widget=forms.TextInput, required=False)
 
     class Meta:
-        model = Poll
+        model = Marketplace
         fields = ('title', 'description', 'multiple_votes', 'can_vote_maybe', 'anyone_can_vote')
     
     def __init__(self, *args, **kwargs):
-        super(_PollForm, self).__init__(*args, **kwargs)
-        # if a Poll has been voted on, no more options can be edited. remove their fields to avoid data injection
+        super(_MarketplaceForm, self).__init__(*args, **kwargs)
+        # if a Marketplace has been voted on, no more options can be edited. remove their fields to avoid data injection
         has_active_votes = self.instance.options.filter(votes__isnull=False).count() > 0
-        if has_active_votes or self.instance and self.instance.state != Poll.STATE_VOTING_OPEN:
+        if has_active_votes or self.instance and self.instance.state != Marketplace.STATE_VOTING_OPEN:
             for remove_field in self.LOCKED_FIELDS_WHILE_ACTIVE_VOTES:
                 del self.fields[remove_field]
                 
     def clean(self, *args, **kwargs):
-        cleaned_data = super(_PollForm, self).clean(*args, **kwargs)
+        cleaned_data = super(_MarketplaceForm, self).clean(*args, **kwargs)
         return cleaned_data
         
 
-PollForm = get_form(_PollForm)
+MarketplaceForm = get_form(_MarketplaceForm)
 
 
 class OptionForm(forms.ModelForm):
@@ -53,7 +53,7 @@ class OptionForm(forms.ModelForm):
         description = self.cleaned_data.get('description', '')
         description = description.strip()
         if not description:
-            raise forms.ValidationError(_('You must write a description for this poll option!'))
+            raise forms.ValidationError(_('You must write a description for this marketplace option!'))
         return description
     
     def clean(self, *args, **kwargs):
@@ -64,7 +64,7 @@ class OptionForm(forms.ModelForm):
         # images are disabled for now
         image = self.cleaned_data.get('image', None)
         if not description and not image:
-            raise forms.ValidationError(_('You must specify either an image or a description for this poll option!'))
+            raise forms.ValidationError(_('You must specify either an image or a description for this marketplace option!'))
         """
         return data
 
@@ -80,10 +80,10 @@ class VoteForm(forms.Form):
         return ''
     
     
-class PollNoFieldForm(forms.ModelForm):
+class MarketplaceNoFieldForm(forms.ModelForm):
 
     class Meta:
-        model = Poll
+        model = Marketplace
         fields = ()
         
         

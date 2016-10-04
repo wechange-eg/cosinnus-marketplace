@@ -1,43 +1,43 @@
 
-.poll-option.poll-option-yes,
-.poll-option.poll-option-yes .media,
-.poll-option.poll-option-yes .media-body,
-.poll-option.poll-option-maybe,
-.poll-option.poll-option-maybe .media,
-.poll-option.poll-option-maybe .media-body,
-.poll-option.poll-option-no,
-.poll-option.poll-option-no .media,
-.poll-option.poll-option-no .media-body
+.marketplace-option.marketplace-option-yes,
+.marketplace-option.marketplace-option-yes .media,
+.marketplace-option.marketplace-option-yes .media-body,
+.marketplace-option.marketplace-option-maybe,
+.marketplace-option.marketplace-option-maybe .media,
+.marketplace-option.marketplace-option-maybe .media-body,
+.marketplace-option.marketplace-option-no,
+.marketplace-option.marketplace-option-no .media,
+.marketplace-option.marketplace-option-no .media-body
 {
     cursor: pointer !important;    
 }
 
-.poll-option .poll-option-display-yes.poll-option-display-color {
+.marketplace-option .marketplace-option-display-yes.marketplace-option-display-color {
     background-color: #779b48 !important;
 }
 
-.poll-option .poll-option-display-maybe.poll-option-display-color {
+.marketplace-option .marketplace-option-display-maybe.marketplace-option-display-color {
     background-color: #efa02d !important;
 }
 
-.poll-option .poll-option-display-no.poll-option-display-color {
+.marketplace-option .marketplace-option-display-no.marketplace-option-display-color {
     background-color: #e55c55 !important;
 }
 
-.poll-option-display {
+.marketplace-option-display {
     display: none;
 }
-.poll-option-display:hover {
+.marketplace-option-display:hover {
     text-decoration: none;
     cursor: pointer;
 }
-.poll-option.poll-option-yes .poll-option-display-yes {
+.marketplace-option.marketplace-option-yes .marketplace-option-display-yes {
     display: inherit;
 }
-.poll-option.poll-option-maybe .poll-option-display-maybe {
+.marketplace-option.marketplace-option-maybe .marketplace-option-display-maybe {
     display: inherit;
 }
-.poll-option.poll-option-no .poll-option-display-no {
+.marketplace-option.marketplace-option-no .marketplace-option-display-no {
     display: inline;
 }
 
@@ -68,14 +68,14 @@
     top: 8px;
 }
 
-.app-poll .btn-emphasized:hover .media > .pull-right {
+.app-marketplace .btn-emphasized:hover .media > .pull-right {
     background-color: #009EE3 !important;
 }
 
-.app-poll .btn-emphasized:hover .media > .pull-right.vote-trophy {
+.app-marketplace .btn-emphasized:hover .media > .pull-right.vote-trophy {
     background-color: #009EE3 !important;
 }
-.app-poll .btn-emphasized:hover .media > a.pull-right.vote-trophy:hover {
+.app-marketplace .btn-emphasized:hover .media > a.pull-right.vote-trophy:hover {
     background-color: #007999 !important;
 }
 .vote-trophy {

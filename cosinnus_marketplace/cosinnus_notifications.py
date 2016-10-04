@@ -10,11 +10,11 @@ from django.utils.translation import ugettext_lazy as _
 
 
 """ Signal definitions """
-poll_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
-poll_completed = dispatch.Signal(providing_args=["user", "obj", "audience"])
-poll_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
-tagged_poll_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
-voted_poll_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
+marketplace_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
+marketplace_completed = dispatch.Signal(providing_args=["user", "obj", "audience"])
+marketplace_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
+tagged_marketplace_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
+voted_marketplace_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
 
 
 """ Notification definitions.
@@ -39,99 +39,99 @@ voted_poll_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audi
     
 """ 
 notifications = {
-    'poll_created': {
-        'label': _('A user created a new poll'), 
-        'mail_template': 'cosinnus_poll/notifications/poll_created.txt',
-        'subject_template': 'cosinnus_poll/notifications/poll_created_subject.txt',
-        'signals': [poll_created],
+    'marketplace_created': {
+        'label': _('A user created a new marketplace'), 
+        'mail_template': 'cosinnus_marketplace/notifications/marketplace_created.txt',
+        'subject_template': 'cosinnus_marketplace/notifications/marketplace_created_subject.txt',
+        'signals': [marketplace_created],
         'default': True,
         
         'is_html': True,
-        'snippet_type': 'poll',
-        'event_text': _('New poll by %(sender_name)s'),
-        'notification_text': _('%(sender_name)s created a new poll'),
-        'subject_text': _('A new poll: "%(object_name)s" was created in %(team_name)s.'),
+        'snippet_type': 'marketplace',
+        'event_text': _('New marketplace by %(sender_name)s'),
+        'notification_text': _('%(sender_name)s created a new marketplace'),
+        'subject_text': _('A new marketplace: "%(object_name)s" was created in %(team_name)s.'),
         'data_attributes': {
             'object_name': 'title', 
             'object_url': 'get_absolute_url', 
             'object_text': 'description',
         },
     }, 
-    'poll_completed': {
-        'label': _('A poll you voted on was completed'), 
-        'mail_template': 'cosinnus_poll/notifications/poll_completed.txt',
-        'subject_template': 'cosinnus_poll/notifications/poll_completed_subject.txt',
-        'signals': [poll_completed],
+    'marketplace_completed': {
+        'label': _('A marketplace you voted on was completed'), 
+        'mail_template': 'cosinnus_marketplace/notifications/marketplace_completed.txt',
+        'subject_template': 'cosinnus_marketplace/notifications/marketplace_completed_subject.txt',
+        'signals': [marketplace_completed],
         'default': True,
         
         'is_html': True,
-        'snippet_type': 'poll',
-        'event_text': _("%(sender_name)s completed the poll"),
-        'notification_text': _('%(sender_name)s completed a poll'),
-        'subject_text': _('Poll "%(object_name)s" was completed in %(team_name)s.'),
+        'snippet_type': 'marketplace',
+        'event_text': _("%(sender_name)s completed the marketplace"),
+        'notification_text': _('%(sender_name)s completed a marketplace'),
+        'subject_text': _('Marketplace "%(object_name)s" was completed in %(team_name)s.'),
         'data_attributes': {
             'object_name': 'title', 
             'object_url': 'get_absolute_url', 
             'object_text': 'description',
         },
     },  
-    'poll_comment_posted': {
-        'label': _('A user commented on one of your polls'), 
-        'mail_template': 'cosinnus_poll/notifications/poll_comment_posted.html',
-        'subject_template': 'cosinnus_poll/notifications/poll_comment_posted_subject.txt',
-        'signals': [poll_comment_posted],
+    'marketplace_comment_posted': {
+        'label': _('A user commented on one of your marketplaces'), 
+        'mail_template': 'cosinnus_marketplace/notifications/marketplace_comment_posted.html',
+        'subject_template': 'cosinnus_marketplace/notifications/marketplace_comment_posted_subject.txt',
+        'signals': [marketplace_comment_posted],
         'default': True,
         
         'is_html': True,
-        'snippet_type': 'poll',
-        'event_text': _('%(sender_name)s commented on your poll'),
-        'notification_text': _('%(sender_name)s commented on one of your polls'),
-        'subject_text': _('%(sender_name)s commented on one of your polls'),
+        'snippet_type': 'marketplace',
+        'event_text': _('%(sender_name)s commented on your marketplace'),
+        'notification_text': _('%(sender_name)s commented on one of your marketplaces'),
+        'subject_text': _('%(sender_name)s commented on one of your marketplaces'),
         'sub_event_text': _('%(sender_name)s'),
         'data_attributes': {
-            'object_name': 'poll.title', 
+            'object_name': 'marketplace.title', 
             'object_url': 'get_absolute_url', 
-            'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'image_url': 'marketplace.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
     },    
-    'tagged_poll_comment_posted': {
-        'label': _('A user commented on a poll you were tagged in'), 
-        'mail_template': 'cosinnus_poll/notifications/tagged_poll_comment_posted.html',
-        'subject_template': 'cosinnus_poll/notifications/tagged_poll_comment_posted_subject.txt',
-        'signals': [tagged_poll_comment_posted],
+    'tagged_marketplace_comment_posted': {
+        'label': _('A user commented on a marketplace you were tagged in'), 
+        'mail_template': 'cosinnus_marketplace/notifications/tagged_marketplace_comment_posted.html',
+        'subject_template': 'cosinnus_marketplace/notifications/tagged_marketplace_comment_posted_subject.txt',
+        'signals': [tagged_marketplace_comment_posted],
         'default': True,
         
         'is_html': True,
-        'snippet_type': 'poll',
-        'event_text': _('%(sender_name)s commented on a poll you were tagged in'),
-        'subject_text': _('%(sender_name)s commented on a poll you were tagged in in %(team_name)s'),
+        'snippet_type': 'marketplace',
+        'event_text': _('%(sender_name)s commented on a marketplace you were tagged in'),
+        'subject_text': _('%(sender_name)s commented on a marketplace you were tagged in in %(team_name)s'),
         'sub_event_text': _('%(sender_name)s'),
         'data_attributes': {
-            'object_name': 'poll.title', 
+            'object_name': 'marketplace.title', 
             'object_url': 'get_absolute_url', 
-            'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'image_url': 'marketplace.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
     },  
-    'voted_poll_comment_posted': {
-        'label': _('A user commented on an poll you voted in'), 
-        'mail_template': 'cosinnus_poll/notifications/voted_poll_comment_posted.html',
-        'subject_template': 'cosinnus_poll/notifications/voted_poll_comment_posted_subject.txt',
-        'signals': [voted_poll_comment_posted],
+    'voted_marketplace_comment_posted': {
+        'label': _('A user commented on an marketplace you voted in'), 
+        'mail_template': 'cosinnus_marketplace/notifications/voted_marketplace_comment_posted.html',
+        'subject_template': 'cosinnus_marketplace/notifications/voted_marketplace_comment_posted_subject.txt',
+        'signals': [voted_marketplace_comment_posted],
         'default': True,
         
         'is_html': True,
-        'snippet_type': 'poll',
-        'event_text': _('%(sender_name)s commented on a poll you voted in'),
-        'subject_text': _('%(sender_name)s commented on a poll you voted in in %(team_name)s'),
+        'snippet_type': 'marketplace',
+        'event_text': _('%(sender_name)s commented on a marketplace you voted in'),
+        'subject_text': _('%(sender_name)s commented on a marketplace you voted in in %(team_name)s'),
         'sub_event_text': _('%(sender_name)s'),
         'data_attributes': {
-            'object_name': 'poll.title', 
+            'object_name': 'marketplace.title', 
             'object_url': 'get_absolute_url', 
-            'image_url': 'poll.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'image_url': 'marketplace.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },

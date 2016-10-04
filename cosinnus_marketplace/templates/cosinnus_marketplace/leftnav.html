@@ -1,12 +1,12 @@
 {% load i18n static cosinnus_tags widget_tweaks %}
 
-{% group_url 'cosinnus:poll:list' group=group as poll_list_page %}
-{% group_url 'cosinnus:poll:list_past' group=group as poll_list_past_page %}
+{% group_url 'cosinnus:marketplace:list' group=group as marketplace_list_page %}
+{% group_url 'cosinnus:marketplace:list_past' group=group as marketplace_list_past_page %}
 
 
-{% if return_to == "polls" %}
+{% if return_to == "marketplaces" %}
 
-    <button type="button" class="btn w100 btn-emphasized" href="{% group_url 'cosinnus:poll:list' group=group %}{% add_current_params %}">
+    <button type="button" class="btn w100 btn-emphasized" href="{% group_url 'cosinnus:marketplace:list' group=group %}{% add_current_params %}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left" href="#">
@@ -14,43 +14,43 @@
                 </a>
                 <a class="pull-right" href="#"></a><!-- only block width -->
                 <div class="media-body">
-                    {% trans "Back to Polls" %}
+                    {% trans "Back to Marketplaces" %}
                 </div>
             </li>
         </ul>
     </button>
     
-{% else %} {# Poll list view #}
+{% else %} {# Marketplace list view #}
     
-    <button type="button" class="btn w100 btn-{% if request.path == poll_list_page or poll and poll.state < 3 %}extra-{% endif %}emphasized fine-space" href="{{ poll_list_page }}{% add_current_params %}">
+    <button type="button" class="btn w100 btn-{% if request.path == marketplace_list_page or marketplace and marketplace.state < 3 %}extra-{% endif %}emphasized fine-space" href="{{ marketplace_list_page }}{% add_current_params %}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left" href="#">
-                    {% if running_polls_count %}
-                        {{ running_polls_count }}
+                    {% if running_marketplaces_count %}
+                        {{ running_marketplaces_count }}
                     {% else %}
                         <i class="fa fa-bar-chart"></i>
                     {% endif %}
                 </a>
-                {% if request.path == poll_list_page or poll and poll.state < 3 %}
+                {% if request.path == marketplace_list_page or marketplace and marketplace.state < 3 %}
                     <a class="pull-right" href="#">
                         <i class="fa fa-caret-right"></i>
                     </a>
                 {% endif %}
                 <div class="media-body">
-                    {% trans "Polls" %}
+                    {% trans "Marketplaces" %}
                 </div>
             </li>
         </ul>
     </button>
     
-    <button type="button" class="btn w100 btn-{% if request.path == poll_list_past_page or poll and poll.state == 3 %}extra-{% endif %}emphasized" href="{{ poll_list_past_page }}{% add_current_params %}">
+    <button type="button" class="btn w100 btn-{% if request.path == marketplace_list_past_page or marketplace and marketplace.state == 3 %}extra-{% endif %}emphasized" href="{{ marketplace_list_past_page }}{% add_current_params %}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left" href="#">
                     {% comment %}  
-                        {% if past_polls_count or past_polls_count%}
-                            {{ past_polls_count }}
+                        {% if past_marketplaces_count or past_marketplaces_count%}
+                            {{ past_marketplaces_count }}
                         {% else %}
                             <i class="fa fa-bar-chart"></i>
                         {% endif %}
@@ -58,12 +58,12 @@
                     <i class="fa fa-bar-chart"></i>
                 </a>
                 <a class="pull-right" href="#">
-                    {% if request.path == poll_list_past_page or poll and poll.state == 3 %}
+                    {% if request.path == marketplace_list_past_page or marketplace and marketplace.state == 3 %}
                         <i class="fa fa-caret-right"></i>
                     {% endif %}
                 </a>
                 <div class="media-body">
-                    {% trans "Past Polls" %}
+                    {% trans "Past Marketplaces" %}
                 </div>
             </li>
         </ul>

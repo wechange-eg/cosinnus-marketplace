@@ -1,12 +1,12 @@
 {% load i18n cosinnus_tags %}
 <div class="fadedown {% if not forloop.last %}regular-space{% endif %}">
-    <div class="btn btn-emphasized w100" href="{{ poll.get_absolute_url }}">
+    <div class="btn btn-emphasized w100" href="{{ marketplace.get_absolute_url }}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left square-date-icon" href="#">
-                      {% if poll.state == 1 %} {# voting open #}
+                      {% if marketplace.state == 1 %} {# voting open #}
                         <i class="fa fa-question-circle"></i>
-                      {% elif poll.state == 2 %} {# voting closed #}
+                      {% elif marketplace.state == 2 %} {# voting closed #}
                           <i class="fa fa-bar-chart"></i>
                       {% else %} {# archived #}
                           <i class="fa fa-bar-chart"></i>
@@ -15,22 +15,22 @@
                 <a class="pull-right fadedown-clickarea" href="#">
                     <i class="fa fa-chevron-down"></i>
                 </a>
-                <a class="pull-right" href="{{ poll.get_absolute_url }}">
+                <a class="pull-right" href="{{ marketplace.get_absolute_url }}">
                     <i class="fa fa-chain"></i>
                 </a>
                 <div class="media-body">
-                    {% with creator=poll.creator %}
+                    {% with creator=marketplace.creator %}
                         <span class="annotation">{% trans "by" %} <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a></span>
                     {% endwith %}
-                    <a href="{{ poll.get_absolute_url }}">
-                        {{ poll.title }}
+                    <a href="{{ marketplace.get_absolute_url }}">
+                        {{ marketplace.title }}
                     </a>
                 </div>
             </li>
         </ul>
     </div>
 
-    {% if poll.description and poll.description|length > 0 %}
+    {% if marketplace.description and marketplace.description|length > 0 %}
         <div class="btn btn-white w100">
             <ul class="media-list">
                 <li class="media">
@@ -39,7 +39,7 @@
                     </a>
                     <div class="media-body">
                         <p>
-                            {{ poll.description|textfield }}
+                            {{ marketplace.description|textfield }}
                         </p>
                     </div>
                 </li>
@@ -47,10 +47,10 @@
         </div>
     {% endif %}
 
-    {% include 'cosinnus/media_tags_readonly.html' with object=poll %}
+    {% include 'cosinnus/media_tags_readonly.html' with object=marketplace %}
     
-    {% if user|has_write_access:poll %}
-        {% captureas delete_modal_id %}deleteModal_{{poll.slug}}{% endcaptureas %}
+    {% if user|has_write_access:marketplace %}
+        {% captureas delete_modal_id %}deleteModal_{{marketplace.slug}}{% endcaptureas %}
         <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{delete_modal_id}}">
             <ul class="media-list">
                 <li class="media">
@@ -63,8 +63,8 @@
                 </li>
             </ul>
         </button>
-        {% if poll.state != 3 %}
-            <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:poll:edit" group=group slug=poll.slug %}">
+        {% if marketplace.state != 3 %}
+            <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:marketplace:edit" group=group slug=marketplace.slug %}">
                 <ul class="media-list">
                     <li class="media">
                         <a class="pull-left" href="#">
@@ -77,8 +77,8 @@
                 </ul>
             </button> 
         {% endif %}
-        {% if poll.state == 2 %}
-            {% captureas reopen_modal_id %}reopenModal_{{poll.slug}}{% endcaptureas %}
+        {% if marketplace.state == 2 %}
+            {% captureas reopen_modal_id %}reopenModal_{{marketplace.slug}}{% endcaptureas %}
             <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{reopen_modal_id}}">
                 <ul class="media-list">
                     <li class="media">
@@ -91,7 +91,7 @@
                     </li>
                 </ul>
             </button> 
-            {% captureas archive_modal_id %}archiveModal_{{poll.slug}}{% endcaptureas %}
+            {% captureas archive_modal_id %}archiveModal_{{marketplace.slug}}{% endcaptureas %}
             <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{archive_modal_id}}">
                 <ul class="media-list">
                     <li class="media">
@@ -107,25 +107,25 @@
         {% endif %}
     {% endif %}
     
-    {% include 'cosinnus/feedback/report_button_btn.html' with object=poll %}
+    {% include 'cosinnus/feedback/report_button_btn.html' with object=marketplace %}
     
 </div><!-- fadedown -->
 
-{% if user|has_write_access:poll %}    
-    {% captureas label %}{% blocktrans with title=poll.title %}Do you really want to delete poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-    {% captureas title %}{% trans "Delete poll" %}{% endcaptureas %}
-    {% captureas action %}{% group_url 'cosinnus:poll:delete' group=group slug=poll.slug %}{% endcaptureas %}
+{% if user|has_write_access:marketplace %}    
+    {% captureas label %}{% blocktrans with title=marketplace.title %}Do you really want to delete marketplace „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+    {% captureas title %}{% trans "Delete marketplace" %}{% endcaptureas %}
+    {% captureas action %}{% group_url 'cosinnus:marketplace:delete' group=group slug=marketplace.slug %}{% endcaptureas %}
     {% include "cosinnus/modal_box.html" with id=delete_modal_id label=label title=title form_action=action %}
     
-    {% if poll.state == 2 %}
-        {% captureas label %}{% blocktrans with title=poll.title %}Do you really want to re-open poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-        {% captureas title %}{% trans "Re-open poll" %}{% endcaptureas %}
-        {% captureas action %}{% group_url 'cosinnus:poll:reopen' group=group slug=poll.slug %}{% endcaptureas %}
+    {% if marketplace.state == 2 %}
+        {% captureas label %}{% blocktrans with title=marketplace.title %}Do you really want to re-open marketplace „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+        {% captureas title %}{% trans "Re-open marketplace" %}{% endcaptureas %}
+        {% captureas action %}{% group_url 'cosinnus:marketplace:reopen' group=group slug=marketplace.slug %}{% endcaptureas %}
         {% include "cosinnus/modal_box.html" with id=reopen_modal_id label=label title=title form_action=action %}
         
-        {% captureas label %}{% blocktrans with title=poll.title %}Do you really want to archive poll „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-        {% captureas title %}{% trans "Archive poll" %}{% endcaptureas %}
-        {% captureas action %}{% group_url 'cosinnus:poll:archive' group=group slug=poll.slug %}{% endcaptureas %}
+        {% captureas label %}{% blocktrans with title=marketplace.title %}Do you really want to archive marketplace „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+        {% captureas title %}{% trans "Archive marketplace" %}{% endcaptureas %}
+        {% captureas action %}{% group_url 'cosinnus:marketplace:archive' group=group slug=marketplace.slug %}{% endcaptureas %}
         {% include "cosinnus/modal_box.html" with id=archive_modal_id label=label title=title form_action=action %}
     {% endif %}
     

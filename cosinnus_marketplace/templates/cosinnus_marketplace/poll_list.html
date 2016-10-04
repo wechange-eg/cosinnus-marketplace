@@ -1,17 +1,17 @@
-{% extends "cosinnus_poll/base.html" %}
+{% extends "cosinnus_marketplace/base.html" %}
 {% load i18n static cosinnus_tags widget_tweaks %}
 
 {% block page_title %}
-{% trans "Polls" %} {{ block.super }}
+{% trans "Marketplaces" %} {{ block.super }}
 {% endblock page_title %}
 
 {% block breadcrumb %}
     {{ block.super }}
-    <li class="active">{% if poll_view == "past" %}{% trans "Archived Polls" %}{% else %}{% trans "Polls" %}{% endif %}</li>
+    <li class="active">{% if marketplace_view == "past" %}{% trans "Archived Marketplaces" %}{% else %}{% trans "Marketplaces" %}{% endif %}</li>
 {% endblock %}
 
 {% block leftnav %}
-    {% include "cosinnus_poll/leftnav.html" %}
+    {% include "cosinnus_marketplace/leftnav.html" %}
 {% endblock leftnav %}
 
 {% block content %}
@@ -21,7 +21,7 @@
         {% include 'cosinnus/common/filter_controls.html' %}        
         
         {% if user|can_create_objects_in:group %} 
-        <form method="GET" action="{% group_url 'cosinnus:poll:add' group=group %}">
+        <form method="GET" action="{% group_url 'cosinnus:marketplace:add' group=group %}">
             <div type="button" class="btn btn-default w100 large-space">
                 <ul class="media-list">
                     <li class="media">
@@ -29,7 +29,7 @@
                             <i class="fa fa-plus"></i>
                         </a>
                         <div class="media-body media-body-form-control">
-                            {% captureas placeholder %}{% trans "Enter the title for a new poll." %}{% endcaptureas %}
+                            {% captureas placeholder %}{% trans "Enter the title for a new marketplace." %}{% endcaptureas %}
                             <input class="form-control next-button-is-for-sending"
                                 placeholder="{{ placeholder }}" autocomplete="off"
                                 name="title"
@@ -53,13 +53,13 @@
         </form>
         {% endif %}
         
-        {% for poll in polls %}
-            {% include 'cosinnus_poll/list_object.html' %}
+        {% for marketplace in marketplaces %}
+            {% include 'cosinnus_marketplace/list_object.html' %}
         {% empty %}
-            {% if poll_view == 'past' %}
-                {% captureas empty_message %}{% trans "There are no archived polls." %}{% endcaptureas %}
+            {% if marketplace_view == 'past' %}
+                {% captureas empty_message %}{% trans "There are no archived marketplaces." %}{% endcaptureas %}
             {% else %}
-                {% captureas empty_message %}{% trans "There are no running polls." %}{% endcaptureas %}
+                {% captureas empty_message %}{% trans "There are no running marketplaces." %}{% endcaptureas %}
             {% endif %}
             {% include 'cosinnus/common/empty_button.html' with message=empty_message %}
         {% endfor %}

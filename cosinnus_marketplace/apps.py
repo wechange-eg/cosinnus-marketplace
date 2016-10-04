@@ -2,12 +2,12 @@
 from django.apps import AppConfig
 
 
-class CosinnusPollAppConfig(AppConfig):
+class CosinnusMarketplaceAppConfig(AppConfig):
 
-    name = 'cosinnus_poll'
-    verbose_name = 'Cosinnus Poll'
+    name = 'cosinnus_marketplace'
+    verbose_name = 'Cosinnus Marketplace'
 
     def ready(self):
-        from cosinnus_poll import cosinnus_app
+        from cosinnus_marketplace import cosinnus_app
         cosinnus_app.register()
 

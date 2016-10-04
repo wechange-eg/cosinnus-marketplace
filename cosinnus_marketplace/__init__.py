@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 VERSION = (0, 1, 0, 'alpha', 0)
 
-default_app_config = 'cosinnus_poll.apps.CosinnusPollAppConfig'
+default_app_config = 'cosinnus_marketplace.apps.CosinnusMarketplaceAppConfig'
 
 
 def get_version(full=True):
