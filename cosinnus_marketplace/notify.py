@@ -3,13 +3,13 @@ from __future__ import unicode_literals
 
 from django.core.urlresolvers import reverse
 
-from cosinnus_marketplace.models import Marketplace
+from cosinnus_marketplace.models import Offer
 
 
-NOTIFY_MODELS = [Marketplace]
+NOTIFY_MODELS = [Offer]
 NOTIFY_POST_SUBSCRIBE_URLS = {
-    'marketplace.Marketplace': {
+    'marketplace.Offer': {
         'show': lambda obj, group: obj.get_absolute_url(),
-        'list': lambda obj, group: reverse('sinn_marketplace-entry-list', kwargs={'group': group.pk}),
+        'list': lambda obj, group: reverse('sinn_offer-entry-list', kwargs={'group': group.pk}),
     },
 }

@@ -11,10 +11,10 @@ def register():
         attached_object_registry, url_registry, widget_registry)
 
     app_registry.register('cosinnus_marketplace', 'marketplace', _('Marketplaces'), deactivatable=True)
-    attached_object_registry.register('cosinnus_marketplace.Marketplace',
-                             'cosinnus_marketplace.utils.renderer.MarketplaceRenderer')
+    attached_object_registry.register('cosinnus_marketplace.Offer',
+                             'cosinnus_marketplace.utils.renderer.OfferRenderer')
     url_registry.register_urlconf('cosinnus_marketplace', 'cosinnus_marketplace.urls')
-    widget_registry.register('marketplace', 'cosinnus_marketplace.dashboard.CurrentMarketplaces')
+    widget_registry.register('marketplace', 'cosinnus_marketplace.dashboard.CurrentOffers')
     
     # makemessages replacement protection
     name = pgettext_lazy("the_app", "marketplace")

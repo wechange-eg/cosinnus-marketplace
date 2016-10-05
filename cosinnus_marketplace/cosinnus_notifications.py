@@ -11,7 +11,7 @@ from django.utils.translation import ugettext_lazy as _
 
 """ Signal definitions """
 marketplace_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
-marketplace_completed = dispatch.Signal(providing_args=["user", "obj", "audience"])
+marketplace_expired = dispatch.Signal(providing_args=["user", "obj", "audience"])
 marketplace_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
 tagged_marketplace_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
 voted_marketplace_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
@@ -57,11 +57,11 @@ notifications = {
             'object_text': 'description',
         },
     }, 
-    'marketplace_completed': {
-        'label': _('A marketplace you voted on was completed'), 
+    'marketplace_expired': {
+        'label': _('A marketplace has expired'), 
         'mail_template': 'cosinnus_marketplace/notifications/marketplace_completed.txt',
         'subject_template': 'cosinnus_marketplace/notifications/marketplace_completed_subject.txt',
-        'signals': [marketplace_completed],
+        'signals': [marketplace_expired],
         'default': True,
         
         'is_html': True,

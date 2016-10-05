@@ -1,1 +1,0 @@
-{% include 'cosinnus_marketplace/single_marketplace.html' with object=object %}

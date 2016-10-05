@@ -7,17 +7,17 @@ from django.db import models
 from taggit.models import TaggedItem
 
 
-class MarketplaceManager(models.Manager):
+class OfferManager(models.Manager):
     def public(self):
         # Django 1.5: get_query_set, 1.7: get_queryset
         qs = getattr(self, 'get_queryset', self.get_query_set)()
-        return qs.filter(public=True, state=self.model.STATE_SCHEDULED)
+        return qs.filter(public=True, is_active=True)
 
     def tags(self):
-        marketplace_type = ContentType.objects.get(app_label="cosinnus_marketplace", model="marketplace")
+        offer_type = ContentType.objects.get(app_label="cosinnus_marketplace", model="offer")
 
         tag_names = []
-        for ti in TaggedItem.objects.filter(content_type_id=marketplace_type):
+        for ti in TaggedItem.objects.filter(content_type_id=offer_type):
             if ti.tag.name not in tag_names:
                 tag_names.append(ti.tag.name)
 

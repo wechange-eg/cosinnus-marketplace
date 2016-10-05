@@ -7,7 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from cosinnus.utils.dashboard import DashboardWidget, DashboardWidgetForm
 
-from cosinnus_marketplace.models import Marketplace, current_marketplace_filter
+from cosinnus_marketplace.models import Offer, current_offer_filter
 
 
 class CurrentMarketplacesForm(DashboardWidgetForm):
@@ -24,8 +24,8 @@ class CurrentMarketplaces(DashboardWidget):
 
     app_name = 'marketplace'
     form_class = CurrentMarketplacesForm
-    model = Marketplace
-    title = _('Current Marketplaces')
+    model = Offer
+    title = _('Current Offers')
     user_model_attr = None  # No filtering on user page
     widget_name = 'current'
     template_name = 'cosinnus_marketplace/widgets/current.html'
@@ -36,7 +36,7 @@ class CurrentMarketplaces(DashboardWidget):
          """
         count = int(self.config['amount'])
         all_current_marketplaces = self.get_queryset().\
-                filter(state__lt=Marketplace.STATE_ARCHIVED).\
+                filter(is_active=True).\
                 order_by('-created').\
                 select_related('group').all()
         marketplaces = all_current_marketplaces
@@ -54,4 +54,4 @@ class CurrentMarketplaces(DashboardWidget):
 
     def get_queryset(self):
         qs = super(CurrentMarketplaces, self).get_queryset()
-        return current_marketplace_filter(qs)
+        return current_offer_filter(qs)

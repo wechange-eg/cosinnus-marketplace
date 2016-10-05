@@ -60,35 +60,23 @@
                                 </li>
                             </ol>
                             
-                            {% if form.forms.obj.can_vote_maybe %}
-                            <ol class="input-area">
-                                <li class="w100">
-                                    {{ form.forms.obj.multiple_votes.errors }}
-                                    {% render_field form.forms.obj.multiple_votes %}
-                                    <label for="{{ form.forms.obj.multiple_votes.auto_id }}" style="white-space: normal;">{% trans "Multiple Votes" %} - <small>{% trans "If disabled, users can only vote for one option" %}</small></label>
-                                </li>
-                            </ol>
-                            {% endif %}
-                            
-                            {% if form.forms.obj.multiple_votes %}
-                            <ol class="input-area">
-                                <li class="w100">
-                                    {{ form.forms.obj.can_vote_maybe.errors }}
-                                    {% render_field form.forms.obj.can_vote_maybe %}
-                                    <label for="{{ form.forms.obj.can_vote_maybe.auto_id }}" style="white-space: normal;">{% trans '"Maybe" option enabled' %} - <small>{% trans 'In addition to "Yes" and "No"' %}</small></label>
-                                </li>
-                            </ol>
-                            {% endif %}
-                            
-                            {% if form.forms.obj.anyone_can_vote %}
-                            <ol class="input-area">
-                                <li class="w100">
-                                    {{ form.forms.obj.anyone_can_vote.errors }}
-                                    {% render_field form.forms.obj.anyone_can_vote %}
-                                    <label for="{{ form.forms.obj.anyone_can_vote.auto_id }}" style="white-space: normal;">{% trans "Public voting" %} - <small>{% trans "Any logged in user who can see this marketplace can vote on it. If disabled, only group/project members can vote on it." %}</small></label>
-                                </li>
-                            </ol>
-                            {% endif %}
+                            <label>
+						    	{% trans "Categories" %}
+						    </label>
+						    {{ form.forms.obj.categories.errors }}
+						    <div type="button" class="btn btn-default w100 regular-space">
+						        <ul class="media-list">
+						            <li class="media">
+						                <a class="pull-left" href="#">
+						                    <i class="fa fa-pencil"></i>
+						                </a>
+						                <div class="media-body">
+							                {% captureas placeholder %}{% trans "Categories" %}{% endcaptureas %}
+							                {% render_field form.forms.obj.categories class+="w100" placeholder=placeholder %}
+						                </div>
+						            </li>
+						        </ul>
+						    </div>
                             
                             
                             {% include 'cosinnus/media_tags.html' %}

@@ -6,21 +6,24 @@ Created on 05.08.2014
 from django.utils.translation import ugettext_lazy as _
 
 from cosinnus.views.mixins.filters import CosinnusFilterSet
-from cosinnus.forms.filters import AllObjectsFilter, SelectCreatorWidget
-from cosinnus_marketplace.models import Marketplace
+from cosinnus.forms.filters import AllObjectsFilter, SelectCreatorWidget,\
+    DropdownChoiceWidgetWithEmpty
+from cosinnus_marketplace.models import Offer
+from django_filters.filters import ChoiceFilter
 
 
-class MarketplaceFilter(CosinnusFilterSet):
+class OfferFilter(CosinnusFilterSet):
     creator = AllObjectsFilter(label=_('Created By'), widget=SelectCreatorWidget)
+    type = ChoiceFilter(label=_('Type'), choices=Offer.TYPE_CHOICES, widget=DropdownChoiceWidgetWithEmpty)
     
     class Meta:
-        model = Marketplace
-        fields = ['creator']
+        model = Offer
+        fields = ['creator', 'type']
         order_by = (
             ('-created', _('Newest Created')),
             ('title', _('Title')),
         )
     
     def get_order_by(self, order_value):
-        return super(MarketplaceFilter, self).get_order_by(order_value)
+        return super(OfferFilter, self).get_order_by(order_value)
     

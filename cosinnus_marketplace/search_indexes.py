@@ -5,12 +5,12 @@ from haystack import indexes
 
 from cosinnus.utils.search import BaseTaggableObjectIndex
 
-from cosinnus_marketplace.models import Marketplace
+from cosinnus_marketplace.models import Offer
 
 
-class MarketplaceIndex(BaseTaggableObjectIndex, indexes.Indexable):
+class OfferIndex(BaseTaggableObjectIndex, indexes.Indexable):
     description = indexes.CharField(model_attr='description', null=True)
 
     def get_model(self):
-        return Marketplace
+        return Offer
 

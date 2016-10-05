@@ -2,19 +2,19 @@
 from __future__ import unicode_literals
 
 from cosinnus.utils.renderer import BaseRenderer
-from cosinnus_marketplace.models import Marketplace
+from cosinnus_marketplace.models import Offer
 
 
-class MarketplaceRenderer(BaseRenderer):
+class OfferRenderer(BaseRenderer):
     """
-    MarketplaceRenderer for Cosinnus attached objects
+    OfferRenderer for Cosinnus attached objects
     """
-    model = Marketplace
+    model = Offer
     
-    template = 'cosinnus_marketplace/attached_marketplaces.html'
-    template_single = 'cosinnus_marketplace/single_marketplace.html'
-    template_list = 'cosinnus_marketplace/marketplace_list_standalone.html'
+    template = 'cosinnus_marketplace/attached_offer.html'
+    template_single = 'cosinnus_marketplace/single_offer.html'
+    template_list = 'cosinnus_marketplace/offer_list_standalone.html'
     
     @classmethod
     def render(cls, context, myobjs):
-        return super(MarketplaceRenderer, cls).render(context, marketplaces=myobjs)
+        return super(OfferRenderer, cls).render(context, marketplaces=myobjs)

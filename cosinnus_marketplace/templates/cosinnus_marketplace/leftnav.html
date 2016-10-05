@@ -14,13 +14,13 @@
                 </a>
                 <a class="pull-right" href="#"></a><!-- only block width -->
                 <div class="media-body">
-                    {% trans "Back to Marketplaces" %}
+                    {% trans "Back to Offers" %}
                 </div>
             </li>
         </ul>
     </button>
     
-{% else %} {# Marketplace list view #}
+{% else %} {# Offer list view #}
     
     <button type="button" class="btn w100 btn-{% if request.path == marketplace_list_page or marketplace and marketplace.state < 3 %}extra-{% endif %}emphasized fine-space" href="{{ marketplace_list_page }}{% add_current_params %}">
         <ul class="media-list">
@@ -38,7 +38,7 @@
                     </a>
                 {% endif %}
                 <div class="media-body">
-                    {% trans "Marketplaces" %}
+                    {% trans "Offers" %}
                 </div>
             </li>
         </ul>
