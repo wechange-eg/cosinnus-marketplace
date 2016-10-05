@@ -128,6 +128,10 @@ class Offer(BaseTaggableObjectModel):
             qs = filter_tagged_object_queryset_for_user(qs, user)
         return current_offer_filter(qs)
     
+    @property
+    def has_expired(self):
+        return self.is_active == False and self.created < now() - datetime.timedelta(days=settings.COSINNUS_MARKETPLACE_OFFER_ACTIVITY_DURATION_DAYS)
+    
 
 
 @python_2_unicode_compatible

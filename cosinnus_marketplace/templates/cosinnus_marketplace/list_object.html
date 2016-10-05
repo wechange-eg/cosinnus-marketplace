@@ -1,36 +1,33 @@
 {% load i18n cosinnus_tags %}
 <div class="fadedown {% if not forloop.last %}regular-space{% endif %}">
-    <div class="btn btn-emphasized w100" href="{{ marketplace.get_absolute_url }}">
+    <div class="btn btn-emphasized w100" href="{{ offer.get_absolute_url }}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left square-date-icon" href="#">
-                      {% if marketplace.state == 1 %} {# voting open #}
-                        <i class="fa fa-question-circle"></i>
-                      {% elif marketplace.state == 2 %} {# voting closed #}
-                          <i class="fa fa-bar-chart"></i>
-                      {% else %} {# archived #}
-                          <i class="fa fa-bar-chart"></i>
-                      {% endif %}
+                	<i class="fa fa-bar-chart"></i>
                 </a>
                 <a class="pull-right fadedown-clickarea" href="#">
                     <i class="fa fa-chevron-down"></i>
                 </a>
-                <a class="pull-right" href="{{ marketplace.get_absolute_url }}">
+                <a class="pull-right" href="{{ offer.get_absolute_url }}">
                     <i class="fa fa-chain"></i>
                 </a>
                 <div class="media-body">
-                    {% with creator=marketplace.creator %}
+                    {% with creator=offer.creator %}
                         <span class="annotation">{% trans "by" %} <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a></span>
                     {% endwith %}
-                    <a href="{{ marketplace.get_absolute_url }}">
-                        {{ marketplace.title }}
+                    <a href="{{ offer.get_absolute_url }}">
+                        {{ offer.title }}
+                        
+                        {# todo: remove #}
+                        ({% if offer.is_active %}ACTIVE!{% else %}INACTIVE!{% endif %})
                     </a>
                 </div>
             </li>
         </ul>
     </div>
 
-    {% if marketplace.description and marketplace.description|length > 0 %}
+    {% if offer.description and offer.description|length > 0 %}
         <div class="btn btn-white w100">
             <ul class="media-list">
                 <li class="media">
@@ -39,7 +36,7 @@
                     </a>
                     <div class="media-body">
                         <p>
-                            {{ marketplace.description|textfield }}
+                            {{ offer.description|textfield }}
                         </p>
                     </div>
                 </li>
@@ -47,10 +44,10 @@
         </div>
     {% endif %}
 
-    {% include 'cosinnus/media_tags_readonly.html' with object=marketplace %}
+    {% include 'cosinnus/media_tags_readonly.html' with object=offer %}
     
-    {% if user|has_write_access:marketplace %}
-        {% captureas delete_modal_id %}deleteModal_{{marketplace.slug}}{% endcaptureas %}
+    {% if user|has_write_access:offer %}
+        {% captureas delete_modal_id %}deleteModal_{{offer.slug}}{% endcaptureas %}
         <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{delete_modal_id}}">
             <ul class="media-list">
                 <li class="media">
@@ -63,70 +60,69 @@
                 </li>
             </ul>
         </button>
-        {% if marketplace.state != 3 %}
-            <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:marketplace:edit" group=group slug=marketplace.slug %}">
-                <ul class="media-list">
-                    <li class="media">
-                        <a class="pull-left" href="#">
-                            <i class="fa fa-pencil"></i>
-                        </a>
-                        <div class="media-body">
-                            {% trans "Edit" %}
-                        </div>
-                    </li>
-                </ul>
-            </button> 
-        {% endif %}
-        {% if marketplace.state == 2 %}
-            {% captureas reopen_modal_id %}reopenModal_{{marketplace.slug}}{% endcaptureas %}
-            <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{reopen_modal_id}}">
-                <ul class="media-list">
-                    <li class="media">
-                        <a class="pull-left" href="#">
-                            <i class="fa fa-eraser"></i>
-                        </a>
-                        <div class="media-body">
-                            {% trans "Re-open" %}
-                        </div>
-                    </li>
-                </ul>
-            </button> 
-            {% captureas archive_modal_id %}archiveModal_{{marketplace.slug}}{% endcaptureas %}
-            <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{archive_modal_id}}">
+        <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:marketplace:edit" group=group slug=offer.slug %}">
+            <ul class="media-list">
+                <li class="media">
+                    <a class="pull-left" href="#">
+                        <i class="fa fa-pencil"></i>
+                    </a>
+                    <div class="media-body">
+                        {% trans "Edit" %}
+                    </div>
+                </li>
+            </ul>
+        </button> 
+        {% if offer.is_active %}
+            {% captureas deactivate_modal_id %}deactivateModal_{{offer.slug}}{% endcaptureas %}
+            <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{deactivate_modal_id}}">
                 <ul class="media-list">
                     <li class="media">
                         <a class="pull-left" href="#">
                             <i class="fa fa-eraser"></i>
                         </a>
                         <div class="media-body">
-                            {% trans "Archive" %}
+                            {% trans "Deactivate" %}
                         </div>
                     </li>
                 </ul>
             </button>
+        {% else %}
+            {% captureas activate_modal_id %}activateModal_{{offer.slug}}{% endcaptureas %}
+            <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{activate_modal_id}}">
+                <ul class="media-list">
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <i class="fa fa-eraser"></i>
+                        </a>
+                        <div class="media-body">
+                        	{% if offer.has_expired %}{% trans "Reactivate" %}{% else %}{% trans "Activate" %}{% endif %}
+                        </div>
+                    </li>
+                </ul>
+            </button> 
         {% endif %}
     {% endif %}
     
-    {% include 'cosinnus/feedback/report_button_btn.html' with object=marketplace %}
+    {% include 'cosinnus/feedback/report_button_btn.html' with object=offer %}
     
 </div><!-- fadedown -->
 
-{% if user|has_write_access:marketplace %}    
-    {% captureas label %}{% blocktrans with title=marketplace.title %}Do you really want to delete marketplace „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-    {% captureas title %}{% trans "Delete marketplace" %}{% endcaptureas %}
-    {% captureas action %}{% group_url 'cosinnus:marketplace:delete' group=group slug=marketplace.slug %}{% endcaptureas %}
+{% if user|has_write_access:offer %}    
+    {% captureas label %}{% blocktrans with title=offer.title %}Do you really want to delete offer „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+    {% captureas title %}{% trans "Delete offer" %}{% endcaptureas %}
+    {% captureas action %}{% group_url 'cosinnus:marketplace:delete' group=group slug=offer.slug %}{% endcaptureas %}
     {% include "cosinnus/modal_box.html" with id=delete_modal_id label=label title=title form_action=action %}
     
-    {% if marketplace.state == 2 %}
-        {% captureas label %}{% blocktrans with title=marketplace.title %}Do you really want to re-open marketplace „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-        {% captureas title %}{% trans "Re-open marketplace" %}{% endcaptureas %}
-        {% captureas action %}{% group_url 'cosinnus:marketplace:reopen' group=group slug=marketplace.slug %}{% endcaptureas %}
-        {% include "cosinnus/modal_box.html" with id=reopen_modal_id label=label title=title form_action=action %}
-        
-        {% captureas label %}{% blocktrans with title=marketplace.title %}Do you really want to archive marketplace „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+    {% if offer.is_active %}
+        {% captureas label %}{% blocktrans with title=offer.title %}Do you really want to deactivate marketplace „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
         {% captureas title %}{% trans "Archive marketplace" %}{% endcaptureas %}
-        {% captureas action %}{% group_url 'cosinnus:marketplace:archive' group=group slug=marketplace.slug %}{% endcaptureas %}
-        {% include "cosinnus/modal_box.html" with id=archive_modal_id label=label title=title form_action=action %}
+        {% captureas action %}{% group_url 'cosinnus:marketplace:deactivate' group=group slug=offer.slug %}{% endcaptureas %}
+        {% include "cosinnus/modal_box.html" with id=deactivate_modal_id label=label title=title form_action=action %}
+    {% else %}
+        {% captureas label %}{% if offer.has_expired %}{% blocktrans with title=offer.title %}Do you really want to reactivate offer „{{ title }}“?{% endblocktrans %}{% else %}{% blocktrans with title=offer.title %}Do you really want to activate offer „{{ title }}“?{% endblocktrans %}{% endif %}{% endcaptureas %}
+        {% captureas title %}{% if offer.has_expired %}{% trans "Reactivate offer" %}{% else %}{% trans "Activate offer" %}{% endif %}{% endcaptureas %}
+        {% captureas action %}{% group_url 'cosinnus:marketplace:activate' group=group slug=offer.slug %}{% endcaptureas %}
+        {% include "cosinnus/modal_box.html" with id=activate_modal_id label=label title=title form_action=action %}
     {% endif %}
     
 {% endif %}

@@ -1,10 +1,10 @@
 {% load i18n static cosinnus_tags widget_tweaks %}
 
 {% group_url 'cosinnus:marketplace:list' group=group as marketplace_list_page %}
-{% group_url 'cosinnus:marketplace:list_past' group=group as marketplace_list_past_page %}
+{% group_url 'cosinnus:marketplace:list_mine' group=group as marketplace_list_mine_page %}
 
 
-{% if return_to == "marketplaces" %}
+{% if return_to == "offers" %}
 
     <button type="button" class="btn w100 btn-emphasized" href="{% group_url 'cosinnus:marketplace:list' group=group %}{% add_current_params %}">
         <ul class="media-list">
@@ -22,17 +22,13 @@
     
 {% else %} {# Offer list view #}
     
-    <button type="button" class="btn w100 btn-{% if request.path == marketplace_list_page or marketplace and marketplace.state < 3 %}extra-{% endif %}emphasized fine-space" href="{{ marketplace_list_page }}{% add_current_params %}">
+    <button type="button" class="btn w100 btn-{% if request.path == marketplace_list_page %}extra-{% endif %}emphasized fine-space" href="{{ marketplace_list_page }}{% add_current_params %}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left" href="#">
-                    {% if running_marketplaces_count %}
-                        {{ running_marketplaces_count }}
-                    {% else %}
-                        <i class="fa fa-bar-chart"></i>
-                    {% endif %}
+                    <i class="fa fa-bar-chart"></i>
                 </a>
-                {% if request.path == marketplace_list_page or marketplace and marketplace.state < 3 %}
+                {% if request.path == marketplace_list_page %}
                     <a class="pull-right" href="#">
                         <i class="fa fa-caret-right"></i>
                     </a>
@@ -44,26 +40,23 @@
         </ul>
     </button>
     
-    <button type="button" class="btn w100 btn-{% if request.path == marketplace_list_past_page or marketplace and marketplace.state == 3 %}extra-{% endif %}emphasized" href="{{ marketplace_list_past_page }}{% add_current_params %}">
+    <button type="button" class="btn w100 btn-{% if request.path == marketplace_list_mine_page %}extra-{% endif %}emphasized" href="{{ marketplace_list_mine_page }}{% add_current_params %}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left" href="#">
-                    {% comment %}  
-                        {% if past_marketplaces_count or past_marketplaces_count%}
-                            {{ past_marketplaces_count }}
-                        {% else %}
-                            <i class="fa fa-bar-chart"></i>
-                        {% endif %}
-                    {% endcomment %}
-                    <i class="fa fa-bar-chart"></i>
+                    {% if my_offer_count or my_offer_count == 0 %}
+                        {{ my_offer_count }}
+                    {% else %}
+                        <i class="fa fa-bar-chart"></i>
+                    {% endif %}
                 </a>
                 <a class="pull-right" href="#">
-                    {% if request.path == marketplace_list_past_page or marketplace and marketplace.state == 3 %}
+                    {% if request.path == marketplace_list_mine_page %}
                         <i class="fa fa-caret-right"></i>
                     {% endif %}
                 </a>
                 <div class="media-body">
-                    {% trans "Past Marketplaces" %}
+                    {% trans "My Offers" %}
                 </div>
             </li>
         </ul>

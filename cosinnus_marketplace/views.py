@@ -25,7 +25,7 @@ from cosinnus.views.mixins.user import UserFormKwargsMixin
 from cosinnus.views.attached_object import AttachableViewMixin
 
 from cosinnus_marketplace.conf import settings
-from cosinnus_marketplace.forms import CommentForm, OfferForm
+from cosinnus_marketplace.forms import CommentForm, OfferForm, OfferNoFieldForm
 from cosinnus_marketplace.models import Offer, current_offer_filter, Comment
 from django.shortcuts import get_object_or_404
 from cosinnus.views.mixins.filters import CosinnusFilterMixin
@@ -34,7 +34,7 @@ from cosinnus.utils.urls import group_aware_reverse
 from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user,\
     check_object_read_access, check_ug_membership
 from cosinnus.core.decorators.views import require_read_access,\
-    require_user_token_access
+    require_user_token_access, redirect_to_not_logged_in
 from django.contrib.sites.models import Site, get_current_site
 from annoying.functions import get_object_or_None
 from cosinnus.templatetags.cosinnus_tags import has_write_access
@@ -45,20 +45,36 @@ from django import forms
 class MarketplaceIndexView(RequireReadMixin, RedirectView):
 
     def get_redirect_url(self, **kwargs):
-        return group_aware_reverse('cosinnus:offer:list', kwargs={'group': self.group})
+        return group_aware_reverse('cosinnus:marketplace:list', kwargs={'group': self.group})
 
 index_view = MarketplaceIndexView.as_view()
 
 
-class OfferListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, ListView):
+class MyActiveOfferCountMixin(object):
+    
+    def get_context_data(self, **kwargs):
+        context = super(MyActiveOfferCountMixin, self).get_context_data(**kwargs)
+        my_offer_count = 0
+        if hasattr(self, 'group') and self.request and self.request.user.is_authenticated():
+            qs = Offer.objects.all()
+            my_offer_count = qs.filter(group=self.group, is_active=True, creator=self.request.user).count()
+        context.update({
+            'my_offer_count': my_offer_count,
+        })
+        return context
+
+
+class OfferListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, MyActiveOfferCountMixin, ListView):
 
     model = Offer
     filterset_class = OfferFilter
-    offer_view = 'all'   # 'all', 'selling' or 'buying'
+    offer_view = 'all'   # 'all', 'selling' or 'buying' or 'mine'
     template_name = 'cosinnus_marketplace/offer_list.html'
     
     def dispatch(self, request, *args, **kwargs):
         self.offer_view = kwargs.get('offer_view', 'all')
+        if self.offer_view == 'mine' and not self.request.user.is_authenticated():
+            return redirect_to_not_logged_in(view=self, group=self.group)
         return super(OfferListView, self).dispatch(request, *args, **kwargs)
     
     def get_queryset(self):
@@ -69,6 +85,8 @@ class OfferListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, Lis
             qs = qs.filter(state=Offer.TYPE_SELLING)
         elif self.offer_view == 'buying':
             qs = qs.filter(state=Offer.TYPE_BUYING)
+        elif self.offer_view == 'mine':
+            qs = qs.filter(creator=self.request.user)
         self.queryset = qs
         return qs
     
@@ -110,13 +128,13 @@ class OfferFormMixin(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
         # no self.object if get_queryset from add/edit view returns empty
         if hasattr(self, 'object'):
             kwargs['slug'] = self.object.slug
-            urlname = 'cosinnus:offer:detail'
+            urlname = 'cosinnus:marketplace:detail'
         else:
-            urlname = 'cosinnus:offer:list'
+            urlname = 'cosinnus:marketplace:list'
         return group_aware_reverse(urlname, kwargs=kwargs)
 
 
-class OfferAddView(OfferFormMixin, AttachableViewMixin, CreateWithInlinesView):
+class OfferAddView(OfferFormMixin, AttachableViewMixin, MyActiveOfferCountMixin, CreateWithInlinesView):
     
     message_success = _('Offer "%(title)s" was added successfully.')
     message_error = _('Offer "%(title)s" could not be added.')
@@ -130,7 +148,7 @@ class OfferAddView(OfferFormMixin, AttachableViewMixin, CreateWithInlinesView):
 offer_add_view = OfferAddView.as_view()
 
 
-class OfferEditView(OfferFormMixin, AttachableViewMixin, UpdateWithInlinesView):
+class OfferEditView(OfferFormMixin, AttachableViewMixin, MyActiveOfferCountMixin, UpdateWithInlinesView):
     
     def get_object(self, queryset=None):
         obj = super(OfferEditView, self).get_object(queryset=queryset)
@@ -145,9 +163,78 @@ class OfferDeleteView(OfferFormMixin, DeleteView):
     message_error = _('Offer "%(title)s" could not be deleted.')
 
     def get_success_url(self):
-        return group_aware_reverse('cosinnus:offer:list', kwargs={'group': self.group})
+        return group_aware_reverse('cosinnus:marketplace:list', kwargs={'group': self.group})
 
 offer_delete_view = OfferDeleteView.as_view()
+
+
+class OfferDetailView(RequireReadMixin, FilterGroupMixin, MyActiveOfferCountMixin, DetailView):
+
+    model = Offer
+
+    def get_context_data(self, **kwargs):
+        context = super(OfferDetailView, self).get_context_data(**kwargs)
+        context.update({
+            'offer': context['object'],
+        })
+        return context
+
+offer_detail_view = OfferDetailView.as_view()
+
+
+class OfferActivateOrDeactivateView(RequireWriteMixin, FilterGroupMixin, UpdateView):
+    """ Completes a marketplace for a selected option, setting the marketplace to completed/archived.
+        Notification triggers are handled in the model. """
+    form_class = OfferNoFieldForm
+    model = Offer
+    mode = 'activate' # 'activate' or 'deactivate'
+    MODES = ['activate', 'deactivate']
+    
+    def dispatch(self, request, *args, **kwargs):
+        self.mode = kwargs.pop('mode')
+        return super(OfferActivateOrDeactivateView, self).dispatch(request, *args, **kwargs)
+    
+    def get_object(self, queryset=None):
+        obj = super(OfferActivateOrDeactivateView, self).get_object(queryset)
+        return obj
+    
+    def get(self, request, *args, **kwargs):
+        # we don't accept GETs on this, just POSTs
+        messages.error(request, _('The complete request can only be sent via POST!'))
+        return HttpResponseRedirect(self.get_object().get_absolute_url())
+    
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        offer = self.object
+        
+        # check if valid action requested depending on marketplace state
+        if self.mode not in self.MODES:
+            messages.error(request, _('Invalid action for this offer. The request could not be completed!'))
+            return HttpResponseRedirect(self.object.get_absolute_url())
+        if offer.is_active and self.mode == 'activate':
+            messages.success(_('The offer is already active'))
+            return HttpResponseRedirect(offer.get_absolute_url())
+        if not offer.is_active and self.mode == 'deactivate':
+            messages.success(_('The offer is already deactivated'))
+            return HttpResponseRedirect(offer.get_absolute_url())
+
+        if self.mode == 'deactivate':
+            offer.is_active = False
+            offer.save(update_fields=['is_active'])
+            messages.success(request, _('The offer was deactivated successfully.'))
+        elif self.mode == 'activate':
+            reactivate = offer.has_expired
+            offer.is_active = True
+            offer.created = now()
+            offer.save(update_fields=['is_active', 'created'])
+            if reactivate:
+                messages.success(request, _('The offer was reactivated successfully.'))
+            else:
+                messages.success(request, _('The offer was activated successfully.'))
+        
+        return HttpResponseRedirect(offer.get_absolute_url())
+    
+offer_activate_or_deactivate_view = OfferActivateOrDeactivateView.as_view()
 
 
 class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):

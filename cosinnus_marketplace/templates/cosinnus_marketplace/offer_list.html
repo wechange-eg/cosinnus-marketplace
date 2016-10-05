@@ -7,7 +7,7 @@
 
 {% block breadcrumb %}
     {{ block.super }}
-    <li class="active">{% if marketplace_view == "past" %}{% trans "Archived Marketplaces" %}{% else %}{% trans "Marketplaces" %}{% endif %}</li>
+    <li class="active">{% if offer_view == "mine" %}{% trans "My Offers" %}{% else %}{% trans "Offers" %}{% endif %}</li>
 {% endblock %}
 
 {% block leftnav %}
@@ -29,7 +29,7 @@
                             <i class="fa fa-plus"></i>
                         </a>
                         <div class="media-body media-body-form-control">
-                            {% captureas placeholder %}{% trans "Enter the title for a new marketplace." %}{% endcaptureas %}
+                            {% captureas placeholder %}{% trans "Enter the title for a new offer." %}{% endcaptureas %}
                             <input class="form-control next-button-is-for-sending"
                                 placeholder="{{ placeholder }}" autocomplete="off"
                                 name="title"
@@ -53,13 +53,13 @@
         </form>
         {% endif %}
         
-        {% for marketplace in marketplaces %}
+        {% for offer in offers %}
             {% include 'cosinnus_marketplace/list_object.html' %}
         {% empty %}
-            {% if marketplace_view == 'past' %}
-                {% captureas empty_message %}{% trans "There are no archived marketplaces." %}{% endcaptureas %}
+            {% if offer_view == 'mine' %}
+                {% captureas empty_message %}{% trans "You have no offers yet." %}{% endcaptureas %}
             {% else %}
-                {% captureas empty_message %}{% trans "There are no running marketplaces." %}{% endcaptureas %}
+                {% captureas empty_message %}{% trans "There are no offers currently." %}{% endcaptureas %}
             {% endif %}
             {% include 'cosinnus/common/empty_button.html' with message=empty_message %}
         {% endfor %}

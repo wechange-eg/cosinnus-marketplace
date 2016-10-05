@@ -27,6 +27,12 @@ class _OfferForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
 OfferForm = get_form(_OfferForm)
 
 
+class OfferNoFieldForm(forms.ModelForm):
+
+    class Meta:
+        model = Offer
+        fields = ()
+
         
 class CommentForm(forms.ModelForm):
 
