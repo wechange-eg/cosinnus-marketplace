@@ -34,7 +34,7 @@
                 {{ formset.management_form }}
             {% endfor %}
             
-            <div type="button" class="btn btn-default w100 large-space">
+            <div class="btn btn-default w100 large-space">
                 <ul class="media-list">
                     <li class="media">
                         <a class="pull-left btn-emphasized" href="#">
@@ -49,17 +49,16 @@
 						    <ol class="input-area">
                                 <li class="w100">
 		                            <label>
-								    	{% trans "Offer type" %}
+								    	{% trans "Offer type" %}:
 								    </label>
 		                            {{ form.forms.obj.type.errors }}
 		                            <div class="condensed-radio-input">
-		                                <label class="notification-options-label">
-		                                	{% for value, label in form.forms.obj.type.field.choices %}
+		                            	{# please keep this linebreak formatting so that no spaces exit between the <label> elements! #}
+	                                	{% for value, label in form.forms.obj.type.field.choices %}<label class="notification-options-label">
 			                                	<input type="radio" name="{{ form.forms.obj.type.html_name }}" value="{{ value }}"
 			                                			 {% if form.forms.obj.type.value == value or value|stringify == form.forms.obj.type.value %}checked="checked"{% endif %}>
 												<span class="">{{ label }}</span>
-		                                	{% endfor %}
-										</label>
+											</label>{% endfor %}
 		                            </div>
 	                            </li>
 	                        </ol>
@@ -80,18 +79,18 @@
                                 </li>
                             </ol>
                             
-                            <ol class="input-area">
+                            <ol class="input-area regular-space">
                                 <li class="w100">
                                 	{{ form.forms.obj.phone_number.errors }}
-									{% captureas placeholder %}{% trans "Your phone number (optional)" %}{% endcaptureas %}
+									{% captureas placeholder %}{% trans "Phone number (optional)" %}{% endcaptureas %}
                                     {% render_field form.forms.obj.phone_number class+="form-control" placeholder=placeholder %}
+                                    <p class="small">
+                                    	{% trans "Your phone number is only visible for registered users" %}
+                                    </p>
                                 </li>
                             </ol>
                             
-                            
-                            <hr>
-                            
-						    <ol class="input-area">
+						    <ol class="input-area regular-space">
                                 <li class="w100">
 		                            <label>
 								    	{% trans "Categories" %}
@@ -100,16 +99,37 @@
 								    <br/>
 					                {% for value, label in form.forms.obj.categories.field.choices %}
 						                <label for="id_{{ form.forms.obj.categories.html_name }}_{{ value }}">
-						                	<input class="w100" id="id_{{ form.forms.obj.categories.html_name }}_{{ value }}" name="{{ form.forms.obj.categories.html_name }}" 
+						                	<input id="id_{{ form.forms.obj.categories.html_name }}_{{ value }}" name="{{ form.forms.obj.categories.html_name }}" 
 						                			type="checkbox" value="{{ value }}"{% if value in form.forms.obj.categories.value or value|stringify in form.forms.obj.categories.value %}checked="checked"{% endif %}>
-						                	{{ label }}
+						                	<span>{{ label }}</span>
 					                	</label>
 					                	<br/>
 					                {% endfor %}
 					            </li>
 					        </ol>
+					        
+					        <ol class="input-area regular-space">
+                                <li class="w100">
+                                	{{ form.forms.obj.is_active.errors }}
+									{% captureas placeholder %}{% trans "is???" %}{% endcaptureas %}
+                                    <label for="{{ form.forms.obj.auto_id }}">
+	                                    {% render_field form.forms.obj.is_active placeholder=placeholder %}
+                                    	{% trans "Offer is active" %}
+                                    </label>
+                                    <p class="small">
+                                    	{% trans "Your offer will stay active for 4 weeks. After that, you can reactivate it at any time." %}
+                                    </p>
+                                </li>
+                            </ol>
                             
-                            {% include 'cosinnus/media_tags.html' %}
+                            <ol class="input-area">
+                                <li class="w100">
+		                            <label>
+								    	{% trans "Add Photos or Files" %}
+								    </label>
+                                </li>
+                            </ol>
+                            {% include 'cosinnus/media_tags.html' with show_files=True %}
                             
                         </div>
                     </li>
