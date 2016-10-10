@@ -89,6 +89,14 @@
                                     </p>
                                 </li>
                             </ol>
+                        </div>
+                    </li>
+                        
+                    <li class="media">
+                        <a class="pull-left btn-emphasized" href="#">
+                            <i class="fa fa-tags"></i>
+                        </a>
+                        <div class="media-body media-body-form-control">
                             
 						    <ol class="input-area regular-space">
                                 <li class="w100">
@@ -107,7 +115,32 @@
 					                {% endfor %}
 					            </li>
 					        </ol>
-					        
+                        </div>
+                    </li>
+                        
+                    <li class="media">
+                        <a class="pull-left btn-emphasized" href="#">
+                            <i class="fa fa-image"></i>
+                        </a>
+                        <div class="media-body media-body-form-control">
+                        
+                            <ol class="input-area">
+                                <li class="w100">
+		                            <label>
+								    	{% trans "Add Photos or Files" %}
+								    </label>
+                                </li>
+                            </ol>
+                            {% include 'cosinnus/media_tags.html' with show_files=True %}
+                        </div>
+                    </li>
+                        
+                    <li class="media">
+                        <a class="pull-left btn-emphasized" href="#">
+                            <i class="fa fa-check"></i>
+                        </a>
+                        <div class="media-body media-body-form-control">
+                        
 					        <ol class="input-area regular-space">
                                 <li class="w100">
                                 	{{ form.forms.obj.is_active.errors }}
@@ -121,16 +154,6 @@
                                     </p>
                                 </li>
                             </ol>
-                            
-                            <ol class="input-area">
-                                <li class="w100">
-		                            <label>
-								    	{% trans "Add Photos or Files" %}
-								    </label>
-                                </li>
-                            </ol>
-                            {% include 'cosinnus/media_tags.html' with show_files=True %}
-                            
                         </div>
                     </li>
                     
