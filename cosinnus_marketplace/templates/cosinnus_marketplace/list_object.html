@@ -1,10 +1,16 @@
-{% load i18n cosinnus_tags %}
+{% load i18n cosinnus_tags thumbnail %}
 <div class="fadedown {% if not forloop.last %}regular-space{% endif %}">
     <div class="btn btn-emphasized w100" href="{{ offer.get_absolute_url }}">
         <ul class="media-list">
             <li class="media">
-                <a class="pull-left square-date-icon" href="#">
-                	<i class="fa fa-bar-chart"></i>
+                <a class="pull-left square-date-icon">
+                	{% if offer.attached_image %}
+                		<img class="image" src="{% thumbnail offer.attached_image.file 40x40 crop=1 upscale=1 %}" />
+                		
+                	{% else %}
+                		<i class="fa fa-exchange"></i>
+                	{% endif %}
+                	
                 </a>
                 <a class="pull-right fadedown-clickarea" href="#">
                     <i class="fa fa-chevron-down"></i>
@@ -44,8 +50,6 @@
         </div>
     {% endif %}
 
-    {% include 'cosinnus/media_tags_readonly.html' with object=offer %}
-    
     {% if user|has_write_access:offer %}
         {% captureas delete_modal_id %}deleteModal_{{offer.slug}}{% endcaptureas %}
         <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{delete_modal_id}}">

@@ -9,9 +9,9 @@
                         {% if marketplace.state == 1 %} {# voting open #}
                             <i class="fa fa-question-circle"></i>
                           {% elif marketplace.state == 2 %} {# voting closed #}
-                              <i class="fa fa-bar-chart"></i>
+                              <i class="fa fa-exchange"></i>
                           {% else %} {# archived #}
-                              <i class="fa fa-bar-chart"></i>
+                              <i class="fa fa-exchange"></i>
                           {% endif %}
                     </a>
                     <div class="media-body">
@@ -29,7 +29,7 @@
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left" href="#">
-                    <i class="fa fa-bar-chart"></i>
+                    <i class="fa fa-exchange"></i>
                 </a>
                 <div class="media-body">
                     {% trans "There are no marketplaces yet" %}
