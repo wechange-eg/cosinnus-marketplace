@@ -1,84 +1,117 @@
-{% load i18n static cosinnus_tags widget_tweaks %}
+{% load i18n static cosinnus_tags widget_tweaks thumbnail %}
 
-<div class="btn btn-emphasized w100 {% if marketplace.attached_image %}button-with-title-image{% endif %}">
-    {% if marketplace.attached_image %}
-        <img src="{{ marketplace.attached_image.static_image_url }}" />
+<div class="btn btn-emphasized w100 noselect {% if offer.attached_image %}button-with-title-image{% endif %}">
+    {% if offer.attached_image %}
+        <img src="{% thumbnail offer.attached_image.file SETTINGS.COSINNUS_GROUP_WALLPAPER_MAXIMUM_SIZE_SCALE crop='smart' upscale='smart' %}" />
         <div></div> <!-- Gradient overlay -->
     {% endif %}
     <ul class="media-list">
         <li class="media">
             <a class="pull-left square-date-icon" href="#">
+        	{% comment %}  
                 <i class="fa fa-bar-chart"></i>
-            </a>
-            <a class="pull-right" href="{{ marketplace.get_absolute_url }}">
-                <i class="fa fa-chain"></i>
+        	{% endcomment %}
+				{% include 'cosinnus/user/user_avatar_image.html' with user=offer.creator %}                
             </a>
             <div class="media-body">
-                {% with creator=marketplace.creator %}
-                    <span class="annotation">{% trans "by" %} <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a></span>
-                {% endwith %}
-                <a href="{{ marketplace.get_absolute_url }}">
-                    {{ marketplace.title }}
-                </a>
+            
+        		{% captureas link_start %}<a href="{{ offer.creator|profile_url }}">{% endcaptureas %}
+        		{% captureas link_end %}</a>{% endcaptureas %}
+            	{% if offer.type == 1 %}
+            		{% blocktrans with username=offer.creator|full_name %}{{ link_start }}{{ username }}{{ link_end }} is looking for{% endblocktrans %}
+            	{% elif offer.type == 2 %}
+            		{% blocktrans with username=offer.creator|full_name %}{{ link_start }}{{ username }}{{ link_end }} is offering{% endblocktrans %}
+            	{% endif %}
+            	
+                <span class="annotation">
+                	<span class="moment-data-date" data-date="{{ offer.created|date:'c' }}"></span>
+                	{% include 'cosinnus/feedback/report_button_a.html' with object=offer %}
+            	</span>
+                   
             </div>
         </li>
     </ul>
 </div>
 
-{% include 'cosinnus/media_tags_readonly.html' with object=marketplace hide_attached=True %}
     
-<div class="btn btn-white w100 {% if not marketplace.url %}{% if not marketplace.attached_objects.exists %}large-space{% endif %}{% endif %}">
-    <ul class="media-list">
-        <li class="media">
-            <a class="pull-left" href="#">
-                <i class="fa fa-pencil"></i>
-            </a>
-            <div class="media-body">
-                <p>
-                {% if marketplace.description and marketplace.description|length > 0 %}
-                    {{ marketplace.description|textfield }}
-                {% else %}
-                    {% trans "(No description set)" %}
-                {% endif %}
-                </p>
-            </div>
-        </li>
-    </ul>
-</div>
-
-{% if marketplace.attached_objects.exists %}
-    {% cosinnus_render_attached_objects marketplace %}
-{% endif %}
-
-{# announce winning option #}
-{% if marketplace.state != 1 %}
-    {% if marketplace.winning_option %}
-        <div class="large-space">
-            <h2>{% trans "The Winner is" %}:</h2>
-            {% include 'cosinnus_marketplace/single_marketplace_option.html' with option=marketplace.winning_option %}
-        </div>
-        <h2>{% trans "Available options were" %}:</h2>
-    {% else %}
-        <div>
-            <h2>{% trans "There was no winning option." %}</h2>
-        </div>
-    {% endif %}
-{% endif %}
-
-{% if options %}
+<div class="content-box white-content {% if not user|has_write_access:offer %}large-space{% endif %}">
+	<h4><b>{{ offer.title }}</b></h4>
+    <p>
+        {% if offer.description and offer.description|length > 0 %}
+            {{ offer.description|textfield }}
+        {% else %}
+            {% trans "(No description set)" %}
+        {% endif %}
+    </p>
     
-    <div class="large-space"> <!-- options panel -->
-        {% for option in options %}
-            {% include 'cosinnus_marketplace/single_marketplace_option.html' with option=option option_counter=forloop.counter %}
-        {% endfor %}
+    <br/>
+    
+    <p>
+    	{% with categories=offer.categories.all %}
+    		{% if categories %}
+    			<span>
+    				{% trans "offered in" %}:
+    				{% for category in categories %}
+    					<a href="{{ category.get_absolute_url }}">{{ category.name }}</a>{% if not forloop.last %}, {% endif %}
+    				{% endfor %}
+    			</span>
+    		{% endif %}
+    	{% endwith %}
+    	<br/>
+    	<span>
+    		{% if offer.is_active %}
+	    		{% trans "expires on" %}: 
+    		{% else %}
+    			{% trans "expired on" %}:
+    		{% endif %}
+    		<span class="moment-data-date" data-date="{{ offer.expires_on|date:'c' }}"></span>
+    	</span>
+    </p>
+    
+    <br/>
+    <div class="content-box">
+    	<p class="transparent large-space"><b>{% blocktrans with username=offer.creator.first_name %}Contact {{ username }} directly{% endblocktrans %}:</b></p>
+    	
+    	{% if offer.phone_number %}
+    	<p class="transparent">
+    		{% trans "Phone number" %}: {{ offer.phone_number.as_international }}
+    	</p>
+    	{% endif %}
+    	
+    	{% if not SETTINGS.COSINNUS_IS_INTEGRATED_PORTAL %}
+	        <button type="button" class="btn btn-emphasized" style="float: none; margin: 0;" {% if not offer.creator == user %}href="{% url 'postman:write' recipients=offer.creator.username %}"{% else %}disabled="true"{% endif %}>
+	            <ul class="media-list">
+	                <li class="media">
+	                    <a class="pull-left" href="#">
+	                        <i class="fa fa-envelope"></i>
+	                    </a>
+	                    <div class="media-body">
+	                        {% trans "Send Message" %}
+	                    </div>
+	                </li>
+	            </ul>
+	        </button>
+        {% endif %}
     </div>
+    
+    <br/>
+	{% if offer.attached_images %}
+	    <div class="row">
+	        {% for image in offer.attached_images %}
+	            <div class="col-sm-4">
+	                <a href="{{ image.static_image_url }}" data-lightbox="image-note-detailed" data-title="{{ image.title }}" class="thumbnail">
+	                    <img src="{{ image.static_image_url_thumbnail }}" title='{{ image.title }}'/>
+	                </a>
+	            </div>
+	        {% endfor %}
+	    </div>
+	{% endif %}
+    
+</div>
 
-
-{% else %}
-    {% comment %} No options were added {% endcomment %}
-    <!-- {% trans "There are no options for this marketplace yet!" %} -->
-    {% include 'cosinnus/common/empty_button.html' with message="There are no options for this marketplace yet!" %}
+{% if offer.attached_objects.exists %}
+    {% cosinnus_render_attached_objects offer skipImages=True %}
 {% endif %}
 
-
+{% include 'cosinnus/media_tags_readonly.html' with object=offer hide_attached=True %}
 

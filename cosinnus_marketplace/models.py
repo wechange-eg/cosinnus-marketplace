@@ -132,7 +132,11 @@ class Offer(BaseTaggableObjectModel):
     def has_expired(self):
         return self.is_active == False and self.created < now() - datetime.timedelta(days=settings.COSINNUS_MARKETPLACE_OFFER_ACTIVITY_DURATION_DAYS)
     
-
+    @property
+    def expires_on(self):
+        return self.created + datetime.timedelta(days=settings.COSINNUS_MARKETPLACE_OFFER_ACTIVITY_DURATION_DAYS)
+    
+    
 
 @python_2_unicode_compatible
 class Comment(models.Model):

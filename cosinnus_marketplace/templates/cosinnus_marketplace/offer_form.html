@@ -5,7 +5,7 @@
     {% if form_view == "add" %}
       {% trans "Add marketplace" %}
     {% elif form_view == "edit" %}
-      {% trans "Edit" %} {{ marketplace.title }}
+      {% trans "Edit" %} {{ offer.title }}
     {% endif %}
 {{ block.super }}
 {% endblock page_title %}
@@ -14,15 +14,15 @@
         {{ block.super }}
         <li class="active">
             {% if form_view == "add" %}
-              {% trans "Add marketplace" %}
+              {% trans "Add Offer" %}
             {% elif form_view == "edit" %}
-              {% trans "Edit" %} {{ marketplace.title }}
+              {% trans "Edit" %} {{ offer.title }}
             {% endif %}
         </li>
 {% endblock %}
 
 {% block leftnav %}
-    {% include "cosinnus_marketplace/leftnav.html" with return_to="marketplaces"%}
+    {% include "cosinnus_marketplace/leftnav.html" with return_to="offers"%}
 {% endblock leftnav %}
 
 {% block content %}
@@ -129,9 +129,12 @@
 		                            <label>
 								    	{% trans "Add Photos or Files" %}
 								    </label>
+								    <p class="small">
+                                    	{% trans "The first uploaded image will be displayed as a wallpaper" %}
+                                    </p>
                                 </li>
                             </ol>
-                            {% include 'cosinnus/media_tags.html' with show_files=True %}
+                            {% include 'cosinnus/media_tags.html' with show_files=True disable_tags=True %}
                         </div>
                     </li>
                         
@@ -160,7 +163,7 @@
                 </ul>
             </div>
             
-            <button type="submit" class="btn btn-emphasized" id="createMarketplaceButton">
+            <button type="submit" class="btn btn-emphasized">
                 <ul class="media-list">
                     <li class="media">
                         <a class="pull-left" href="#">

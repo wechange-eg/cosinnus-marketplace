@@ -1,29 +1,23 @@
 {% load i18n cosinnus_tags %}
 
-{% with marketplace=object %}
+{% with offer=object %}
     <div class="app-marketplace">
         <div class="btn btn-emphasized w100" >
             <ul class="media-list large-space">
                 <li class="media">
                     <a class="pull-left square-date-icon" href="#">
-                        {% if marketplace.state == 1 %} {# voting open #}
-                            <i class="fa fa-question-circle"></i>
-                          {% elif marketplace.state == 2 %} {# voting closed #}
-                              <i class="fa fa-bar-chart"></i>
-                          {% else %} {# archived #}
-                              <i class="fa fa-bar-chart"></i>
-                          {% endif %}
+                        <i class="fa fa-bar-chart"></i>
                     </a>
                     <div class="media-body no-vertical-padding ">
                         <span class="annotation">
-                            {% with creator=marketplace.creator %}
+                            {% with creator=offer.creator %}
                                 {# {% trans "by" %} #} <strong><a href="{{ creator|profile_url }}">{{ creator|full_name }}</a></strong>
                             {% endwith %}
-                            <span class="moment-data-date" data-date="{{ marketplace.created|date:'c' }}"></span>
+                            <span class="moment-data-date" data-date="{{ offer.created|date:'c' }}"></span>
                         </span>
-                        <strong><a href="{{ marketplace.get_absolute_url }}">{{ marketplace.title }}</a></strong>
+                        <strong><a href="{{ offer.get_absolute_url }}">{{ offer.title }}</a></strong>
                         <div class="group-annotation">
-                            {% include 'cosinnus/group/group_label.html' with group=marketplace.group %}
+                            {% include 'cosinnus/group/group_label.html' with group=offer.group %}
                         </div>
                     </div>
                 </li>

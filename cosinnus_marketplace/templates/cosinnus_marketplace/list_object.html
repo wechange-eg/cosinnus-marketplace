@@ -114,8 +114,8 @@
     {% include "cosinnus/modal_box.html" with id=delete_modal_id label=label title=title form_action=action %}
     
     {% if offer.is_active %}
-        {% captureas label %}{% blocktrans with title=offer.title %}Do you really want to deactivate marketplace „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
-        {% captureas title %}{% trans "Archive marketplace" %}{% endcaptureas %}
+        {% captureas label %}{% blocktrans with title=offer.title %}Do you really want to deactivate offer „{{ title }}“?{% endblocktrans %}{% endcaptureas %}
+        {% captureas title %}{% trans "Deactivate offer" %}{% endcaptureas %}
         {% captureas action %}{% group_url 'cosinnus:marketplace:deactivate' group=group slug=offer.slug %}{% endcaptureas %}
         {% include "cosinnus/modal_box.html" with id=deactivate_modal_id label=label title=title form_action=action %}
     {% else %}
