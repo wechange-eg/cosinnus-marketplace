@@ -147,8 +147,7 @@
 					        <ol class="input-area regular-space">
                                 <li class="w100">
                                 	{{ form.forms.obj.is_active.errors }}
-									{% captureas placeholder %}{% trans "is???" %}{% endcaptureas %}
-                                    <label for="{{ form.forms.obj.auto_id }}">
+                                    <label for="{{ form.forms.obj.is_active.auto_id }}">
 	                                    {% render_field form.forms.obj.is_active placeholder=placeholder %}
                                     	{% trans "Offer is active" %}
                                     </label>
