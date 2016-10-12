@@ -13,4 +13,9 @@ class OfferIndex(BaseTaggableObjectIndex, indexes.Indexable):
 
     def get_model(self):
         return Offer
-
+    
+    def index_queryset(self, *args, **kwargs):
+        """ Only include active offers """
+        qs = super(OfferIndex, self).index_queryset(*args, **kwargs)
+        qs = qs.filter(is_active=True)
+        return qs
