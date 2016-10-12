@@ -24,9 +24,6 @@
                     {% endwith %}
                     <a href="{{ offer.get_absolute_url }}">
                         {{ offer.title }}
-                        
-                        {# todo: remove #}
-                        ({% if offer.is_active %}ACTIVE!{% else %}INACTIVE!{% endif %})
                     </a>
                 </div>
             </li>
