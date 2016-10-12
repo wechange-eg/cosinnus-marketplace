@@ -18,7 +18,7 @@ class OfferFilter(CosinnusFilterSet):
     
     class Meta:
         model = Offer
-        fields = ['creator', 'type']
+        fields = ['creator', 'type', 'categories']
         order_by = (
             ('-created', _('Newest Created')),
             ('title', _('Title')),

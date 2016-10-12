@@ -68,7 +68,7 @@ class OfferListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, MyA
 
     model = Offer
     filterset_class = OfferFilter
-    offer_view = 'all'   # 'all', 'selling' or 'buying' or 'mine'
+    offer_view = 'all'   # 'all' or 'mine'
     template_name = 'cosinnus_marketplace/offer_list.html'
     
     def dispatch(self, request, *args, **kwargs):
@@ -81,10 +81,8 @@ class OfferListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, MyA
         """ In the calendar we only show scheduled marketplaces """
         qs = super(OfferListView, self).get_queryset()
         self.unfiltered_qs = qs
-        if self.offer_view == 'selling':
-            qs = qs.filter(state=Offer.TYPE_SELLING)
-        elif self.offer_view == 'buying':
-            qs = qs.filter(state=Offer.TYPE_BUYING)
+        if self.offer_view == 'all':
+            qs = qs.filter(is_active=True)
         elif self.offer_view == 'mine':
             qs = qs.filter(creator=self.request.user)
         self.queryset = qs
@@ -92,9 +90,15 @@ class OfferListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, MyA
     
     def get_context_data(self, **kwargs):
         context = super(OfferListView, self).get_context_data(**kwargs)
+        offers = context['object_list']
+        # filter here so we don't filter on the DB
+        offers_buying = [offer for offer in offers if offer.type == Offer.TYPE_BUYING]
+        offers_selling = [offer for offer in offers if offer.type == Offer.TYPE_SELLING]
         context.update({
             'offer_view': self.offer_view,
-            'offers': context['object_list'],
+            'offers': offers,
+            'offers_buying': offers_buying,
+            'offers_selling': offers_selling,
         })
         return context
 

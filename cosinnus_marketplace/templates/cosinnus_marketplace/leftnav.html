@@ -2,11 +2,12 @@
 
 {% group_url 'cosinnus:marketplace:list' group=group as marketplace_list_page %}
 {% group_url 'cosinnus:marketplace:list_mine' group=group as marketplace_list_mine_page %}
+{% group_url 'cosinnus:marketplace:add' group=group as marketplace_add_page %}
 
 
 {% if return_to == "offers" %}
 
-    <button type="button" class="btn w100 btn-emphasized" href="{% group_url 'cosinnus:marketplace:list' group=group %}{% add_current_params %}">
+    <button type="button" class="btn w100 btn-emphasized" href="{% group_url 'cosinnus:marketplace:list' group=group %}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left">
@@ -22,7 +23,7 @@
     
 {% else %} {# Offer list view #}
     
-    <button type="button" class="btn w100 btn-{% if request.path == marketplace_list_page %}extra-{% endif %}emphasized fine-space" href="{{ marketplace_list_page }}{% add_current_params %}">
+    <button type="button" class="btn w100 btn-{% if request.path == marketplace_list_page %}extra-{% endif %}emphasized fine-space" href="{{ marketplace_list_page }}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left">
@@ -40,7 +41,7 @@
         </ul>
     </button>
     
-    <button type="button" class="btn w100 btn-{% if request.path == marketplace_list_mine_page %}extra-{% endif %}emphasized" href="{{ marketplace_list_mine_page }}{% add_current_params %}">
+    <button type="button" class="btn w100 btn-{% if request.path == marketplace_list_mine_page %}extra-{% endif %}emphasized large-space" href="{{ marketplace_list_mine_page }}">
         <ul class="media-list">
             <li class="media">
                 <a class="pull-left">
@@ -57,6 +58,19 @@
                 </a>
                 <div class="media-body">
                     {% trans "My Offers" %}
+                </div>
+            </li>
+        </ul>
+    </button>
+    
+    <button type="button" class="btn w100 btn-emphasized large-space" href="{{ marketplace_add_page }}">
+        <ul class="media-list">
+            <li class="media">
+                <a class="pull-left">
+                    <i class="fa fa-plus"></i>
+                </a>
+                <div class="media-body">
+                    {% trans "Add Offer" %}
                 </div>
             </li>
         </ul>

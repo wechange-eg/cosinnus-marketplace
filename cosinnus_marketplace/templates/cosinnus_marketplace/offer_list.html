@@ -15,54 +15,162 @@
 {% endblock leftnav %}
 
 {% block content %}
-
-    <!-- a box with semi transparent background -->
+	
+	{% comment %}  
+	Disabled for now to keep the view more compact. There is an add button in the left navbar.
+	
+    {% if user|can_create_objects_in:group %} 
+	    <!-- a box with semi transparent background -->
+	    <div class="content-box regular-space">
+	        <form method="GET" action="{% group_url 'cosinnus:marketplace:add' group=group %}">
+	            <div type="button" class="btn btn-default w100 large-space">
+	                <ul class="media-list">
+	                    <li class="media">
+	                        <a class="pull-left" href="#">
+	                            <i class="fa fa-plus"></i>
+	                        </a>
+	                        <div class="media-body media-body-form-control">
+	                            {% captureas placeholder %}{% trans "Enter the title for a new offer." %}{% endcaptureas %}
+	                            <input class="form-control next-button-is-for-sending"
+	                                placeholder="{{ placeholder }}" autocomplete="off"
+	                                name="title"
+	                                value="" />
+	                        </div>
+	                    </li>
+	                </ul>
+	            </div>
+	            <button type="submit" class="btn btn-emphasized large-space" style="display: none;">
+	                <ul class="media-list">
+	                    <li class="media">
+	                        <a class="pull-left">
+	                            <i class="fa fa-pencil"></i>
+	                        </a>
+	                        <div class="media-body">
+	                            {% trans "Create" %}
+	                        </div>
+	                    </li>
+	                </ul>
+	            </button>
+	        </form>
+	    </div>    
+    {% endif %}
+	{% endcomment %}
+        
+        
+	<form action="." method="GET" class="regular-space clearfix">
+	
+	    <!-- a box with semi transparent background -->
+	    <div class="content-box">
+	    	<input type="hidden" id="input_tab_param" name="tab" value="{{ request.GET.tab }}" />
+	    
+			{# set all existing filters as inputs for the GET request #}        
+	        {% for filter_key in 'o,creator'|makelist %}
+	        	{% for filter_value in filter.data|querydictlist:filter_key %}
+	        		<input type="hidden" name="{{ filter_key }}" value="{{ filter_value }}" />
+	        	{% endfor %}
+	        {% endfor %}
+	        
+        	{% with categories=filter.form.fields.categories %}
+		        {% for value, label in categories.choices %}
+		            <label for="id_categories_{{ value }}">
+		            	<input id="id_categories_{{ value }}" name="categories" 
+		            			type="checkbox" value="{{ value }}"{% if value in filter.data|querydictlist:'categories' or value|stringify in filter.data|querydictlist:'categories' %}checked="checked"{% endif %}>
+		            	<span>{{ label }}</span>
+		        	</label>
+		        	<br/>
+		        {% endfor %}
+		    {% endwith %}
+    	</div>
+		<button type="submit" class="btn btn-emphasized large-space">
+            <ul class="media-list">
+                <li class="media">
+                    <a class="pull-left">
+                        <i class="fa fa-filter"></i>
+                    </a>
+                    <div class="media-body">
+                        {% trans "Filter" %}
+                    </div>
+                </li>
+            </ul>
+        </button>        
+        
+    </form>
+    
+    
+	        
+    <ul class="nav nav-tabs" role="tablist">
+		<li {% if not request.GET.tab or request.GET.tab == 'all' %}class="active"{% endif %}>
+			<a href="#all" class="_group-form-tab _group-form-tab-awesome-avatar" role="tab" data-toggle="tab" onclick="$('#input_tab_param').val('all'); history.replaceState( {} , null, $.cosinnus.updateQueryString('tab','all') );">
+				<i class="fa fa-exchange"></i>
+				{% trans "All" %}
+			</a>
+		</li>
+		<li {% if request.GET.tab == 'looking' %}class="active"{% endif %}>
+			<a href="#looking" class="_group-form-tab" role="tab" data-toggle="tab" onclick="$('#input_tab_param').val('looking'); history.replaceState( {} , null, $.cosinnus.updateQueryString('tab','looking') );">
+				<i class="fa fa-question"></i>
+				{% trans "Wanted" %}
+			</a>
+		</li>
+		<li {% if request.GET.tab == 'offering' %}class="active"{% endif %}>
+			<a href="#offering" class="_group-form-tab" role="tab" data-toggle="tab" onclick="$('#input_tab_param').val('offering'); history.replaceState( {} , null, $.cosinnus.updateQueryString('tab','offering') );">
+				<i class="fa fa-exclamation"></i>
+				{% trans "Offers" %}
+			</a>
+		</li>
+	</ul>
+	
     <div class="content-box large-space">
-        {% include 'cosinnus/common/filter_controls.html' %}        
+    
+    	<div>
+		    {% for field in filter.form %}
+			    {% if field.name == 'creator' or field.name == 'o' %}
+			    	{{ field }}
+			    {% endif %}
+			{% endfor %}
+	        
+	        {% for filter_param, chosen_value, label, type in active_filters %}
+	        	{% if not filter_param == 'categories' %}
+				    <span class="inline-list nowrap">
+				        <a href="?{% strip_params request filter_param %}" class="app-background small-padding"><i class="fa fa-times"></i></a
+				        ><span class="app-background-light dark-color small-padding">
+				            {{ label }}: {{ chosen_value }}
+				        </span>
+				    </span>
+			    {% endif %}
+			{% endfor %}
+		</div>
         
-        {% if user|can_create_objects_in:group %} 
-        <form method="GET" action="{% group_url 'cosinnus:marketplace:add' group=group %}">
-            <div type="button" class="btn btn-default w100 large-space">
-                <ul class="media-list">
-                    <li class="media">
-                        <a class="pull-left" href="#">
-                            <i class="fa fa-plus"></i>
-                        </a>
-                        <div class="media-body media-body-form-control">
-                            {% captureas placeholder %}{% trans "Enter the title for a new offer." %}{% endcaptureas %}
-                            <input class="form-control next-button-is-for-sending"
-                                placeholder="{{ placeholder }}" autocomplete="off"
-                                name="title"
-                                value="" />
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <button type="submit" class="btn btn-emphasized large-space" style="display: none;">
-                <ul class="media-list">
-                    <li class="media">
-                        <a class="pull-left">
-                            <i class="fa fa-pencil"></i>
-                        </a>
-                        <div class="media-body">
-                            {% trans "Create" %}
-                        </div>
-                    </li>
-                </ul>
-            </button>
-        </form>
-        {% endif %}
+        <div class="tab-content">
+			<div class="tab-pane {% if not request.GET.tab or request.GET.tab == 'all' %}active{% endif %}" id="all" >
+				{% for offer in offers %}
+		            {% include 'cosinnus_marketplace/list_object.html' %}
+		        {% empty %}
+	                {% captureas empty_message %}{% trans "No offers" %}{% endcaptureas %}
+		            {% include 'cosinnus/common/empty_button.html' with message=empty_message %}
+		        {% endfor %}
+			</div>
+			<div class="tab-pane {% if request.GET.tab == 'looking' %}active{% endif %}" id="looking" >
+				{% for offer in offers_buying %}
+		            {% include 'cosinnus_marketplace/list_object.html' %}
+		        {% empty %}
+	                {% captureas empty_message %}{% trans "No offers" %}{% endcaptureas %}
+		            {% include 'cosinnus/common/empty_button.html' with message=empty_message %}
+		        {% endfor %}
+			</div>
+			<div class="tab-pane {% if request.GET.tab == 'offering' %}active{% endif %}" id="offering" >
+				{% for offer in offers_selling %}
+		            {% include 'cosinnus_marketplace/list_object.html' %}
+		        {% empty %}
+	                {% captureas empty_message %}{% trans "No offers" %}{% endcaptureas %}
+		            {% include 'cosinnus/common/empty_button.html' with message=empty_message %}
+		        {% endfor %}
+			</div>
+		</div>		
         
-        {% for offer in offers %}
-            {% include 'cosinnus_marketplace/list_object.html' %}
-        {% empty %}
-            {% if offer_view == 'mine' %}
-                {% captureas empty_message %}{% trans "You have no offers yet." %}{% endcaptureas %}
-            {% else %}
-                {% captureas empty_message %}{% trans "There are no offers currently." %}{% endcaptureas %}
-            {% endif %}
-            {% include 'cosinnus/common/empty_button.html' with message=empty_message %}
-        {% endfor %}
+        
+        
+        
+        
        
     </div><!-- content-box -->
     

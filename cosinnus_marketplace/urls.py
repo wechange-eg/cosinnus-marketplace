@@ -8,8 +8,6 @@ cosinnus_group_patterns = patterns('cosinnus_marketplace.views',
     url(r'^$', 'index_view', name='index'),
 
     url(r'^list/$', 'offer_list_view', name='list', kwargs={'offer_view': 'all'}),
-    url(r'^list/offering/$', 'offer_list_view', name='list_selling', kwargs={'offer_view': 'selling'}),
-    url(r'^list/looking/$', 'offer_list_view', name='list_buying', kwargs={'offer_view': 'buying'}),
     url(r'^list/mine/$', 'offer_list_view', name='list_mine', kwargs={'offer_view': 'mine'}),
     
     
