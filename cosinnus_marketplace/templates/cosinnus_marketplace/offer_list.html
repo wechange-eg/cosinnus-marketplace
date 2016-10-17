@@ -2,7 +2,7 @@
 {% load i18n static cosinnus_tags widget_tweaks %}
 
 {% block page_title %}
-{% trans "Offers" %} {{ block.super }}
+{% if offer_view == "mine" %}{% trans "My Offers" %}{% else %}{% trans "Offers" %}{% endif %} {{ block.super }}
 {% endblock page_title %}
 
 {% block breadcrumb %}

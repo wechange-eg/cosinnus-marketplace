@@ -2,10 +2,10 @@
 {% load i18n static cosinnus_tags widget_tweaks thumbnail %}
 
 {% block page_title %}
-    {% if form_view == "add" %}
-      {% trans "Add marketplace" %}
+	{% if form_view == "add" %}
+      {% trans "Add Offer" %}
     {% elif form_view == "edit" %}
-      {% trans "Edit" %} {{ offer.title }}
+      {% trans "Edit" %}: {{ offer.title }}
     {% endif %}
 {{ block.super }}
 {% endblock page_title %}
@@ -49,7 +49,7 @@
 						    <ol class="input-area">
                                 <li class="w100">
 		                            <label>
-								    	{% trans "Offer type" %}:
+								    	{% trans "Offer type" %}:&nbsp;&nbsp;
 								    </label>
 		                            {{ form.forms.obj.type.errors }}
 		                            <div class="condensed-radio-input">
