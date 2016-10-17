@@ -113,14 +113,22 @@
 								    </label>
 								    {{ form.forms.obj.categories.errors }}
 								    <br/>
-					                {% for value, label in form.forms.obj.categories.field.choices %}
-						                <label for="id_{{ form.forms.obj.categories.html_name }}_{{ value }}">
-						                	<input id="id_{{ form.forms.obj.categories.html_name }}_{{ value }}" name="{{ form.forms.obj.categories.html_name }}" 
-						                			type="checkbox" value="{{ value }}"{% if value in form.forms.obj.categories.value or value|stringify in form.forms.obj.categories.value %}checked="checked"{% endif %}>
-						                	<span>{{ label }}</span>
-					                	</label>
-					                	<br/>
-					                {% endfor %}
+								    <div class="row large-space">
+						                {% for value, label in form.forms.obj.categories.field.choices %}
+										    <div class="col-sm-4 col-xs-6">
+										    	<label for="id_{{ form.forms.obj.categories.html_name }}_{{ value }}">
+								                	<input id="id_{{ form.forms.obj.categories.html_name }}_{{ value }}" name="{{ form.forms.obj.categories.html_name }}" 
+								                			type="checkbox" value="{{ value }}"{% if value in form.forms.obj.categories.value or value|stringify in form.forms.obj.categories.value %}checked="checked"{% endif %}>
+								                	<span>{{ label }}</span>
+							                	</label>
+										    </div>
+										    {% if forloop.counter|divisibleby:3 %}
+									           <div class="clearfix hidden-xs-down"></div>
+									        {% elif forloop.counter|divisibleby:2 %}
+									           <div class="clearfix visible-xs"></div>
+									        {% endif %}
+						                {% endfor %}
+					                </div>
 					            </li>
 					        </ol>
                         </div>
