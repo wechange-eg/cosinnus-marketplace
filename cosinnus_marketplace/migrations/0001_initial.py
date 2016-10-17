@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=255, verbose_name='Title')),
                 ('slug', models.SlugField(max_length=55, blank=True)),
                 ('created', models.DateTimeField(auto_now_add=True, verbose_name='Created')),
-                ('type', models.PositiveIntegerField(default=1, verbose_name='Type', choices=[(1, 'Buying'), (2, 'Selling')])),
+                ('type', models.PositiveIntegerField(default=1, verbose_name='Type', choices=[(1, 'Looking for'), (2, 'Offering')])),
                 ('is_active', models.BooleanField(default=False, verbose_name='Offer currently active?')),
                 ('description', models.TextField(null=True, verbose_name='Description', blank=True)),
                 ('phone_number', phonenumber_field.modelfields.PhoneNumberField(max_length=128)),

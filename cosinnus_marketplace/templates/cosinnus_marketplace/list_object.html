@@ -6,9 +6,8 @@
                 <a class="pull-left square-date-icon">
                 	{% if offer.attached_image %}
                 		<img class="image" src="{% thumbnail offer.attached_image.file 40x40 crop=1 upscale=1 %}" />
-                		
                 	{% else %}
-                		<i class="fa fa-exchange"></i>
+                		{% include 'cosinnus_marketplace/offer_icon.html' %}
                 	{% endif %}
                 	
                 </a>
@@ -20,7 +19,17 @@
                 </a>
                 <div class="media-body">
                     {% with creator=offer.creator %}
-                        <span class="annotation">{% trans "by" %} <a href="{{ creator|profile_url }}" >{{ creator|full_name }}</a></span>
+                    	
+                    
+                        <span class="annotation">
+                        	{% captureas link_start %}<a href="{{ offer.creator|profile_url }}">{% endcaptureas %}
+			        		{% captureas link_end %}</a>{% endcaptureas %}
+			            	{% if offer.type == 1 %}
+			            		{% blocktrans with username=offer.creator|full_name %}{{ link_start }}{{ username }}{{ link_end }} is looking for{% endblocktrans %}
+			            	{% elif offer.type == 2 %}
+			            		{% blocktrans with username=offer.creator|full_name %}{{ link_start }}{{ username }}{{ link_end }} is offering{% endblocktrans %}
+			            	{% endif %}
+                        </span>
                     {% endwith %}
                     <a href="{{ offer.get_absolute_url }}">
                         {{ offer.title }}

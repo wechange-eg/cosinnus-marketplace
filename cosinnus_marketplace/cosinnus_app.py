@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 
 def register():
-    # Import here to prmarketplace import side effects
+    # Import here to prevent import side effects
     from django.utils.translation import ugettext_lazy as _
     from django.utils.translation import pgettext_lazy
 

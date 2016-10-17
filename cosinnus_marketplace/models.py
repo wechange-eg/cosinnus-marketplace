@@ -58,8 +58,8 @@ class Offer(BaseTaggableObjectModel):
     TYPE_SELLING = 2
 
     TYPE_CHOICES = (
-        (TYPE_BUYING, _('Buying')),
-        (TYPE_SELLING, _('Selling')),
+        (TYPE_BUYING, _('Looking for')),
+        (TYPE_SELLING, _('Offering')),
     )
 
     type = models.PositiveIntegerField(
@@ -187,7 +187,7 @@ class Comment(models.Model):
 
 def current_offer_filter(queryset):
     """ Filters a queryset of marketplaces for marketplaces are open or closed (but not archived). """
-    return queryset.exclude(is_active=True).order_by('-created')
+    return queryset.filter(is_active=True).order_by('-created')
 
 
 import django

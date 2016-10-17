@@ -16,7 +16,7 @@
             {% if form_view == "add" %}
               {% trans "Add Offer" %}
             {% elif form_view == "edit" %}
-              {% trans "Edit" %} {{ offer.title }}
+              {% trans "Edit" %}: {{ offer.title }}
             {% endif %}
         </li>
 {% endblock %}
@@ -57,7 +57,15 @@
 	                                	{% for value, label in form.forms.obj.type.field.choices %}<label class="notification-options-label">
 			                                	<input type="radio" name="{{ form.forms.obj.type.html_name }}" value="{{ value }}"
 			                                			 {% if form.forms.obj.type.value == value or value|stringify == form.forms.obj.type.value %}checked="checked"{% endif %}>
-												<span class="">{{ label }}</span>
+												<span class="">
+													{% if value == 1 %}
+														<i class="fa fa-question"></i> 
+													{% elif value == 2 %}
+														<i class="fa fa-exclamation"></i> 
+													{% endif %}
+													{{ label }}
+												</span>
+														
 											</label>{% endfor %}
 		                            </div>
 	                            </li>

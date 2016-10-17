@@ -10,20 +10,20 @@ from cosinnus.utils.dashboard import DashboardWidget, DashboardWidgetForm
 from cosinnus_marketplace.models import Offer, current_offer_filter
 
 
-class CurrentMarketplacesForm(DashboardWidgetForm):
+class CurrentOffersForm(DashboardWidgetForm):
     amount = forms.IntegerField(label="Amount", initial=5, min_value=0,
         help_text="0 means unlimited", required=False)
-    template_name = 'cosinnus_marketplace/widgets/marketplace_widget_form.html'
+    template_name = 'cosinnus_marketplace/widgets/offer_widget_form.html'
     
     def __init__(self, *args, **kwargs):
         kwargs.pop('group', None)
-        super(CurrentMarketplacesForm, self).__init__(*args, **kwargs)
+        super(CurrentOffersForm, self).__init__(*args, **kwargs)
 
 
-class CurrentMarketplaces(DashboardWidget):
+class CurrentOffers(DashboardWidget):
 
     app_name = 'marketplace'
-    form_class = CurrentMarketplacesForm
+    form_class = CurrentOffersForm
     model = Offer
     title = _('Current Offers')
     user_model_attr = None  # No filtering on user page
@@ -35,23 +35,22 @@ class CurrentMarketplaces(DashboardWidget):
             if has_more == False, the receiving widget will assume no further data can be loaded.
          """
         count = int(self.config['amount'])
-        all_current_marketplaces = self.get_queryset().\
-                filter(is_active=True).\
+        all_current_offers = self.get_queryset().\
                 order_by('-created').\
                 select_related('group').all()
-        marketplaces = all_current_marketplaces
+        offers = all_current_offers
         
         if count != 0:
-            marketplaces = marketplaces.all()[offset:offset+count]
+            offers = offers.all()[offset:offset+count]
         
         data = {
-            'marketplaces': marketplaces,
-            'all_current_marketplaces': all_current_marketplaces,
-            'no_data': _('No current marketplaces'),
+            'offers': offers,
+            'all_current_offers': all_current_offers,
+            'no_data': _('No current offers'),
             'group': self.config.group,
         }
-        return (render_to_string(self.template_name, data), len(marketplaces), len(marketplaces) >= count)
+        return (render_to_string(self.template_name, data), len(offers), len(offers) >= count)
 
     def get_queryset(self):
-        qs = super(CurrentMarketplaces, self).get_queryset()
+        qs = super(CurrentOffers, self).get_queryset()
         return current_offer_filter(qs)

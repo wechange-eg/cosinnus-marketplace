@@ -2,7 +2,12 @@
 {% load i18n static cosinnus_tags widget_tweaks sekizai_tags %}
 
 {% block page_title %}
-{% trans "Vote" context "the_verb" %}
+{% if offer.type == 1 %}
+	{% trans "Looking for" %}:
+{% elif offer.type == 2 %}
+	{% trans "Offering" %}:
+{% endif %}
+{{ offer.title }}
 {{ block.super }}
 {% endblock page_title %}
 

@@ -1,23 +1,17 @@
 {% load i18n %}
 
-{% if marketplaces %}
-    {% for marketplace in marketplaces %}
-        <div type="button" href="{{ marketplace.get_absolute_url }}" class="btn btn-emphasized dashboard-appwidget-contentline">
+{% if offers %}
+    {% for offer in offers %}
+        <div type="button" href="{{ offer.get_absolute_url }}" class="btn btn-emphasized dashboard-appwidget-contentline">
             <ul class="media-list fine-space">
                 <li class="media">
                     <a class="pull-left" href="#">
-                        {% if marketplace.state == 1 %} {# voting open #}
-                            <i class="fa fa-question-circle"></i>
-                          {% elif marketplace.state == 2 %} {# voting closed #}
-                              <i class="fa fa-exchange"></i>
-                          {% else %} {# archived #}
-                              <i class="fa fa-exchange"></i>
-                          {% endif %}
+                    	{% include 'cosinnus_marketplace/offer_icon.html' %}
                     </a>
                     <div class="media-body">
-                        <a href="{{ marketplace.get_absolute_url }}">{{ marketplace.title }}</a>
+                        <a href="{{ offer.get_absolute_url }}">{{ offer.title }}</a>
                         <div class="group-annotation">
-                            {% include 'cosinnus/group/group_label.html' with group=marketplace.group %}
+                            {% include 'cosinnus/group/group_label.html' with group=offer.group %}
                         </div>
                     </div>
                 </li>
@@ -32,7 +26,7 @@
                     <i class="fa fa-exchange"></i>
                 </a>
                 <div class="media-body">
-                    {% trans "There are no marketplaces yet" %}
+                    {% trans "There are no offers yet" %}
                 </div>
             </li>
         </ul>

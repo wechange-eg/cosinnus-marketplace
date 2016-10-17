@@ -17,11 +17,11 @@
 
     <div class="col-md-9">
         <div class="content-box">
-            {% for marketplace in object_list %}
-                {% include 'cosinnus_marketplace/single_marketplace.html' with object=marketplace %}
+            {% for offer in object_list %}
+                {% include 'cosinnus_marketplace/single_marketplace.html' with object=offer %}
             {% empty %}
-                <!-- {% trans "There are no upcoming marketplaces" %} -->
-                {% include 'cosinnus/common/empty_button.html' with message="There are no upcoming marketplaces" %}
+                <!-- {% trans "There are no offers" %} -->
+                {% include 'cosinnus/common/empty_button.html' with message="There are no offers" %}
             {% endfor %}
          </div>
     </div><!-- right column -->
