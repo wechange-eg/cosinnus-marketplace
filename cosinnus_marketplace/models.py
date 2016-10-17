@@ -35,7 +35,7 @@ from cosinnus_marketplace.managers import OfferManager
 
 
 def get_marketplace_image_filename(instance, filename):
-    return _get_avatar_filename(instance, filename, 'images', 'marketplaces')
+    return _get_avatar_filename(instance, filename, 'images', 'offers')
 
 
 class OfferCategory(MultiLanguageFieldMagicMixin, CosinnusBaseCategory):
@@ -101,8 +101,7 @@ class Offer(BaseTaggableObjectModel):
         super(Offer, self).save(*args, **kwargs)
 
         if created:
-            cosinnus_notifications.marketplace_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
-        
+            cosinnus_notifications.offer_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
         
         # TODO: offer has expired: implement
         """
@@ -113,7 +112,7 @@ class Offer(BaseTaggableObjectModel):
             if self.creator.id in voter_ids:
                 voter_ids.remove(self.creator.id)
             voters = get_user_model().objects.filter(id__in=voter_ids)
-            cosinnus_notifications.marketplace_expired.send(sender=self, user=self.creator, obj=self, audience=voters)
+            cosinnus_notifications.offer_expired.send(sender=self, user=self.creator, obj=self, audience=voters)
         """
 
     def get_absolute_url(self):
@@ -122,7 +121,7 @@ class Offer(BaseTaggableObjectModel):
 
     @classmethod
     def get_current(self, group, user):
-        """ Returns a queryset of the current marketplaces """
+        """ Returns a queryset of the current offers """
         qs = Offer.objects.filter(group=group)
         if user:
             qs = filter_tagged_object_queryset_for_user(qs, user)
@@ -168,12 +167,12 @@ class Comment(models.Model):
         if created:
             # comment was created, message offer creator
             if not self.offer.creator == self.creator:
-                cosinnus_notifications.marketplace_comment_posted.send(sender=self, user=self.creator, obj=self, audience=[self.offer.creator])
+                cosinnus_notifications.offer_comment_posted.send(sender=self, user=self.creator, obj=self, audience=[self.offer.creator])
             # message all taggees (except comment creator)
             if self.offer.media_tag and self.offer.media_tag.persons:
                 tagged_users_without_self = self.offer.media_tag.persons.exclude(id=self.creator.id)
                 if len(tagged_users_without_self) > 0:
-                    cosinnus_notifications.tagged_marketplace_comment_posted.send(sender=self, user=self.creator, obj=self, audience=list(tagged_users_without_self))
+                    cosinnus_notifications.tagged_offer_comment_posted.send(sender=self, user=self.creator, obj=self, audience=list(tagged_users_without_self))
     
     @property
     def group(self):
@@ -186,7 +185,7 @@ class Comment(models.Model):
 
 
 def current_offer_filter(queryset):
-    """ Filters a queryset of marketplaces for marketplaces are open or closed (but not archived). """
+    """ Filters a queryset of offers for active offers. """
     return queryset.filter(is_active=True).order_by('-created')
 
 

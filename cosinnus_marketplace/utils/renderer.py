@@ -17,4 +17,4 @@ class OfferRenderer(BaseRenderer):
     
     @classmethod
     def render(cls, context, myobjs):
-        return super(OfferRenderer, cls).render(context, marketplaces=myobjs)
+        return super(OfferRenderer, cls).render(context, offers=myobjs)

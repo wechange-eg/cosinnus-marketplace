@@ -10,12 +10,10 @@ from django.utils.translation import ugettext_lazy as _
 
 
 """ Signal definitions """
-marketplace_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
-marketplace_expired = dispatch.Signal(providing_args=["user", "obj", "audience"])
-marketplace_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
-tagged_marketplace_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
-voted_marketplace_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
-
+offer_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
+offer_expired = dispatch.Signal(providing_args=["user", "obj", "audience"])
+offer_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
+tagged_offer_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
 
 """ Notification definitions.
     These will be picked up by cosinnus_notfications automatically, as long as the 
@@ -39,99 +37,79 @@ voted_marketplace_comment_posted = dispatch.Signal(providing_args=["user", "obj"
     
 """ 
 notifications = {
-    'marketplace_created': {
-        'label': _('A user created a new marketplace'), 
-        'mail_template': 'cosinnus_marketplace/notifications/marketplace_created.txt',
-        'subject_template': 'cosinnus_marketplace/notifications/marketplace_created_subject.txt',
-        'signals': [marketplace_created],
+    'offer_created': {
+        'label': _('A user created a new offer'), 
+        'mail_template': 'cosinnus_marketplace/notifications/offer_created.txt',
+        'subject_template': 'cosinnus_marketplace/notifications/offer_created_subject.txt',
+        'signals': [offer_created],
         'default': True,
         
         'is_html': True,
         'snippet_type': 'marketplace',
-        'event_text': _('New marketplace by %(sender_name)s'),
-        'notification_text': _('%(sender_name)s created a new marketplace'),
-        'subject_text': _('A new marketplace: "%(object_name)s" was created in %(team_name)s.'),
+        'event_text': _('New offer by %(sender_name)s'),
+        'notification_text': _('%(sender_name)s created a new offer'),
+        'subject_text': _('A new offer: "%(object_name)s" was created in %(team_name)s.'),
         'data_attributes': {
             'object_name': 'title', 
             'object_url': 'get_absolute_url', 
             'object_text': 'description',
         },
     }, 
-    'marketplace_expired': {
-        'label': _('A marketplace has expired'), 
-        'mail_template': 'cosinnus_marketplace/notifications/marketplace_completed.txt',
-        'subject_template': 'cosinnus_marketplace/notifications/marketplace_completed_subject.txt',
-        'signals': [marketplace_expired],
+    'offer_expired': {
+        'label': _('An offer has expired'), 
+        'mail_template': 'cosinnus_marketplace/notifications/offer_completed.txt',
+        'subject_template': 'cosinnus_marketplace/notifications/offer_completed_subject.txt',
+        'signals': [offer_expired],
         'default': True,
         
         'is_html': True,
         'snippet_type': 'marketplace',
-        'event_text': _("%(sender_name)s completed the marketplace"),
-        'notification_text': _('%(sender_name)s completed a marketplace'),
-        'subject_text': _('Marketplace "%(object_name)s" was completed in %(team_name)s.'),
+        'event_text': _("Your offer has expired"),
+        'notification_text': _('Your offer has expired'),
+        'subject_text': _('Offer "%(object_name)s"has expired.'),
         'data_attributes': {
             'object_name': 'title', 
             'object_url': 'get_absolute_url', 
             'object_text': 'description',
         },
     },  
-    'marketplace_comment_posted': {
-        'label': _('A user commented on one of your marketplaces'), 
-        'mail_template': 'cosinnus_marketplace/notifications/marketplace_comment_posted.html',
-        'subject_template': 'cosinnus_marketplace/notifications/marketplace_comment_posted_subject.txt',
-        'signals': [marketplace_comment_posted],
+    'offer_comment_posted': {
+        'label': _('A user commented on one of your offers'), 
+        'mail_template': 'cosinnus_marketplace/notifications/offer_comment_posted.html',
+        'subject_template': 'cosinnus_marketplace/notifications/offer_comment_posted_subject.txt',
+        'signals': [offer_comment_posted],
         'default': True,
         
         'is_html': True,
         'snippet_type': 'marketplace',
-        'event_text': _('%(sender_name)s commented on your marketplace'),
-        'notification_text': _('%(sender_name)s commented on one of your marketplaces'),
-        'subject_text': _('%(sender_name)s commented on one of your marketplaces'),
+        'event_text': _('%(sender_name)s commented on your offer'),
+        'notification_text': _('%(sender_name)s commented on one of your offers'),
+        'subject_text': _('%(sender_name)s commented on one of your offers'),
         'sub_event_text': _('%(sender_name)s'),
         'data_attributes': {
-            'object_name': 'marketplace.title', 
+            'object_name': 'offer.title', 
             'object_url': 'get_absolute_url', 
-            'image_url': 'marketplace.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'image_url': 'offer.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
     },    
-    'tagged_marketplace_comment_posted': {
-        'label': _('A user commented on a marketplace you were tagged in'), 
-        'mail_template': 'cosinnus_marketplace/notifications/tagged_marketplace_comment_posted.html',
-        'subject_template': 'cosinnus_marketplace/notifications/tagged_marketplace_comment_posted_subject.txt',
-        'signals': [tagged_marketplace_comment_posted],
+    'tagged_offer_comment_posted': {
+        'label': _('A user commented on an offer you were tagged in'), 
+        'mail_template': 'cosinnus_marketplace/notifications/tagged_offer_comment_posted.html',
+        'subject_template': 'cosinnus_marketplace/notifications/tagged_offer_comment_posted_subject.txt',
+        'signals': [tagged_offer_comment_posted],
         'default': True,
         
         'is_html': True,
         'snippet_type': 'marketplace',
-        'event_text': _('%(sender_name)s commented on a marketplace you were tagged in'),
-        'subject_text': _('%(sender_name)s commented on a marketplace you were tagged in in %(team_name)s'),
+        'event_text': _('%(sender_name)s commented on an offer you were tagged in'),
+        'subject_text': _('%(sender_name)s commented on an offer you were tagged in in %(team_name)s'),
         'sub_event_text': _('%(sender_name)s'),
         'data_attributes': {
-            'object_name': 'marketplace.title', 
+            'object_name': 'offer.title', 
             'object_url': 'get_absolute_url', 
-            'image_url': 'marketplace.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
-            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
-            'sub_object_text': 'text',
-        },
-    },  
-    'voted_marketplace_comment_posted': {
-        'label': _('A user commented on an marketplace you voted in'), 
-        'mail_template': 'cosinnus_marketplace/notifications/voted_marketplace_comment_posted.html',
-        'subject_template': 'cosinnus_marketplace/notifications/voted_marketplace_comment_posted_subject.txt',
-        'signals': [voted_marketplace_comment_posted],
-        'default': True,
-        
-        'is_html': True,
-        'snippet_type': 'marketplace',
-        'event_text': _('%(sender_name)s commented on a marketplace you voted in'),
-        'subject_text': _('%(sender_name)s commented on a marketplace you voted in in %(team_name)s'),
-        'sub_event_text': _('%(sender_name)s'),
-        'data_attributes': {
-            'object_name': 'marketplace.title', 
-            'object_url': 'get_absolute_url', 
-            'image_url': 'marketplace.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'image_url': 'offer.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },

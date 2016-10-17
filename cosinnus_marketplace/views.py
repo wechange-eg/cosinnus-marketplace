@@ -78,7 +78,6 @@ class OfferListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, MyA
         return super(OfferListView, self).dispatch(request, *args, **kwargs)
     
     def get_queryset(self):
-        """ In the calendar we only show scheduled marketplaces """
         qs = super(OfferListView, self).get_queryset()
         self.unfiltered_qs = qs
         if self.offer_view == 'all':
