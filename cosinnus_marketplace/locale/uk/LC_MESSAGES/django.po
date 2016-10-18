@@ -1,0 +1,346 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-18 16:29+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Marketplace"
+msgstr ""
+
+msgctxt "the_app"
+msgid "marketplace"
+msgstr ""
+
+msgid "A user created a new offer"
+msgstr ""
+
+#, python-format
+msgid "New offer by %(sender_name)s"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s created a new offer"
+msgstr ""
+
+#, python-format
+msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
+msgstr ""
+
+msgid "An offer has expired"
+msgstr ""
+
+msgid "Your offer has expired"
+msgstr ""
+
+#, python-format
+msgid "Offer \"%(object_name)s\"has expired."
+msgstr ""
+
+msgid "A user commented on one of your offers"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s commented on your offer"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s commented on one of your offers"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s"
+msgstr ""
+
+msgid "A user commented on an offer you were tagged in"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s commented on an offer you were tagged in"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
+msgstr ""
+
+msgid "Current Offers"
+msgstr ""
+
+msgid "No current offers"
+msgstr ""
+
+msgid "Created By"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Newest Created"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Order Key"
+msgstr ""
+
+msgid "Looking for"
+msgstr ""
+
+msgid "Offering"
+msgstr ""
+
+msgid "Offer currently active?"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Offer Category"
+msgstr ""
+
+msgid "Offer"
+msgstr ""
+
+msgid "Offers"
+msgstr ""
+
+#, python-format
+msgid "Offer: %(offer)s (%(type)s)"
+msgstr ""
+
+msgid "Creator"
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Last modified"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Comment"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "Back to Offers"
+msgstr ""
+
+msgid "My Offers"
+msgstr ""
+
+msgid "Add Offer"
+msgstr ""
+
+#, python-format
+msgid "%(link_start)s%(username)s%(link_end)s is looking for"
+msgstr ""
+
+#, python-format
+msgid "%(link_start)s%(username)s%(link_end)s is offering"
+msgstr ""
+
+msgid "Inactive"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Deactivate"
+msgstr ""
+
+msgid "Reactivate"
+msgstr ""
+
+msgid "Activate"
+msgstr ""
+
+#, python-format
+msgid "Do you really want to delete offer „%(title)s“?"
+msgstr ""
+
+msgid "Delete offer"
+msgstr ""
+
+#, python-format
+msgid "Do you really want to deactivate offer „%(title)s“?"
+msgstr ""
+
+msgid "Deactivate offer"
+msgstr ""
+
+#, python-format
+msgid "Do you really want to reactivate offer „%(title)s“?"
+msgstr ""
+
+#, python-format
+msgid "Do you really want to activate offer „%(title)s“?"
+msgstr ""
+
+msgid "Reactivate offer"
+msgstr ""
+
+msgid "Activate offer"
+msgstr ""
+
+msgid "Write comment..."
+msgstr ""
+
+msgid "Post"
+msgstr ""
+
+#, python-format
+msgid "Vote for %(title)s"
+msgstr ""
+
+msgid "This offer is inactive. It is only visible to you and not listed in the marketplace. You can reactivate it below."
+msgstr ""
+
+msgid "Offer type"
+msgstr ""
+
+msgid "Offer Title"
+msgstr ""
+
+msgid "Enter a description for your offer."
+msgstr ""
+
+msgid "Phone number (optional)"
+msgstr ""
+
+msgid "Your phone number is only visible for registered users"
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Add Photos or Files"
+msgstr ""
+
+msgid "The first uploaded image will be displayed as a wallpaper"
+msgstr ""
+
+msgid "Offer is active"
+msgstr ""
+
+msgid "Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
+msgstr ""
+
+msgid "Create"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Filter"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "Wanted"
+msgstr ""
+
+msgid "No offers"
+msgstr ""
+
+msgid "There are no offers"
+msgstr ""
+
+msgid "(No description set)"
+msgstr ""
+
+msgid "offered in"
+msgstr ""
+
+msgid "expires on"
+msgstr ""
+
+msgid "expired on"
+msgstr ""
+
+#, python-format
+msgid "Contact %(username)s directly"
+msgstr ""
+
+msgid "Phone number"
+msgstr ""
+
+msgid "Send Message"
+msgstr ""
+
+msgid "There are no offers yet"
+msgstr ""
+
+#, python-format
+msgid "Offer \"%(title)s\" was edited successfully."
+msgstr ""
+
+#, python-format
+msgid "Offer \"%(title)s\" could not be edited."
+msgstr ""
+
+#, python-format
+msgid "Offer \"%(title)s\" was added successfully."
+msgstr ""
+
+#, python-format
+msgid "Offer \"%(title)s\" could not be added."
+msgstr ""
+
+#, python-format
+msgid "Offer \"%(title)s\" was deleted successfully."
+msgstr ""
+
+#, python-format
+msgid "Offer \"%(title)s\" could not be deleted."
+msgstr ""
+
+msgid "The offer you requested is no longer active. Sorry!"
+msgstr ""
+
+msgid "The complete request can only be sent via POST!"
+msgstr ""
+
+msgid "Invalid action for this offer. The request could not be completed!"
+msgstr ""
+
+msgid "The offer is already active"
+msgstr ""
+
+msgid "The offer is already deactivated"
+msgstr ""
+
+msgid "The offer was deactivated successfully."
+msgstr ""
+
+msgid "The offer was reactivated successfully."
+msgstr ""
+
+msgid "The offer was activated successfully."
+msgstr ""
+
+msgid "Your comment was added successfully."
+msgstr ""
+
+msgid "Your comment was deleted successfully."
+msgstr ""
