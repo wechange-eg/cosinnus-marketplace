@@ -100,7 +100,7 @@ class Offer(BaseTaggableObjectModel):
         created = bool(self.pk) == False
         super(Offer, self).save(*args, **kwargs)
 
-        if created:
+        if created and self.is_active:
             cosinnus_notifications.offer_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
         
         # TODO: offer has expired: implement
