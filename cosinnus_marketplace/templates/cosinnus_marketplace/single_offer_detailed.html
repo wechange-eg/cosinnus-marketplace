@@ -71,7 +71,12 @@
     	
     	{% if offer.phone_number %}
     	<p class="transparent">
-    		{% trans "Phone number" %}: {{ offer.phone_number.as_international }}
+    		{% trans "Phone number" %}: 
+    		{% if user.is_authenticated %}
+    			{{ offer.phone_number.as_international }}
+    		{% else %}
+    			<i>({% trans "Only shown for registered users" %})</i>
+    		{% endif %}
     	</p>
     	{% endif %}
     	
