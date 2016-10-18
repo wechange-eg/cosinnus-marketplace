@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-18 16:29+0200\n"
+"POT-Creation-Date: 2016-10-18 17:14+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,14 +39,14 @@ msgstr ""
 msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
 msgstr ""
 
-msgid "An offer has expired"
+msgid "One of your offers expired"
 msgstr ""
 
 msgid "Your offer has expired"
 msgstr ""
 
 #, python-format
-msgid "Offer \"%(object_name)s\"has expired."
+msgid "Offer \"%(object_name)s\" has expired."
 msgstr ""
 
 msgid "A user commented on one of your offers"
@@ -208,10 +208,6 @@ msgstr ""
 msgid "Post"
 msgstr ""
 
-#, python-format
-msgid "Vote for %(title)s"
-msgstr ""
-
 msgid "This offer is inactive. It is only visible to you and not listed in the marketplace. You can reactivate it below."
 msgstr ""
 
@@ -242,7 +238,7 @@ msgstr ""
 msgid "Offer is active"
 msgstr ""
 
-msgid "Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
+msgid "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
 msgstr ""
 
 msgid "Create"
@@ -285,10 +281,13 @@ msgstr ""
 msgid "Phone number"
 msgstr ""
 
+msgid "Only shown for registered users"
+msgstr ""
+
 msgid "Send Message"
 msgstr ""
 
-msgid "There are no offers yet"
+msgid "There are no current offers"
 msgstr ""
 
 #, python-format

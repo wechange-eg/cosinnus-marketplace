@@ -3,344 +3,347 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-18 16:29+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2016-10-18 17:14+0200\n"
+"PO-Revision-Date: 2016-10-18 17:28+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
+"X-Generator: Poedit 1.8.4\n"
 
 msgid "Marketplace"
-msgstr ""
+msgstr "Marktplatz"
 
 msgctxt "the_app"
 msgid "marketplace"
-msgstr ""
+msgstr "Marktplatz"
 
 msgid "A user created a new offer"
-msgstr ""
+msgstr "Ein Mitglied hat ein neues Angebot erstellt"
 
 #, python-format
 msgid "New offer by %(sender_name)s"
-msgstr ""
+msgstr "Neues Angebot von %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new offer"
-msgstr ""
+msgstr "%(sender_name)s hat ein neues Angebot erstellt"
 
 #, python-format
 msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
-msgstr ""
+msgstr "Ein neues Angebot  \"%(object_name)s\" wurde in %(team_name)s erstellt."
 
-msgid "An offer has expired"
-msgstr ""
+msgid "One of your offers expired"
+msgstr "Eins deiner Angebote ist abgelaufen"
 
 msgid "Your offer has expired"
-msgstr ""
+msgstr "Dein Angebot ist abgelaufen"
 
 #, python-format
-msgid "Offer \"%(object_name)s\"has expired."
-msgstr ""
+msgid "Offer \"%(object_name)s\" has expired."
+msgstr "Angebot  \"%(object_name)s\" ist abgelaufen."
 
 msgid "A user commented on one of your offers"
-msgstr ""
+msgstr "Ein Benutzer hat eines deiner Angebote kommentiert"
 
 #, python-format
 msgid "%(sender_name)s commented on your offer"
-msgstr ""
+msgstr "%(sender_name)s hat dein Angebot kommentiert"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your offers"
-msgstr ""
+msgstr "%(sender_name)s hat auf eines deiner Angebote kommentiert"
 
 #, python-format
 msgid "%(sender_name)s"
-msgstr ""
+msgstr "%(sender_name)s"
 
 msgid "A user commented on an offer you were tagged in"
-msgstr ""
+msgstr "Ein Mitglied hat ein Angebot kommentiert in dem du getaggt bist"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
-msgstr ""
+msgstr "%(sender_name)s hat ein Angebot kommentiert in dem du getaggt bist"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
-msgstr ""
+msgstr "%(sender_name)s hat ein Angebot kommentiert in dem du getaggt bist in %(team_name)s"
 
 msgid "Current Offers"
-msgstr ""
+msgstr "Aktuelle Angebote"
 
 msgid "No current offers"
-msgstr ""
+msgstr "Keine aktuellen Angebote"
 
 msgid "Created By"
-msgstr ""
+msgstr "Erstellt von"
 
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 msgid "Newest Created"
-msgstr ""
+msgstr "Zuletzt erstellt"
 
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 msgid "Order Key"
-msgstr ""
+msgstr "Sortierschlüssel"
 
 msgid "Looking for"
-msgstr ""
+msgstr "Suche"
 
 msgid "Offering"
-msgstr ""
+msgstr "Biete"
 
 msgid "Offer currently active?"
-msgstr ""
+msgstr "Angebot aktuell aktiv?"
 
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 msgid "Offer Category"
-msgstr ""
+msgstr "Angebots-Kategorie"
 
 msgid "Offer"
-msgstr ""
+msgstr "Angebot"
 
 msgid "Offers"
-msgstr ""
+msgstr "Angebote"
 
 #, python-format
 msgid "Offer: %(offer)s (%(type)s)"
-msgstr ""
+msgstr "Angebot: %(offer)s (%(type)s)"
 
 msgid "Creator"
-msgstr ""
+msgstr "Ersteller"
 
 msgid "Created"
-msgstr ""
+msgstr "Erstellt"
 
 msgid "Last modified"
-msgstr ""
+msgstr "Zuletzt geändert"
 
 msgid "Text"
-msgstr ""
+msgstr "Text"
 
 msgid "Comment"
-msgstr ""
+msgstr "Kommentar"
 
 msgid "Comments"
-msgstr ""
+msgstr "Kommentare"
 
 msgid "Back to Offers"
-msgstr ""
+msgstr "Zurück zu Angeboten"
 
 msgid "My Offers"
-msgstr ""
+msgstr "Meine Angebote"
 
 msgid "Add Offer"
-msgstr ""
+msgstr "Angebot erstellen"
 
 #, python-format
 msgid "%(link_start)s%(username)s%(link_end)s is looking for"
-msgstr ""
+msgstr "%(link_start)s%(username)s%(link_end)s sucht "
 
 #, python-format
 msgid "%(link_start)s%(username)s%(link_end)s is offering"
-msgstr ""
+msgstr "%(link_start)s%(username)s%(link_end)s bietet"
 
 msgid "Inactive"
-msgstr ""
+msgstr "Inaktiv"
 
 msgid "Delete"
-msgstr ""
+msgstr "Löschen"
 
 msgid "Edit"
-msgstr ""
+msgstr "Bearbeiten"
 
 msgid "Deactivate"
-msgstr ""
+msgstr "Deaktivieren"
 
 msgid "Reactivate"
-msgstr ""
+msgstr "Reaktivieren"
 
 msgid "Activate"
-msgstr ""
+msgstr "Aktivieren"
 
 #, python-format
 msgid "Do you really want to delete offer „%(title)s“?"
-msgstr ""
+msgstr "Willst du wirklich Angebot „%(title)s“ löschen?"
 
 msgid "Delete offer"
-msgstr ""
+msgstr "Angebot löschen"
 
 #, python-format
 msgid "Do you really want to deactivate offer „%(title)s“?"
-msgstr ""
+msgstr "Willst du wirklich Angebot „%(title)s“ deaktivieren?"
 
 msgid "Deactivate offer"
-msgstr ""
+msgstr "Angebot deaktivieren"
 
 #, python-format
 msgid "Do you really want to reactivate offer „%(title)s“?"
-msgstr ""
+msgstr "Willst du wirklich Angebot „%(title)s“ reaktivieren?"
 
 #, python-format
 msgid "Do you really want to activate offer „%(title)s“?"
-msgstr ""
+msgstr "Willst du wirklich Angebot „%(title)s“ aktivieren?"
 
 msgid "Reactivate offer"
-msgstr ""
+msgstr "Angebot reaktivieren"
 
 msgid "Activate offer"
-msgstr ""
+msgstr "Angebot aktivieren"
 
 msgid "Write comment..."
-msgstr ""
+msgstr "Kommentar schreiben..."
 
 msgid "Post"
-msgstr ""
-
-#, python-format
-msgid "Vote for %(title)s"
-msgstr ""
+msgstr "Posten"
 
 msgid "This offer is inactive. It is only visible to you and not listed in the marketplace. You can reactivate it below."
-msgstr ""
+msgstr "Dieses Angebot is inaktiv. Es ist nur für dich sichtbar und wird nicht im Marktplatz angezeigt. Du kannst es unten reaktivieren."
 
 msgid "Offer type"
-msgstr ""
+msgstr "Angebotstyp"
 
 msgid "Offer Title"
-msgstr ""
+msgstr "Angebotstitel"
 
 msgid "Enter a description for your offer."
-msgstr ""
+msgstr "Gib eine Beschreibung für dein Angebot ein."
 
 msgid "Phone number (optional)"
-msgstr ""
+msgstr "Mobilnumer (optional)"
 
 msgid "Your phone number is only visible for registered users"
-msgstr ""
+msgstr "Deine Telefonnummer ist nur für registrierte Benutzer sichtbar"
 
 msgid "Categories"
-msgstr ""
+msgstr "Kategorien"
 
 msgid "Add Photos or Files"
-msgstr ""
+msgstr "Photos oder Dateien hinzufügen"
 
 msgid "The first uploaded image will be displayed as a wallpaper"
-msgstr ""
+msgstr "Das erste hochgeladene Bild wird als Hintergrundbild angezeigt"
 
 msgid "Offer is active"
-msgstr ""
+msgstr "Angebot ist aktiv"
 
-msgid "Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
-msgstr ""
+msgid "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
+msgstr "Nur aktive Angebote werden im Marktplatz angezeigt. Dein Angebot wird 4 Wochen lang aktiv bleiben. Danach kannst du es jederzeit reaktivieren."
 
 msgid "Create"
-msgstr ""
+msgstr "Erstellen"
 
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 msgid "Filter"
-msgstr ""
+msgstr "Filtern"
 
 msgid "All"
-msgstr ""
+msgstr "Alle"
 
 msgid "Wanted"
-msgstr ""
+msgstr "Gesucht"
 
 msgid "No offers"
-msgstr ""
+msgstr "Keine Angebote"
 
 msgid "There are no offers"
-msgstr ""
+msgstr "Es gibt keine Angebote"
 
 msgid "(No description set)"
-msgstr ""
+msgstr "(Keine Beschreibung erstellt)"
 
 msgid "offered in"
-msgstr ""
+msgstr "angeboten in"
 
 msgid "expires on"
-msgstr ""
+msgstr "läuft ab am"
 
 msgid "expired on"
-msgstr ""
+msgstr "abgelaufen am"
 
 #, python-format
 msgid "Contact %(username)s directly"
-msgstr ""
+msgstr "Kontaktiere %(username)s direkt"
 
 msgid "Phone number"
-msgstr ""
+msgstr "Mobilnummer"
+
+msgid "Only shown for registered users"
+msgstr "Nur für registrierte Mitglieder sichtbar"
 
 msgid "Send Message"
-msgstr ""
+msgstr "Nachricht schicken"
 
-msgid "There are no offers yet"
-msgstr ""
+msgid "There are no current offers"
+msgstr "Es gibt aktuell keine Angebote"
 
 #, python-format
 msgid "Offer \"%(title)s\" was edited successfully."
-msgstr ""
+msgstr "Angebot \"%(title)s\" wurde erfolgreich editiert."
 
 #, python-format
 msgid "Offer \"%(title)s\" could not be edited."
-msgstr ""
+msgstr "Angebot \"%(title)s\" konnte nicht editiert werden."
 
 #, python-format
 msgid "Offer \"%(title)s\" was added successfully."
-msgstr ""
+msgstr "Angebot \"%(title)s\" wurde erfolgreich eingestellt."
 
 #, python-format
 msgid "Offer \"%(title)s\" could not be added."
-msgstr ""
+msgstr "Angebot \"%(title)s\" konnte nicht eingestellt werden."
 
 #, python-format
 msgid "Offer \"%(title)s\" was deleted successfully."
-msgstr ""
+msgstr "Angebot \"%(title)s\" wurde erfolgreich gelöscht."
 
 #, python-format
 msgid "Offer \"%(title)s\" could not be deleted."
-msgstr ""
+msgstr "Angebot \"%(title)s\" konnte nicht gelöscht werden."
 
 msgid "The offer you requested is no longer active. Sorry!"
-msgstr ""
+msgstr "Das Angebote das du angefragt hast ist leider nicht mehr aktiv!"
 
 msgid "The complete request can only be sent via POST!"
-msgstr ""
+msgstr "The complete request can only be sent via POST!"
 
 msgid "Invalid action for this offer. The request could not be completed!"
-msgstr ""
+msgstr "Invalid action for this offer. The request could not be completed!"
 
 msgid "The offer is already active"
-msgstr ""
+msgstr "Das Angebot ist bereits aktiv"
 
 msgid "The offer is already deactivated"
-msgstr ""
+msgstr "Das Angebot ist bereits deaktiviert"
 
 msgid "The offer was deactivated successfully."
-msgstr ""
+msgstr "Das Angebot wurde erfolgreich deaktiviert."
 
 msgid "The offer was reactivated successfully."
-msgstr ""
+msgstr "Das Angebot wurde erfolgreich reaktiviert."
 
 msgid "The offer was activated successfully."
-msgstr ""
+msgstr "Das Angebot wurde erfolgreich aktiviert."
 
 msgid "Your comment was added successfully."
-msgstr ""
+msgstr "Dein Kommentar wurde erfolgreich hinzugefügt."
 
 msgid "Your comment was deleted successfully."
-msgstr ""
+msgstr "Dein Kommentar wurde erfolgreich gelöscht."
+
+#~ msgid "An offer has expired"
+#~ msgstr "Ein"

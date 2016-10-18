@@ -14,7 +14,12 @@
 {% block breadcrumb %}
   {{ block.super }}
   <li class="active">
-    {% blocktrans with title=offer.title %}Vote for {{ title }}{% endblocktrans %}
+    {% if offer.type == 1 %}
+		{% trans "Looking for" %}:
+	{% elif offer.type == 2 %}
+		{% trans "Offering" %}:
+	{% endif %}
+	{{ offer.title }}
   </li>
 {% endblock %}
 

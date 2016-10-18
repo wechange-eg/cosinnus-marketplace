@@ -56,7 +56,7 @@ notifications = {
         },
     }, 
     'offer_expired': {
-        'label': _('An offer has expired'), 
+        'label': _('One of your offers expired'), 
         'mail_template': 'cosinnus_marketplace/notifications/offer_completed.txt',
         'subject_template': 'cosinnus_marketplace/notifications/offer_completed_subject.txt',
         'signals': [offer_expired],
@@ -66,7 +66,7 @@ notifications = {
         'snippet_type': 'marketplace',
         'event_text': _("Your offer has expired"),
         'notification_text': _('Your offer has expired'),
-        'subject_text': _('Offer "%(object_name)s"has expired.'),
+        'subject_text': _('Offer "%(object_name)s" has expired.'),
         'data_attributes': {
             'object_name': 'title', 
             'object_url': 'get_absolute_url', 
