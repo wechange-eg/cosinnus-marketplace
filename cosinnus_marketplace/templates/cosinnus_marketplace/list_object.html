@@ -33,6 +33,9 @@
                     {% endwith %}
                     <a href="{{ offer.get_absolute_url }}">
                         {{ offer.title }}
+                        {% if not offer.is_active %}
+                        	({% trans "Inactive" %})
+                        {% endif %}
                     </a>
                 </div>
             </li>
