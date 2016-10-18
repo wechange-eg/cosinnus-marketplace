@@ -27,19 +27,20 @@ from cosinnus.views.attached_object import AttachableViewMixin
 from cosinnus_marketplace.conf import settings
 from cosinnus_marketplace.forms import CommentForm, OfferForm, OfferNoFieldForm
 from cosinnus_marketplace.models import Offer, current_offer_filter, Comment
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from cosinnus.views.mixins.filters import CosinnusFilterMixin
 from cosinnus_marketplace.filters import OfferFilter
 from cosinnus.utils.urls import group_aware_reverse
 from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user,\
-    check_object_read_access, check_ug_membership
+    check_object_read_access, check_ug_membership, check_object_write_access
 from cosinnus.core.decorators.views import require_read_access,\
-    require_user_token_access, redirect_to_not_logged_in
+    require_user_token_access, redirect_to_not_logged_in, get_group_for_request
 from django.contrib.sites.models import Site, get_current_site
 from annoying.functions import get_object_or_None
 from cosinnus.templatetags.cosinnus_tags import has_write_access
 from annoying.exceptions import Redirect
 from django import forms
+from cosinnus.utils.exceptions import CosinnusPermissionDeniedException
 
 
 class MarketplaceIndexView(RequireReadMixin, RedirectView):
@@ -174,6 +175,19 @@ offer_delete_view = OfferDeleteView.as_view()
 class OfferDetailView(RequireReadMixin, FilterGroupMixin, MyActiveOfferCountMixin, DetailView):
 
     model = Offer
+    
+    @require_read_access()
+    def dispatch(self, request, *args, **kwargs):
+        """ Only allow owners to see inactive offers """
+        try:
+            self.group = get_group_for_request(kwargs.get('group'), request)
+            offer = self.get_object()
+            if not offer.is_active and not check_object_write_access(offer, request.user):
+                messages.error(request, _('The offer you requested is no longer active. Sorry!'))
+                return redirect(group_aware_reverse('cosinnus:marketplace:list', kwargs={'group': self.group}))
+            return super(OfferDetailView, self).dispatch(request, *args, **kwargs)
+        except CosinnusPermissionDeniedException:
+            return redirect_to_not_logged_in(request, view=self)
 
     def get_context_data(self, **kwargs):
         context = super(OfferDetailView, self).get_context_data(**kwargs)
