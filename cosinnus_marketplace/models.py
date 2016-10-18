@@ -68,7 +68,7 @@ class Offer(BaseTaggableObjectModel):
         default=TYPE_BUYING,
     )
     
-    is_active = models.BooleanField(_('Offer currently active?'), default=False)
+    is_active = models.BooleanField(_('Offer currently active?'), default=True)
     
     description = models.TextField(_('Description'), blank=True, null=True)
     phone_number = PhoneNumberField(blank=True)

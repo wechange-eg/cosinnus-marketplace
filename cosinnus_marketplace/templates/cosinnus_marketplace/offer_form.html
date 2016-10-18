@@ -72,7 +72,7 @@
 	                        </ol>
                             
                             {{ form.forms.obj.title.errors }}
-                            {% captureas placeholder %}{% trans "Detailed description" %}{% endcaptureas %}
+                            {% captureas placeholder %}{% trans "Offer Title" %}{% endcaptureas %}
                             {% if request.GET.title %}
                                 {% render_field form.forms.obj.title class+="form-control" placeholder=placeholder value=request.GET.title %}
                             {% else %}
