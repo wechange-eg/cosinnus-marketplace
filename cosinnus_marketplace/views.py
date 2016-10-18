@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from collections import defaultdict
-
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.utils.translation import ugettext_lazy as _
@@ -12,34 +10,22 @@ from django.views.generic.edit import DeleteView, UpdateView, CreateView
 from django.views.generic.list import ListView
 from django.utils.timezone import now
 
-from extra_views import (CreateWithInlinesView, FormSetView, InlineFormSet,
-    UpdateWithInlinesView)
+from extra_views import (CreateWithInlinesView, UpdateWithInlinesView)
 
-from django_ical.views import ICalFeed
-
-from cosinnus.views.export import CSVExportView
 from cosinnus.views.mixins.group import (RequireReadMixin, RequireWriteMixin,
     GroupFormKwargsMixin, FilterGroupMixin)
 from cosinnus.views.mixins.user import UserFormKwargsMixin
 
 from cosinnus.views.attached_object import AttachableViewMixin
 
-from cosinnus_marketplace.conf import settings
 from cosinnus_marketplace.forms import CommentForm, OfferForm, OfferNoFieldForm
-from cosinnus_marketplace.models import Offer, current_offer_filter, Comment
+from cosinnus_marketplace.models import Offer, Comment
 from django.shortcuts import get_object_or_404, redirect
 from cosinnus.views.mixins.filters import CosinnusFilterMixin
 from cosinnus_marketplace.filters import OfferFilter
 from cosinnus.utils.urls import group_aware_reverse
-from cosinnus.utils.permissions import filter_tagged_object_queryset_for_user,\
-    check_object_read_access, check_ug_membership, check_object_write_access
-from cosinnus.core.decorators.views import require_read_access,\
-    require_user_token_access, redirect_to_not_logged_in, get_group_for_request
-from django.contrib.sites.models import Site, get_current_site
-from annoying.functions import get_object_or_None
-from cosinnus.templatetags.cosinnus_tags import has_write_access
-from annoying.exceptions import Redirect
-from django import forms
+from cosinnus.utils.permissions import check_object_write_access
+from cosinnus.core.decorators.views import require_read_access, redirect_to_not_logged_in, get_group_for_request
 from cosinnus.utils.exceptions import CosinnusPermissionDeniedException
 
 

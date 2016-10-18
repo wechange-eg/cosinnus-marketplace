@@ -1,21 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from os.path import join
 import datetime
 
-from django.core.urlresolvers import reverse
 from django.db import models
-from django.db.models import Q
-from django.db.models.signals import post_delete, post_save
-from django.dispatch import receiver
-from django.utils import dateformat
 from django.utils.encoding import python_2_unicode_compatible
-from django.utils.formats import date_format
-from django.utils.functional import cached_property
-from django.utils.timezone import localtime, now
-from django.utils.translation import ugettext_lazy as _, pgettext_lazy
-
+from django.utils.timezone import now
+from django.utils.translation import ugettext_lazy as _
 
 from cosinnus_marketplace.conf import settings
 from cosinnus.models import BaseTaggableObjectModel
@@ -25,10 +16,8 @@ from cosinnus.utils.urls import group_aware_reverse
 from cosinnus_marketplace import cosinnus_notifications
 from django.contrib.auth import get_user_model
 from cosinnus.utils.files import _get_avatar_filename
-from cosinnus.models.mixins.images import ThumbnailableImageMixin
 
 from phonenumber_field.modelfields import PhoneNumberField
-from django.core.exceptions import ImproperlyConfigured
 from cosinnus.utils.lanugages import MultiLanguageFieldMagicMixin
 from cosinnus.models.tagged import CosinnusBaseCategory
 from cosinnus_marketplace.managers import OfferManager
