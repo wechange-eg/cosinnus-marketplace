@@ -61,6 +61,7 @@ notifications = {
         'subject_template': 'cosinnus_marketplace/notifications/offer_completed_subject.txt',
         'signals': [offer_expired],
         'default': True,
+        'allow_creator_as_audience': True,
         
         'is_html': True,
         'snippet_type': 'marketplace',
