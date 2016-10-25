@@ -91,18 +91,6 @@ class Offer(BaseTaggableObjectModel):
 
         if created and self.is_active:
             cosinnus_notifications.offer_created.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=self.group.members).exclude(id=self.creator.pk))
-        
-        # TODO: offer has expired: implement
-        """
-        if not created and self.__state == Offer.STATE_VOTING_OPEN and self.state == Offer.STATE_CLOSED:
-            # offer went from open to closed, so maybe send a notification for offer closed?
-            # send signal only for voters as audience!
-            voter_ids = list(set(self.options.all().values_list('votes__voter__id', flat=True)))
-            if self.creator.id in voter_ids:
-                voter_ids.remove(self.creator.id)
-            voters = get_user_model().objects.filter(id__in=voter_ids)
-            cosinnus_notifications.offer_expired.send(sender=self, user=self.creator, obj=self, audience=voters)
-        """
 
     def get_absolute_url(self):
         kwargs = {'group': self.group, 'slug': self.slug}
@@ -124,6 +112,12 @@ class Offer(BaseTaggableObjectModel):
     def expires_on(self):
         return self.created + datetime.timedelta(days=settings.COSINNUS_MARKETPLACE_OFFER_ACTIVITY_DURATION_DAYS)
     
+    def do_expire_this(self):
+        # call this to make this offer expired. usually called only from cron
+        self.is_active = False
+        self.save(update_fields=['is_active'])
+        # send signal for expiry
+        cosinnus_notifications.offer_expired.send(sender=self, user=self.creator, obj=self, audience=[self.creator])
     
 
 @python_2_unicode_compatible
