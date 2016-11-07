@@ -114,6 +114,7 @@ class OfferFormMixin(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
         return context
 
     def get_success_url(self):
+        messages.success(self.request, self.message_success % {'title': self.object.title})
         kwargs = {'group': self.group}
         # no self.object if get_queryset from add/edit view returns empty
         if hasattr(self, 'object'):
@@ -127,12 +128,20 @@ class OfferFormMixin(RequireWriteMixin, FilterGroupMixin, GroupFormKwargsMixin,
 class OfferAddView(OfferFormMixin, AttachableViewMixin, MyActiveOfferCountMixin, CreateWithInlinesView):
     
     message_success = _('Offer "%(title)s" was added successfully.')
+    message_success_added = _('Offer "%(title)s" was saved successfully, but is not active yet.')
     message_error = _('Offer "%(title)s" could not be added.')
 
     def forms_valid(self, form, inlines):
         form.instance.creator = self.request.user
         ret = super(OfferAddView, self).forms_valid(form, inlines)
-
+        return ret
+    
+    def get_success_url(self):
+        ret = super(OfferAddView, self).get_success_url()
+        if not self.object.is_active:
+            # clear messages to display different success
+            list(messages.get_messages(self.request))
+            messages.success(self.request, self.message_success_added % {'title': self.object.title})
         return ret
 
 offer_add_view = OfferAddView.as_view()

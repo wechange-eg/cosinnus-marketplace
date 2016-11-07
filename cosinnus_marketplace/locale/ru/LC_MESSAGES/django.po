@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 13:17+0100\n"
+"POT-Creation-Date: 2016-11-07 13:21+0100\n"
 "PO-Revision-Date: 2016-11-02 11:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -300,6 +300,11 @@ msgstr "Предложение \"%(title)s\" не может быть измен
 
 #, python-format
 msgid "Offer \"%(title)s\" was added successfully."
+msgstr "Предложение \"%(title)s\" было успешно добавлено."
+
+#, fuzzy, python-format
+#| msgid "Offer \"%(title)s\" was added successfully."
+msgid "Offer \"%(title)s\" was saved successfully, but is not active yet."
 msgstr "Предложение \"%(title)s\" было успешно добавлено."
 
 #, python-format
