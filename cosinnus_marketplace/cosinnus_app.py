@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from cosinnus.conf import settings
 
 def register():
+    if 'cosinnus_marketplace' in getattr(settings, 'COSINNUS_DISABLED_COSINNUS_APPS', []):
+        return
+    
     # Import here to prevent import side effects
     from django.utils.translation import ugettext_lazy as _
     from django.utils.translation import pgettext_lazy
@@ -10,7 +14,7 @@ def register():
     from cosinnus.core.registries import (app_registry,
         attached_object_registry, url_registry, widget_registry)
 
-    app_registry.register('cosinnus_marketplace', 'marketplace', _('Marketplace'), deactivatable=True, active_by_default=False)
+    app_registry.register('cosinnus_marketplace', 'marketplace', _('Marketplace'), deactivatable=True, active_by_default=False, activatable_for_groups_only=True)
     attached_object_registry.register('cosinnus_marketplace.Offer',
                              'cosinnus_marketplace.utils.renderer.OfferRenderer')
     url_registry.register_urlconf('cosinnus_marketplace', 'cosinnus_marketplace.urls')

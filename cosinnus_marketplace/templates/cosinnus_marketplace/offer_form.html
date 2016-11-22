@@ -97,6 +97,9 @@
                                     </p>
                                 </li>
                             </ol>
+                            
+                            {% include 'cosinnus/media_tags.html' with disable_files=True disable_tags=True %}
+                            
                         </div>
                     </li>
                         
@@ -150,7 +153,9 @@
                                     </p>
                                 </li>
                             </ol>
-                            {% include 'cosinnus/media_tags.html' with show_files=True disable_tags=True %}
+                            
+                            <div></div> {# this is only here to remove a CSS line that would otherwise show for .input-area + .input-area #}
+                            {% include 'cosinnus/media_tags.html' with show_files=True no_imports=True disable_tags=True disable_persons=True disable_location=True disable_topics=True disable_visibility=True %}
                         </div>
                     </li>
                         
