@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from cosinnus_marketplace.models import Offer, OfferCategory
+from cosinnus_marketplace.models import Offer, OfferCategory, OfferCategoryGroup
 
 
 class OfferAdmin(admin.ModelAdmin):
@@ -15,6 +15,12 @@ admin.site.register(Offer, OfferAdmin)
 
 
 class OfferCategoryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'name_en', 'name_ru', 'name_uk')
+    list_display = ('name', 'name_en', 'name_ru', 'name_uk', 'category_group')
 
 admin.site.register(OfferCategory, OfferCategoryAdmin)
+
+
+class OfferCategoryGroupAdmin(admin.ModelAdmin):
+    list_display = ('name', 'name_en', 'name_ru', 'name_uk')
+
+admin.site.register(OfferCategoryGroup, OfferCategoryGroupAdmin)

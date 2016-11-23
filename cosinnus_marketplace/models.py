@@ -3,8 +3,10 @@ from __future__ import unicode_literals
 
 import datetime
 
+from collections import defaultdict
+
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
+from django.utils.encoding import force_text, python_2_unicode_compatible
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
@@ -27,13 +29,18 @@ def get_marketplace_image_filename(instance, filename):
     return _get_avatar_filename(instance, filename, 'images', 'offers')
 
 
-class OfferCategory(MultiLanguageFieldMagicMixin, CosinnusBaseCategory):
+class OfferCategoryGroup(MultiLanguageFieldMagicMixin, CosinnusBaseCategory):
     
     class Meta:
         ordering = ['order_key']
     
     order_key = models.CharField(_('Order Key'), max_length=30, blank=True, 
-         help_text='Set this to the same key for multiple categories to group them together on the form.')
+         help_text='Not shown. Category groups will be sorted in alphanumerical order for this key.')
+
+
+class OfferCategory(MultiLanguageFieldMagicMixin, CosinnusBaseCategory):
+    
+    category_group = models.ForeignKey(OfferCategoryGroup, related_name='categories', null=True, blank=True)
     
 
 @python_2_unicode_compatible
@@ -119,6 +126,9 @@ class Offer(BaseTaggableObjectModel):
         # send signal for expiry
         cosinnus_notifications.offer_expired.send(sender=self, user=self.creator, obj=self, audience=[self.creator])
     
+    def get_categories_grouped(self):
+        return get_categories_grouped(OfferCategory.objects.all())
+    
 
 @python_2_unicode_compatible
 class Comment(models.Model):
@@ -170,6 +180,20 @@ class Comment(models.Model):
 def current_offer_filter(queryset):
     """ Filters a queryset of offers for active offers. """
     return queryset.filter(is_active=True).order_by('-created')
+
+def get_categories_grouped(category_qs):
+    """ Returns a list of tuples of the categories in this filter, grouped by categorygroup name.
+        All categories not assigned a group fall in the category ``zzz_misc``
+    
+        [('group1', [cat1, cat2]), ('group2', cat3), ... , ('zzz_misc', cat99) ] """
+    
+    misc_label = 'zzz_misc'
+    grouped_dict = defaultdict(list)
+    for category in category_qs:
+        label = category.category_group and category.category_group['name'] or force_text(misc_label)
+        grouped_dict[label].append(category)
+    category_groups = [(group_label, grouped_dict[group_label]) for group_label in sorted(grouped_dict, key=lambda cat: cat.lower())]
+    return category_groups
 
 
 import django

@@ -8,7 +8,8 @@ from cosinnus.forms.group import GroupKwargModelFormMixin
 from cosinnus.forms.tagged import get_form
 from cosinnus.forms.user import UserKwargModelFormMixin
 
-from cosinnus_marketplace.models import Offer, Comment
+from cosinnus_marketplace.models import Offer, Comment, get_categories_grouped,\
+    OfferCategory
 from cosinnus.forms.attached_object import FormAttachable
 
 
@@ -22,6 +23,9 @@ class _OfferForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
     def clean(self, *args, **kwargs):
         cleaned_data = super(_OfferForm, self).clean(*args, **kwargs)
         return cleaned_data
+    
+    def get_categories_grouped(self):
+        return get_categories_grouped(OfferCategory.objects.all())
         
 OfferForm = get_form(_OfferForm)
 

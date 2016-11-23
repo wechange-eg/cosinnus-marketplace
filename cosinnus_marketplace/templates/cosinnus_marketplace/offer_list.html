@@ -70,24 +70,21 @@
 	        	{% endfor %}
 	        {% endfor %}
 	        
-        	{% with categories=filter.form.fields.categories %}
-        		<div class="row large-space">
-			        {% for value, label in categories.choices %}
-			            <div class="col-sm-4 col-xs-6">
-				            <label for="id_categories_{{ value }}">
-				            	<input id="id_categories_{{ value }}" name="categories" 
-				            			type="checkbox" value="{{ value }}"{% if value in filter.data|querydictlist:'categories' or value|stringify in filter.data|querydictlist:'categories' %}checked="checked"{% endif %}>
-				            	<span>{{ label }}</span>
+    		<div class="row large-space">
+    			{% for group, categories in filter.get_categories_grouped %}
+		            <div class="col-sm-4 col-xs-6">
+	    				<b>{% if group == 'zzz_misc' %}{% trans "Misc" %}{% else %}{{ group }}{% endif %}</b>
+			        	{% for category in categories %}
+			        		<br/>
+				            <label for="id_categories_{{ category.id }}">
+				            	<input id="id_categories_{{ category.id }}" name="categories" 
+				            			type="checkbox" value="{{ category.id }}"{% if category.id in filter.data|querydictlist:'categories' or category.id|stringify in filter.data|querydictlist:'categories' %}checked="checked"{% endif %}>
+				            	<span>{{ category.name }}</span>
 				        	</label>
-			        	</div>
-			        	{% if forloop.counter|divisibleby:3 %}
-				           <div class="clearfix hidden-xs-down"></div>
-				        {% elif forloop.counter|divisibleby:2 %}
-				           <div class="clearfix visible-xs"></div>
-				        {% endif %}
-			        {% endfor %}
-		        </div>
-		    {% endwith %}
+			        	{% endfor %}
+		        	</div>
+		        {% endfor %}
+	        </div>
     	</div>
 		<button type="submit" class="btn btn-emphasized large-space">
             <ul class="media-list">
