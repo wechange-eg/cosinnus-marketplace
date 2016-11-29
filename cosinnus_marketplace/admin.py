@@ -21,6 +21,6 @@ admin.site.register(OfferCategory, OfferCategoryAdmin)
 
 
 class OfferCategoryGroupAdmin(admin.ModelAdmin):
-    list_display = ('name', 'name_en', 'name_ru', 'name_uk')
+    list_display = ('name', 'name_en', 'name_ru', 'name_uk', 'order_key')
 
 admin.site.register(OfferCategoryGroup, OfferCategoryGroupAdmin)

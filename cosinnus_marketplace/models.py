@@ -188,11 +188,14 @@ def get_categories_grouped(category_qs):
         [('group1', [cat1, cat2]), ('group2', cat3), ... , ('zzz_misc', cat99) ] """
     
     misc_label = 'zzz_misc'
+    def cat_group_key_or_misc(cat, key):
+        return cat.category_group and cat.category_group[key] or force_text(misc_label)
+    
     grouped_dict = defaultdict(list)
     for category in category_qs:
-        label = category.category_group and category.category_group['name'] or force_text(misc_label)
-        grouped_dict[label].append(category)
-    category_groups = [(group_label, grouped_dict[group_label]) for group_label in sorted(grouped_dict, key=lambda cat: cat.lower())]
+        grouped_dict[cat_group_key_or_misc(category, 'order_key')].append(category)
+    category_groups = [(cat_group_key_or_misc(grouped_dict[order_key][0], 'name'), grouped_dict[order_key]) for order_key in sorted(grouped_dict, key=lambda cat_key: cat_key.lower())]
+    
     return category_groups
 
 
