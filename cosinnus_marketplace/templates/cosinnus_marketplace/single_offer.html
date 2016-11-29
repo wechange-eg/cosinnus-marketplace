@@ -8,7 +8,7 @@
                     <a class="pull-left square-date-icon" href="#">
                         {% include 'cosinnus_marketplace/offer_icon.html' %}
                     </a>
-                    <div class="media-body no-vertical-padding ">
+                    <div class="media-body {% if not hide_group_name %}no-vertical-padding{% endif %} ">
                         <span class="annotation">
                             {% with creator=offer.creator %}
                                 {# {% trans "by" %} #} <strong><a href="{{ creator|profile_url }}">{{ creator|full_name }}</a></strong>
@@ -16,9 +16,11 @@
                             <span class="moment-data-date" data-date="{{ offer.created|date:'c' }}"></span>
                         </span>
                         <strong><a href="{{ offer.get_absolute_url }}">{{ offer.title }}</a></strong>
-                        <div class="group-annotation">
-                            {% include 'cosinnus/group/group_label.html' with group=offer.group %}
-                        </div>
+                        {% if not hide_group_name %}
+	                        <div class="group-annotation">
+	                            {% include 'cosinnus/group/group_label.html' with group=offer.group %}
+	                        </div>
+	                    {% endif %}
                     </div>
                 </li>
             </ul>
