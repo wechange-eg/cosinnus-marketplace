@@ -72,7 +72,7 @@
 	        
     		<div class="row large-space">
     			{% for group, categories in filter.get_categories_grouped %}
-		            <div class="col-sm-4 col-xs-6">
+		            <div class="col-sm-4 col-xs-6 large-space">
 	    				<b>{% if group == 'zzz_misc' %}{% trans "Misc" %}{% else %}{{ group }}{% endif %}</b>
 			        	{% for category in categories %}
 			        		<br/>
