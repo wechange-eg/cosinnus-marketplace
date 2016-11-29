@@ -193,7 +193,13 @@ def get_categories_grouped(category_qs):
     
     grouped_dict = defaultdict(list)
     for category in category_qs:
-        grouped_dict[cat_group_key_or_misc(category, 'order_key')].append(category)
+        if not category.category_group:
+            order_key = force_text(misc_label)
+        elif category.category_group.order_key:
+            order_key = category.category_group.order_key
+        else:
+            order_key = category.category_group['name']
+        grouped_dict[order_key].append(category)
     category_groups = [(cat_group_key_or_misc(grouped_dict[order_key][0], 'name'), grouped_dict[order_key]) for order_key in sorted(grouped_dict, key=lambda cat_key: cat_key.lower())]
     
     return category_groups
