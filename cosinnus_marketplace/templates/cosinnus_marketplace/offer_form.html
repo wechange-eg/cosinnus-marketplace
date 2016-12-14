@@ -103,8 +103,8 @@
                             
                         </div>
                     </li>
-                        
-                    <li class="media">
+                       
+                    <li class="media" {% if not form.forms.obj.get_categories_grouped %}style="display: none;"{% endif %}>
                         <a class="pull-left btn-emphasized" href="#">
                             <i class="fa fa-tags"></i>
                         </a>
