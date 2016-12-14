@@ -3,7 +3,7 @@
 {% with offer=object %}
     <div class="app-marketplace">
         <div class="btn btn-emphasized w100" >
-            <ul class="media-list large-space">
+            <ul class="media-list {% if no_space %}fine-space{% else %}large-space{% endif %}">
                 <li class="media">
                     <a class="pull-left square-date-icon" href="#">
                         {% include 'cosinnus_marketplace/offer_icon.html' %}
