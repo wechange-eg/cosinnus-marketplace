@@ -1,23 +1,7 @@
 {% load i18n %}
 
 {% if offers %}
-    {% for offer in offers %}
-        <div type="button" href="{{ offer.get_absolute_url }}" class="btn btn-emphasized dashboard-appwidget-contentline">
-            <ul class="media-list fine-space">
-                <li class="media">
-                    <a class="pull-left" href="#">
-                    	{% include 'cosinnus_marketplace/offer_icon.html' %}
-                    </a>
-                    <div class="media-body">
-                        <a href="{{ offer.get_absolute_url }}">{{ offer.title }}</a>
-                        <div class="group-annotation">
-                            {% include 'cosinnus/group/group_label.html' with group=offer.group %}
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div><!-- btn -->
-    {% endfor %}
+    {% include 'cosinnus_marketplace/attached_offers.html' with offers=offers no_indent=1 %}
 {% else %}
     <div type="button" class="btn btn-emphasized dashboard-appwidget-contentline fine-space">
         <ul class="media-list">

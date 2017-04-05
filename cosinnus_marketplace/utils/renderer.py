@@ -11,7 +11,7 @@ class OfferRenderer(BaseRenderer):
     """
     model = Offer
     
-    template = 'cosinnus_marketplace/attached_offer.html'
+    template = 'cosinnus_marketplace/attached_offers.html'
     template_single = 'cosinnus_marketplace/single_offer.html'
     template_list = 'cosinnus_marketplace/offer_list_standalone.html'
     
