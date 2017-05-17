@@ -5,16 +5,16 @@ from django import forms
 from django.utils.translation import ugettext_lazy as _
 
 from cosinnus.forms.group import GroupKwargModelFormMixin
-from cosinnus.forms.tagged import get_form
+from cosinnus.forms.tagged import get_form, BaseTaggableObjectForm
 from cosinnus.forms.user import UserKwargModelFormMixin
 
 from cosinnus_marketplace.models import Offer, Comment, get_categories_grouped,\
     OfferCategory
-from cosinnus.forms.attached_object import FormAttachable
+from cosinnus.forms.attached_object import FormAttachableMixin
 
 
 class _OfferForm(GroupKwargModelFormMixin, UserKwargModelFormMixin,
-                 FormAttachable):
+                 FormAttachableMixin, BaseTaggableObjectForm):
     
     class Meta:
         model = Offer
