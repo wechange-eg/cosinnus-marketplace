@@ -33,13 +33,13 @@
     
 <div class="content-box white-content">
 	<h4><b>{{ offer.title }}</b></h4>
-    <p>
+    <div class="textfield">
         {% if offer.description and offer.description|length > 0 %}
             {{ offer.description|textfield }}
         {% else %}
             {% trans "(No description set)" %}
         {% endif %}
-    </p>
+    </div>
     
     <br/>
     
