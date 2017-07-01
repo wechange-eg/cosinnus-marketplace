@@ -33,7 +33,7 @@
     
 <div class="content-box white-content">
 	<h4><b>{{ offer.title }}</b></h4>
-    <div class="textfield">
+    <div class="textfield no-padding">
         {% if offer.description and offer.description|length > 0 %}
             {{ offer.description|textfield }}
         {% else %}
