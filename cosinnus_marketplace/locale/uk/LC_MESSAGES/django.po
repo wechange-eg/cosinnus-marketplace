@@ -3,347 +3,348 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-07 13:21+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-09-06 11:03+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk\n"
+"X-Generator: Poedit 2.0.3\n"
 
 msgid "Marketplace"
-msgstr ""
+msgstr "Дошка оголошень"
 
 msgctxt "the_app"
 msgid "marketplace"
-msgstr ""
+msgstr "Дошка оголошень"
 
 msgid "A user created a new offer"
-msgstr ""
+msgstr "Користувач створив(ла) нове оголошення"
 
 #, python-format
 msgid "New offer by %(sender_name)s"
-msgstr ""
+msgstr "Нове оголошення від %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new offer"
-msgstr ""
+msgstr "%(sender_name)s створив(ла) нове оголошення"
 
 #, python-format
 msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
-msgstr ""
+msgstr "Нове оголошення: \"%(object_name)s\" було створено в %(team_name)s."
 
 msgid "One of your offers expired"
-msgstr ""
+msgstr "Закінчився термін одного з Ваших оголошень "
 
 msgid "Your offer has expired"
-msgstr ""
+msgstr "Термін дії вашого оголошення минув"
 
 #, python-format
 msgid "Offer \"%(object_name)s\" has expired."
-msgstr ""
+msgstr "Термін дії оголошення \"%(object_name)s\" минув"
 
 msgid "A user commented on one of your offers"
-msgstr ""
+msgstr "Користувач прокоментував одне з Ваших оголошень"
 
 #, python-format
 msgid "%(sender_name)s commented on your offer"
-msgstr ""
+msgstr "%(sender_name)s прокоментував Ваше оголошення"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your offers"
-msgstr ""
+msgstr "%(sender_name)s прокоментував одне з Ваших оголошень"
 
 #, python-format
 msgid "%(sender_name)s"
-msgstr ""
+msgstr "%(sender_name)s"
 
 msgid "A user commented on an offer you were tagged in"
-msgstr ""
+msgstr "Користувач прокоментував оголошення, в якому Ви були позначені"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
-msgstr ""
+msgstr "%(sender_name)s прокоментував оголошення, в якому Ви були позначені "
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
-msgstr ""
+msgstr "%(sender_name)s прокоментував оголошення, в якому Ви були відзначені в %(team_name)s"
 
 msgid "Current Offers"
-msgstr ""
+msgstr "Актуальні оголошення"
 
 msgid "No current offers"
-msgstr ""
+msgstr "Актуальних оголошень немає"
 
 msgid "Created By"
-msgstr ""
+msgstr "Автор:"
 
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 msgid "Newest Created"
-msgstr ""
+msgstr "Останнє створене"
 
 msgid "Title"
-msgstr ""
+msgstr "Назва"
 
 msgid "Order Key"
-msgstr ""
+msgstr "Ключ сортування"
 
 msgid "Looking for"
-msgstr ""
+msgstr "Шукаю"
 
 msgid "Offering"
-msgstr ""
+msgstr "Пропоную"
 
 msgid "Offer currently active?"
-msgstr ""
+msgstr "Оголошення активне на даний момент?"
 
 msgid "Description"
-msgstr ""
+msgstr "Опис"
 
 msgid "Offer Category"
-msgstr ""
+msgstr "Категорія оголошення"
 
 msgid "Offer"
-msgstr ""
+msgstr "Оголошення"
 
 msgid "Offers"
-msgstr ""
+msgstr "Оголошення"
 
 #, python-format
 msgid "Offer: %(offer)s (%(type)s)"
-msgstr ""
+msgstr "Оголошення: %(offer)s (%(type)s)"
 
 msgid "Creator"
-msgstr ""
+msgstr "Автор"
 
 msgid "Created"
-msgstr ""
+msgstr "Створено"
 
 msgid "Last modified"
-msgstr ""
+msgstr "Востаннє змінено"
 
 msgid "Text"
-msgstr ""
+msgstr "Текст"
 
 msgid "Comment"
-msgstr ""
+msgstr "Коментар"
 
 msgid "Comments"
-msgstr ""
+msgstr "Коментарі"
 
 msgid "Back to Offers"
-msgstr ""
+msgstr "Повернутися до оголошень"
 
 msgid "My Offers"
-msgstr ""
+msgstr "Мої оголошення"
 
 msgid "Add Offer"
-msgstr ""
+msgstr "Додати оголошення"
 
 #, python-format
 msgid "%(link_start)s%(username)s%(link_end)s is looking for"
-msgstr ""
+msgstr "%(link_start)s%(username)s%(link_end)s шукає"
 
 #, python-format
 msgid "%(link_start)s%(username)s%(link_end)s is offering"
-msgstr ""
+msgstr "%(link_start)s%(username)s%(link_end)s пропонує"
 
 msgid "Inactive"
-msgstr ""
+msgstr "Неактивно"
 
 msgid "Delete"
-msgstr ""
+msgstr "Видалити"
 
 msgid "Edit"
-msgstr ""
+msgstr "Змінити"
 
 msgid "Deactivate"
-msgstr ""
+msgstr "Деактивувати"
 
 msgid "Reactivate"
-msgstr ""
+msgstr "Відновити"
 
 msgid "Activate"
-msgstr ""
+msgstr "Активувати"
 
 #, python-format
 msgid "Do you really want to delete offer „%(title)s“?"
-msgstr ""
+msgstr "Ви дійсно бажаєте видалити оголошення „%(title)s“?"
 
 msgid "Delete offer"
-msgstr ""
+msgstr "Видалити оголошення"
 
 #, python-format
 msgid "Do you really want to deactivate offer „%(title)s“?"
-msgstr ""
+msgstr "Ви дійсно бажаєте деактивувати оголошення „%(title)s“?"
 
 msgid "Deactivate offer"
-msgstr ""
+msgstr "Деактивувати оголошення "
 
 #, python-format
 msgid "Do you really want to reactivate offer „%(title)s“?"
-msgstr ""
+msgstr "Ви дійсно бажаєте відновити оголошення „%(title)s“?"
 
 #, python-format
 msgid "Do you really want to activate offer „%(title)s“?"
-msgstr ""
+msgstr "Ви дійсно бажаєте активувати оголошення „%(title)s“?"
 
 msgid "Reactivate offer"
-msgstr ""
+msgstr "Відновити оголошення"
 
 msgid "Activate offer"
-msgstr ""
+msgstr "Активувати оголошення"
 
 msgid "Write comment..."
-msgstr ""
+msgstr "Написати комментар..."
 
 msgid "Post"
-msgstr ""
+msgstr "Опублікувати"
 
 msgid "This offer is inactive. It is only visible to you and not listed in the marketplace. You can reactivate it below."
-msgstr ""
+msgstr "Це оголошення неактивне. Його бачать тільки Ви і воно не відображається на «Дошці оголошень». Ви можете відновити його нижче."
 
 msgid "Offer type"
-msgstr ""
+msgstr "Тип оголошення"
 
 msgid "Offer Title"
-msgstr ""
+msgstr "Назва оголошення"
 
 msgid "Enter a description for your offer."
-msgstr ""
+msgstr "Введіть опис Вашого оголошення"
 
 msgid "Phone number (optional)"
-msgstr ""
+msgstr "Телефонний номер (необов’язково)"
 
 msgid "Your phone number is only visible for registered users"
-msgstr ""
+msgstr "Ваш номер телефону відображається тільки для зареєстрованих користувачів"
 
 msgid "Categories"
-msgstr ""
+msgstr "Категорії"
 
 msgid "Add Photos or Files"
-msgstr ""
+msgstr "Додати зображення чи файли"
 
 msgid "The first uploaded image will be displayed as a wallpaper"
-msgstr ""
+msgstr "Перше завантажене Вами фото буде відображатися як фон "
 
 msgid "Offer is active"
-msgstr ""
+msgstr "Оголошення активне"
 
 msgid "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
-msgstr ""
+msgstr "На «Дошці оголошень» будуть відображені тільки активні оголошення. Ваше оголошення залишається активним протягом 4-х тижнів. Пізніше Ви зможете відновити оголошення в будь-який момент."
 
 msgid "Create"
-msgstr ""
+msgstr "Створити"
 
 msgid "Save"
-msgstr ""
+msgstr "Зберегти"
 
 msgid "Filter"
-msgstr ""
+msgstr "Фільтрувати"
 
 msgid "All"
-msgstr ""
+msgstr "Всі"
 
 msgid "Wanted"
-msgstr ""
+msgstr "Потребуються"
 
 msgid "No offers"
-msgstr ""
+msgstr "Немає оголошень"
 
 msgid "There are no offers"
-msgstr ""
+msgstr "Немає оголошень"
 
 msgid "(No description set)"
-msgstr ""
+msgstr "(Опис не надано)"
 
 msgid "offered in"
-msgstr ""
+msgstr "пропонується в"
 
 msgid "expires on"
-msgstr ""
+msgstr "закінчується"
 
 msgid "expired on"
-msgstr ""
+msgstr "закінчився"
 
 #, python-format
 msgid "Contact %(username)s directly"
-msgstr ""
+msgstr "Контактувати безпосередньо %(username)s"
 
 msgid "Phone number"
-msgstr ""
+msgstr "Номер телефону"
 
 msgid "Only shown for registered users"
-msgstr ""
+msgstr "Видимо тільки для зареєстрованих користувачів"
 
 msgid "Send Message"
-msgstr ""
+msgstr "Відправити повідомлення"
 
 msgid "There are no current offers"
-msgstr ""
+msgstr "Немає актуальних оголошень"
 
 #, python-format
 msgid "Offer \"%(title)s\" was edited successfully."
-msgstr ""
+msgstr "Оголошення \"%(title)s\" було успішно змінено."
 
 #, python-format
 msgid "Offer \"%(title)s\" could not be edited."
-msgstr ""
+msgstr "Оголошення \"%(title)s\" не може бути зміненим."
 
 #, python-format
 msgid "Offer \"%(title)s\" was added successfully."
-msgstr ""
+msgstr "Оголошення \"%(title)s\" було успішно додано."
 
 #, python-format
 msgid "Offer \"%(title)s\" was saved successfully, but is not active yet."
-msgstr ""
+msgstr "Оголошення \"%(title)s\" було успішно збережено, але ще не активне."
 
 #, python-format
 msgid "Offer \"%(title)s\" could not be added."
-msgstr ""
+msgstr "Оголошення \"%(title)s\" не можна додати."
 
 #, python-format
 msgid "Offer \"%(title)s\" was deleted successfully."
-msgstr ""
+msgstr "Оголошення \"%(title)s\" було успішно видалено."
 
 #, python-format
 msgid "Offer \"%(title)s\" could not be deleted."
-msgstr ""
+msgstr "Оголошення \"%(title)s\" не може бути видалено."
 
 msgid "The offer you requested is no longer active. Sorry!"
-msgstr ""
+msgstr "Вибачте, оголошення, на яке Ви надіслали запит, більше неактивне!"
 
 msgid "The complete request can only be sent via POST!"
-msgstr ""
+msgstr "Повний запит може бути відправлений тільки ПОШТОЮ!"
 
 msgid "Invalid action for this offer. The request could not be completed!"
-msgstr ""
+msgstr "Неприпустимі дії для цього Оголошення. Запит не може бути завершеним!"
 
 msgid "The offer is already active"
-msgstr ""
+msgstr "Оголошення вже активоване"
 
 msgid "The offer is already deactivated"
-msgstr ""
+msgstr "Оголошення вже деактивоване"
 
 msgid "The offer was deactivated successfully."
-msgstr ""
+msgstr "Оголошення було успішно деактивовано."
 
 msgid "The offer was reactivated successfully."
-msgstr ""
+msgstr "Оголошення було успішно відновлено."
 
 msgid "The offer was activated successfully."
-msgstr ""
+msgstr "Оголошення було успішно активовано."
 
 msgid "Your comment was added successfully."
-msgstr ""
+msgstr "Ваш коментар було успішно додано."
 
 msgid "Your comment was deleted successfully."
-msgstr ""
+msgstr "Ваш коментар було успішно видалено."
