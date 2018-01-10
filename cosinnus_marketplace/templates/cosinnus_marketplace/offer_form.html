@@ -42,7 +42,7 @@
     <div class="content-box">
     
         {# Regular field with custom HTML #}
-		{% trans "Offer type" as type_legend %}
+		{% trans "Offer type" as type_label %}
 		{% captureas type_html %}
 		    {{ form.forms.obj.type.errors }}
             <div class="condensed-radio-input" style="line-height: 25px;">
@@ -62,12 +62,11 @@
                     </label>{% endfor %}
             </div>
 		{% endcaptureas %}
-		{% include 'cosinnus/fields/default_field.html' with field_html=type_html legend=type_legend large_field=True first=True unstyled=True %}
+		{% include 'cosinnus/fields/default_field.html' with field_html=type_html label=type_label large_field=True first=True unstyled=True %}
     
     
-        {% trans "Description and Infos" as title_legend %}
         {% trans "Offer Title" as title_label %}
-        {% include 'cosinnus/fields/default_field.html' with field=form.forms.obj.title legend=title_legend label=title_label placeholder=title_label %}
+        {% include 'cosinnus/fields/default_field.html' with field=form.forms.obj.title label=title_label placeholder=title_label %}
         
         
         {# SimpleMDE Description Field (gets initialized in extrahead) #}                                   
@@ -76,16 +75,16 @@
         {% include 'cosinnus/fields/default_field.html' with field=form.forms.obj.description legend=description_legend label=description_label placeholder=description_placeholder large_field=True %}
               
         {# Regular Field #}
-		{% trans "Phone number" as phone_legend %}
-		{% trans "Your phone number is only visible for registered users" as phone_label %}
+		{% trans "Phone number" as phone_label %}
+		{% trans "Your phone number is only visible for registered users" as phone_legend %}
 		{% trans "Phone number" as phone_placeholder %}
 		{% include 'cosinnus/fields/default_field.html' with field=form.forms.obj.phone_number label=phone_label legend=phone_legend placeholder=phone_placeholder %}
 		        
                             
         {% if form.forms.obj.get_categories_grouped %}
             {# Regular field with custom HTML #}
-			{% trans "Categories" as categories_legend %}
-			{% trans "Check all categories that fit your offer" as categories_label %}
+			{% trans "Categories" as categories_label %}
+			{% trans "Check all categories that fit your offer" as categories_legend %}
 			{% captureas categories_html %}
 			    {{ form.forms.obj.categories.errors }}
                 <div class="white-content clearfix">
@@ -116,9 +115,9 @@
         
         
         {# Checkbox Field #}
-		{% trans "Offer is active" as active_legend %}
-		{% trans "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time." as active_label %}
-		{% include 'cosinnus/fields/checkbox_field.html' with field=form.forms.obj.is_active label=active_label legend=active_legend checkbox_label=active_legend %}
+		{% trans "Offer is active" as active_label %}
+		{% trans "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time." as active_legend %}
+		{% include 'cosinnus/fields/checkbox_field.html' with field=form.forms.obj.is_active label=active_label legend=active_legend checkbox_label=active_label %}
 					                    
     </div><!-- content-box -->
     
