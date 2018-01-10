@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-07 13:21+0100\n"
+"POT-Creation-Date: 2018-01-10 16:48+0100\n"
 "PO-Revision-Date: 2017-08-16 14:46+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -220,8 +220,8 @@ msgstr "Название Объявления"
 msgid "Enter a description for your offer."
 msgstr "Введите описание Вашего Объявления"
 
-msgid "Phone number (optional)"
-msgstr "Номер телефона (необязательно)"
+msgid "Phone number"
+msgstr "Номер телефона"
 
 msgid "Your phone number is only visible for registered users"
 msgstr "Ваш номер телефона виден только зарегистрированным пользователям"
@@ -229,8 +229,14 @@ msgstr "Ваш номер телефона виден только зареги�
 msgid "Categories"
 msgstr "Категории"
 
-msgid "Add Photos or Files"
-msgstr "Добавить фотографии или файлы"
+msgid "Check all categories that fit your offer"
+msgstr ""
+
+msgid "Misc"
+msgstr ""
+
+msgid "Upload a file or image or attach an existing one"
+msgstr ""
 
 msgid "The first uploaded image will be displayed as a wallpaper"
 msgstr "Первая загруженная Вами фотография будет отображаться как фон"
@@ -277,9 +283,6 @@ msgstr "истёк"
 #, python-format
 msgid "Contact %(username)s directly"
 msgstr "Контактировать непосредственно %(username)s"
-
-msgid "Phone number"
-msgstr "Номер телефона"
 
 msgid "Only shown for registered users"
 msgstr "Видимо только для зарегистрированных пользователей"
@@ -347,3 +350,9 @@ msgstr "Ваш комментарий был успешно добавлен."
 
 msgid "Your comment was deleted successfully."
 msgstr "Ваш комментарий был успешно удалён."
+
+#~ msgid "Phone number (optional)"
+#~ msgstr "Номер телефона (необязательно)"
+
+#~ msgid "Add Photos or Files"
+#~ msgstr "Добавить фотографии или файлы"

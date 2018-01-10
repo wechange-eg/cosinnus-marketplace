@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-07 13:21+0100\n"
+"POT-Creation-Date: 2018-01-10 16:48+0100\n"
 "PO-Revision-Date: 2016-10-18 16:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -220,7 +220,7 @@ msgstr ""
 msgid "Enter a description for your offer."
 msgstr ""
 
-msgid "Phone number (optional)"
+msgid "Phone number"
 msgstr ""
 
 msgid "Your phone number is only visible for registered users"
@@ -229,7 +229,13 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-msgid "Add Photos or Files"
+msgid "Check all categories that fit your offer"
+msgstr ""
+
+msgid "Misc"
+msgstr ""
+
+msgid "Upload a file or image or attach an existing one"
 msgstr ""
 
 msgid "The first uploaded image will be displayed as a wallpaper"
@@ -276,9 +282,6 @@ msgstr ""
 
 #, python-format
 msgid "Contact %(username)s directly"
-msgstr ""
-
-msgid "Phone number"
 msgstr ""
 
 msgid "Only shown for registered users"
