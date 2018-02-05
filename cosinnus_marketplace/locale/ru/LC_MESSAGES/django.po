@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-10 16:48+0100\n"
-"PO-Revision-Date: 2017-08-16 14:46+0200\n"
+"POT-Creation-Date: 2018-02-05 13:07+0100\n"
+"PO-Revision-Date: 2018-02-01 00:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -211,6 +211,9 @@ msgstr "Опубликовать"
 msgid "This offer is inactive. It is only visible to you and not listed in the marketplace. You can reactivate it below."
 msgstr "Это объявление неактивно. Оно видно только Вам и не отображается на \"Доске объявлений\". Вы можете восстановить его ниже."
 
+msgid "There was an error in one of the fields you entered. Please correct it before saving!"
+msgstr ""
+
 msgid "Offer type"
 msgstr "Тип Объявления"
 
@@ -230,13 +233,13 @@ msgid "Categories"
 msgstr "Категории"
 
 msgid "Check all categories that fit your offer"
-msgstr ""
+msgstr "Проверьте все категории, которые соответствуют Вашему запросу"
 
 msgid "Misc"
-msgstr ""
+msgstr "Прочее"
 
 msgid "Upload a file or image or attach an existing one"
-msgstr ""
+msgstr "Загрузить файл или изображение или добавить существующее"
 
 msgid "The first uploaded image will be displayed as a wallpaper"
 msgstr "Первая загруженная Вами фотография будет отображаться как фон"
