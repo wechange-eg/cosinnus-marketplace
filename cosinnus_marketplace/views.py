@@ -61,7 +61,7 @@ class OfferListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, MyA
     def dispatch(self, request, *args, **kwargs):
         self.offer_view = kwargs.get('offer_view', 'all')
         if self.offer_view == 'mine' and not self.request.user.is_authenticated():
-            return redirect_to_not_logged_in(view=self, group=self.group)
+            return redirect_to_not_logged_in(view=self)
         return super(OfferListView, self).dispatch(request, *args, **kwargs)
     
     def get_queryset(self):
