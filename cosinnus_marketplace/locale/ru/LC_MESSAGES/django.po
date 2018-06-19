@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-05 13:07+0100\n"
-"PO-Revision-Date: 2018-02-01 00:31+0100\n"
+"POT-Creation-Date: 2018-06-19 14:36+0200\n"
+"PO-Revision-Date: 2018-06-17 23:39+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,14 +15,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Language: ru\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.6\n"
 
 msgid "Marketplace"
 msgstr "Доска объявлений"
 
 msgctxt "the_app"
 msgid "marketplace"
-msgstr "Доска объявлений"
+msgstr "доска объявлений"
 
 msgid "A user created a new offer"
 msgstr "Пользователь создал новое объявление"
@@ -47,7 +47,7 @@ msgstr "Ваше объявление истекло"
 
 #, python-format
 msgid "Offer \"%(object_name)s\" has expired."
-msgstr "Объявление \"%(object_name)s\" истекло"
+msgstr "Объявление \"%(object_name)s\" истекло."
 
 msgid "A user commented on one of your offers"
 msgstr "Пользователь прокомментировал одно из Ваших предложений"
@@ -221,7 +221,7 @@ msgid "Offer Title"
 msgstr "Название Объявления"
 
 msgid "Enter a description for your offer."
-msgstr "Введите описание Вашего Объявления"
+msgstr "Введите описание Вашего Объявления."
 
 msgid "Phone number"
 msgstr "Номер телефона"
@@ -233,13 +233,13 @@ msgid "Categories"
 msgstr "Категории"
 
 msgid "Check all categories that fit your offer"
-msgstr "Проверьте все категории, которые соответствуют Вашему запросу"
+msgstr "Проверьте все категории, которые соответствуют Вашему предложению"
 
 msgid "Misc"
-msgstr "Прочее"
+msgstr "Разное"
 
 msgid "Upload a file or image or attach an existing one"
-msgstr "Загрузить файл или изображение или добавить существующее"
+msgstr "Загрузите файл или изображение или прикрепите существующее"
 
 msgid "The first uploaded image will be displayed as a wallpaper"
 msgstr "Первая загруженная Вами фотография будет отображаться как фон"

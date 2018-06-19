@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-05 13:07+0100\n"
-"PO-Revision-Date: 2018-02-01 15:56+0100\n"
+"POT-Creation-Date: 2018-06-19 14:36+0200\n"
+"PO-Revision-Date: 2018-06-17 21:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr "Дошка оголошень"
 
 msgctxt "the_app"
 msgid "marketplace"
-msgstr "Дошка оголошень"
+msgstr "дошка оголошень"
 
 msgid "A user created a new offer"
 msgstr "Користувач створив(ла) нове оголошення"
@@ -41,14 +41,14 @@ msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
 msgstr "Нове оголошення: \"%(object_name)s\" було створено в %(team_name)s."
 
 msgid "One of your offers expired"
-msgstr "Закінчився термін одного з Ваших оголошень "
+msgstr "Закінчився термін одного з Ваших оголошень"
 
 msgid "Your offer has expired"
 msgstr "Термін дії вашого оголошення минув"
 
 #, python-format
 msgid "Offer \"%(object_name)s\" has expired."
-msgstr "Термін дії оголошення \"%(object_name)s\" минув"
+msgstr "Термін дії оголошення \"%(object_name)s\" минув."
 
 msgid "A user commented on one of your offers"
 msgstr "Користувач прокоментував одне з Ваших оголошень"
@@ -70,7 +70,7 @@ msgstr "Користувач прокоментував оголошення, в
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
-msgstr "%(sender_name)s прокоментував оголошення, в якому Ви були позначені "
+msgstr "%(sender_name)s прокоментував оголошення, в якому Ви були позначені"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
@@ -187,7 +187,7 @@ msgid "Do you really want to deactivate offer „%(title)s“?"
 msgstr "Ви дійсно бажаєте деактивувати оголошення „%(title)s“?"
 
 msgid "Deactivate offer"
-msgstr "Деактивувати оголошення "
+msgstr "Деактивувати оголошення"
 
 #, python-format
 msgid "Do you really want to reactivate offer „%(title)s“?"
@@ -222,7 +222,7 @@ msgid "Offer Title"
 msgstr "Назва оголошення"
 
 msgid "Enter a description for your offer."
-msgstr "Введіть опис Вашого оголошення"
+msgstr "Введіть опис Вашого оголошення."
 
 msgid "Phone number"
 msgstr "Номер телефону"
@@ -234,16 +234,16 @@ msgid "Categories"
 msgstr "Категорії"
 
 msgid "Check all categories that fit your offer"
-msgstr "Перевірте всі категорії, які Ви можете додати до вашої пропозиції"
+msgstr "Перевірте всі категорії, що підходять під Ваш запит"
 
 msgid "Misc"
-msgstr "Інше"
+msgstr "Різне"
 
 msgid "Upload a file or image or attach an existing one"
-msgstr "Завантажуйте файл, чи зображення, або додайте те, що вже існує"
+msgstr "Завантажте файл або зображення або додайте те, що вже існує"
 
 msgid "The first uploaded image will be displayed as a wallpaper"
-msgstr "Перше завантажене Вами фото буде відображатися як фон "
+msgstr "Перше фото, яке ви завантажете, буде відображатися як фон"
 
 msgid "Offer is active"
 msgstr "Оголошення активне"
