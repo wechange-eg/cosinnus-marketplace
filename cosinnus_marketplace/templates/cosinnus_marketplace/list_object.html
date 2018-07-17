@@ -29,6 +29,13 @@
 			            	{% elif offer.type == 2 %}
 			            		{% blocktrans with username=offer.creator|full_name %}{{ link_start }}{{ username }}{{ link_end }} is offering{% endblocktrans %}
 			            	{% endif %}
+			            	{% if offer.created %}
+                                &nbsp;&nbsp;
+                                <span title="{% trans "Created" %}">
+                                    <i class="fa fa-pencil"></i>
+                                    <span class="moment-data-date" data-date="{{ offer.created|date:'c' }}"></span>
+                                </span>
+                            {% endif %}
                         </span>
                     {% endwith %}
                     <a href="{{ offer.get_absolute_url }}">
