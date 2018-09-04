@@ -43,6 +43,7 @@ notifications = {
         'subject_template': 'cosinnus_marketplace/notifications/offer_created_subject.txt',
         'signals': [offer_created],
         'default': True,
+        'moderatable_content': True,
         
         'is_html': True,
         'snippet_type': 'marketplace',
@@ -80,6 +81,7 @@ notifications = {
         'subject_template': 'cosinnus_marketplace/notifications/offer_comment_posted_subject.txt',
         'signals': [offer_comment_posted],
         'default': True,
+        'moderatable_content': True,
         
         'is_html': True,
         'snippet_type': 'marketplace',
