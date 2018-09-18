@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-22 13:18+0200\n"
-"PO-Revision-Date: 2018-06-23 16:52+0200\n"
+"POT-Creation-Date: 2018-09-18 22:50+0200\n"
+"PO-Revision-Date: 2018-08-30 21:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pl\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 2.0.4\n"
 
 msgid "Marketplace"
 msgstr "Rynek"
@@ -65,30 +65,30 @@ msgid "%(sender_name)s"
 msgstr "%(sender_name)s"
 
 msgid "A user commented on an offer you were tagged in"
-msgstr "Użytkownik skomentował ofertę, w której zostałeś/aś oznaczony"
+msgstr "Użytkownik skomentował ofertę, w której zostałeś/aś oznaczony/a"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
-msgstr "%(sender_name)s skomentował/a ofertę, w której zostałeś/aś oznaczony"
+msgstr "%(sender_name)s skomentował/a ofertę, w której zostałeś/aś oznaczony/a"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
-msgstr "%(sender_name)s skomentował/a ofertę, w której zostałeś/aś oznaczony w zespole %(team_name)s."
+msgstr "%(sender_name)s skomentował/a ofertę, w której zostałeś/aś oznaczony/a w zespole %(team_name)s"
 
 msgid "Current Offers"
-msgstr "Aktywne oferty"
+msgstr "Aktywne Oferty"
 
 msgid "No current offers"
 msgstr "Brak aktywnych ofert"
 
 msgid "Created By"
-msgstr "Stworzone przez"
+msgstr "Utworzone przez"
 
 msgid "Type"
 msgstr "Rodzaj"
 
 msgid "Newest Created"
-msgstr "Najnowsze stworzone"
+msgstr "Najnowsze Utworzone"
 
 msgid "Title"
 msgstr "Tytuł"
@@ -128,7 +128,7 @@ msgid "Created"
 msgstr "Stworzył/a"
 
 msgid "Last modified"
-msgstr "Data ost. mod."
+msgstr "Data ostatniej modyfikacji"
 
 msgid "Text"
 msgstr "Treść"
@@ -251,7 +251,7 @@ msgid "Only active offers will be listed in the Marketplace. Your offer will sta
 msgstr "Tylko aktywne oferty będą wyświetlone na Rynku. Twoja oferta pozostanie aktywna przez 4 tygodnie. Po tym czasie możesz ponownie ją aktywować."
 
 msgid "Create"
-msgstr "Stwórz"
+msgstr "Utwórz"
 
 msgid "Save"
 msgstr "Zapisz"
@@ -272,7 +272,7 @@ msgid "There are no offers"
 msgstr "Nie ma ofert"
 
 msgid "(No description set)"
-msgstr "(Nie ma opisu)"
+msgstr "(Brak opisu)"
 
 msgid "offered in"
 msgstr "oferowane w"
