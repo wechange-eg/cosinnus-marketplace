@@ -260,7 +260,7 @@ class CommentCreateView(RequireWriteMixin, FilterGroupMixin, CreateView):
     form_class = CommentForm
     group_field = 'offer__group'
     model = Comment
-    template_name = 'cosinnus_marketplace/offer_vote.html'
+    template_name = 'cosinnus_marketplace/offer_detail.html'
     
     message_success = _('Your comment was added successfully.')
 
