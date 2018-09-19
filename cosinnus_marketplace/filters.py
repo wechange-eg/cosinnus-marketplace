@@ -3,6 +3,7 @@ Created on 05.08.2014
 
 @author: Sascha
 '''
+from builtins import object
 from django.utils.translation import ugettext_lazy as _
 
 from cosinnus.views.mixins.filters import CosinnusFilterSet
@@ -16,7 +17,7 @@ class OfferFilter(CosinnusFilterSet):
     creator = AllObjectsFilter(label=_('Created By'), widget=SelectCreatorWidget)
     type = ChoiceFilter(label=_('Type'), choices=Offer.TYPE_CHOICES, widget=DropdownChoiceWidgetWithEmpty)
     
-    class Meta:
+    class Meta(object):
         model = Offer
         fields = ['creator', 'type', 'categories']
         order_by = (

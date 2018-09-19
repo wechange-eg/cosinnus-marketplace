@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from builtins import object
 import datetime
 
 from collections import defaultdict
@@ -31,7 +32,7 @@ def get_marketplace_image_filename(instance, filename):
 
 class OfferCategoryGroup(MultiLanguageFieldMagicMixin, CosinnusBaseCategory):
     
-    class Meta:
+    class Meta(object):
         ordering = ['order_key']
     
     order_key = models.CharField(_('Order Key'), max_length=30, blank=True, 
@@ -138,7 +139,7 @@ class Comment(models.Model):
     offer = models.ForeignKey(Offer, related_name='comments')
     text = models.TextField(_('Text'))
 
-    class Meta:
+    class Meta(object):
         ordering = ['created_on']
         verbose_name = _('Comment')
         verbose_name_plural = _('Comments')
