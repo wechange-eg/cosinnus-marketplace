@@ -71,7 +71,7 @@ class Offer(BaseTaggableObjectModel):
     phone_number = PhoneNumberField(blank=True)
     
     categories = models.ManyToManyField(OfferCategory, verbose_name=_('Offer Category'), 
-        related_name='offers', blank=True, null=True)
+        related_name='offers', blank=True)
     
 
     objects = OfferManager()
