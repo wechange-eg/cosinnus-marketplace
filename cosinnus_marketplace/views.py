@@ -67,11 +67,10 @@ class OfferListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, MyA
     
     def get_queryset(self):
         qs = super(OfferListView, self).get_queryset()
+        
         # additional category AND filter:
         categories = self.request.GET.getlist('categories')
-        if categories:
-            for cat in categories:
-                qs = qs.filter(categories=cat)
+        qs = qs.filter(categories__in=categories)
         
         self.unfiltered_qs = qs
         if self.offer_view == 'all':
