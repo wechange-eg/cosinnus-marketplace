@@ -31,6 +31,7 @@ from cosinnus.utils.exceptions import CosinnusPermissionDeniedException
 
 
 class MarketplaceIndexView(RequireReadMixin, RedirectView):
+    permanent = False
 
     def get_redirect_url(self, **kwargs):
         return group_aware_reverse('cosinnus:marketplace:list', kwargs={'group': self.group})
@@ -324,7 +325,7 @@ comment_delete = CommentDeleteView.as_view()
 
 
 class CommentDetailView(SingleObjectMixin, RedirectView):
-
+    permanent = False
     model = Comment
 
     def get(self, request, *args, **kwargs):
