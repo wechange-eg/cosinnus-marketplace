@@ -14,14 +14,11 @@
                 <a class="pull-right fadedown-clickarea" href="#">
                     <i class="fa fa-chevron-down"></i>
                 </a>
-                <a class="pull-right" href="{{ offer.get_absolute_url }}">
-                    <i class="fa fa-chain"></i>
-                </a>
                 <div class="media-body">
                     {% with creator=offer.creator %}
                     	
                     
-                        <span class="annotation">
+                        <span class="annotation mobile-hidden">
                         	{% captureas link_start %}<a href="{{ offer.creator|profile_url }}">{% endcaptureas %}
 			        		{% captureas link_end %}</a>{% endcaptureas %}
 			            	{% if offer.type == 1 %}
