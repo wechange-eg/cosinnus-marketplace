@@ -3,14 +3,14 @@
     <div class="btn btn-emphasized w100" href="{{ offer.get_absolute_url }}">
         <ul class="media-list">
             <li class="media">
-                <a class="pull-left square-date-icon">
+                <span class="pull-left square-date-icon">
                 	{% if offer.attached_image %}
                 		<img class="image" src="{% thumbnail offer.attached_image.file 40x40 crop=1 upscale=1 %}" />
                 	{% else %}
                 		{% include 'cosinnus_marketplace/offer_icon.html' %}
                 	{% endif %}
                 	
-                </a>
+                </span>
                 <a class="pull-right fadedown-clickarea" href="#">
                     <i class="fa fa-chevron-down"></i>
                 </a>
