@@ -2,20 +2,20 @@
 
 {% with offer=object %}
     <div class="app-marketplace">
-        <div class="btn btn-emphasized w100" >
+        <div class="btn btn-emphasized w100" href="{{ offer.get_absolute_url }}">
             <ul class="media-list {% if no_space %}fine-space{% else %}large-space{% endif %}">
                 <li class="media">
-                    <a class="pull-left square-date-icon" href="#">
+                    <span>
                         {% include 'cosinnus_marketplace/offer_icon.html' %}
-                    </a>
+                    </span>
                     <div class="media-body {% if not hide_group_name %}no-vertical-padding{% endif %} ">
-                        <span class="annotation">
+                        <span class="annotation mobile-hidden">
                             {% with creator=offer.creator %}
                                 {# {% trans "by" %} #} <strong><a href="{{ creator|profile_url }}">{{ creator|full_name }}</a></strong>
                             {% endwith %}
                             <span class="moment-data-date" data-date="{{ offer.created|date:'c' }}"></span>
                         </span>
-                        <strong><a href="{{ offer.get_absolute_url }}">{{ offer.title }}</a></strong>
+                        <strong>{{ offer.title }}</strong>
                         {% if not hide_group_name %}
 	                        <div class="group-annotation">
 	                            {% include 'cosinnus/group/group_label.html' with group=offer.group %}
