@@ -43,6 +43,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='offercategory',
             name='category_group',
-            field=models.ForeignKey(related_name='categories', blank=True, to='cosinnus_marketplace.OfferCategoryGroup', null=True),
+            field=models.ForeignKey(related_name='categories', blank=True, to='cosinnus_marketplace.OfferCategoryGroup', null=True, on_delete=models.CASCADE),
         ),
     ]

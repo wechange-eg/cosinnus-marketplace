@@ -77,12 +77,12 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='offer',
             name='creator',
-            field=models.ForeignKey(related_name='cosinnus_marketplace_offer_set', verbose_name='Creator', to=settings.AUTH_USER_MODEL, null=True),
+            field=models.ForeignKey(related_name='cosinnus_marketplace_offer_set', verbose_name='Creator', to=settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE),
         ),
         migrations.AddField(
             model_name='offer',
             name='group',
-            field=models.ForeignKey(related_name='cosinnus_marketplace_offer_set', verbose_name='Team', to=settings.COSINNUS_GROUP_OBJECT_MODEL),
+            field=models.ForeignKey(related_name='cosinnus_marketplace_offer_set', verbose_name='Team', to=settings.COSINNUS_GROUP_OBJECT_MODEL, on_delete=models.CASCADE),
         ),
         migrations.AddField(
             model_name='offer',
@@ -92,7 +92,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='comment',
             name='offer',
-            field=models.ForeignKey(related_name='comments', to='cosinnus_marketplace.Offer'),
+            field=models.ForeignKey(related_name='comments', to='cosinnus_marketplace.Offer', on_delete=models.CASCADE),
         ),
         migrations.AlterUniqueTogether(
             name='offer',

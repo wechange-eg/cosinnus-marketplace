@@ -41,7 +41,7 @@ class OfferCategoryGroup(MultiLanguageFieldMagicMixin, CosinnusBaseCategory):
 
 class OfferCategory(MultiLanguageFieldMagicMixin, CosinnusBaseCategory):
     
-    category_group = models.ForeignKey(OfferCategoryGroup, related_name='categories', null=True, blank=True)
+    category_group = models.ForeignKey(OfferCategoryGroup, related_name='categories', null=True, blank=True, on_delete=models.CASCADE)
     
 
 @python_2_unicode_compatible
@@ -136,7 +136,7 @@ class Comment(models.Model):
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('Creator'), on_delete=models.PROTECT, related_name='marketplace_comments')
     created_on = models.DateTimeField(_('Created'), default=now, editable=False)
     last_modified = models.DateTimeField(_('Last modified'), auto_now=True, editable=False)
-    offer = models.ForeignKey(Offer, related_name='comments')
+    offer = models.ForeignKey(Offer, related_name='comments', on_delete=models.CASCADE)
     text = models.TextField(_('Text'))
 
     class Meta(object):
