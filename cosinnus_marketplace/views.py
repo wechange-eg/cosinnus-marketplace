@@ -44,7 +44,7 @@ class MyActiveOfferCountMixin(object):
     def get_context_data(self, **kwargs):
         context = super(MyActiveOfferCountMixin, self).get_context_data(**kwargs)
         my_offer_count = 0
-        if hasattr(self, 'group') and self.request and self.request.user.is_authenticated():
+        if hasattr(self, 'group') and self.request and self.request.user.is_authenticated:
             qs = Offer.objects.all()
             my_offer_count = qs.filter(group=self.group, is_active=True, creator=self.request.user).count()
         context.update({
@@ -62,7 +62,7 @@ class OfferListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, MyA
     
     def dispatch(self, request, *args, **kwargs):
         self.offer_view = kwargs.get('offer_view', 'all')
-        if self.offer_view == 'mine' and not self.request.user.is_authenticated():
+        if self.offer_view == 'mine' and not self.request.user.is_authenticated:
             return redirect_to_not_logged_in(view=self)
         return super(OfferListView, self).dispatch(request, *args, **kwargs)
     
