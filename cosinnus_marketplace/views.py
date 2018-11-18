@@ -28,6 +28,7 @@ from cosinnus.utils.urls import group_aware_reverse
 from cosinnus.utils.permissions import check_object_write_access
 from cosinnus.core.decorators.views import require_read_access, redirect_to_not_logged_in, get_group_for_request
 from cosinnus.utils.exceptions import CosinnusPermissionDeniedException
+from cosinnus.utils.functions import ensure_list_of_ints
 
 
 class MarketplaceIndexView(RequireReadMixin, RedirectView):
@@ -70,7 +71,8 @@ class OfferListView(RequireReadMixin, FilterGroupMixin, CosinnusFilterMixin, MyA
         qs = super(OfferListView, self).get_queryset()
         
         # additional category AND filter:
-        categories = self.request.GET.getlist('categories')
+        categories = ensure_list_of_ints(self.request.GET.getlist('categories'))
+        
         if categories:
             qs = qs.filter(categories__in=categories)
         
