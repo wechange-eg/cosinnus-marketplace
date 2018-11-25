@@ -1,8 +1,13 @@
 {% load i18n cosinnus_tags thumbnail %}
-<div class="fadedown {% if not forloop.last %}regular-space{% endif %}">
-    <div class="btn btn-emphasized w100" href="{{ offer.get_absolute_url }}">
+<div id="cosinnus_list_element_{{ offer.id }}" class="fadedown {% if not forloop.last %}regular-space{% endif %}">
+    <div class="item_checkbox_element btn btn-emphasized w100" href="{{ offer.get_absolute_url }}">
         <ul class="media-list">
             <li class="media">
+                {% if user|has_write_access:offer %}
+                    {% captureas input_name %}{{ offer.id }}{% endcaptureas %}
+                    {% include 'cosinnus/common/checkbox/checkbox_overlay_box.html' with input_name=input_name %}
+                {% endif %}
+            
                 <span class="pull-left square-date-icon">
                 	{% if offer.attached_image %}
                 		<img class="image" src="{% thumbnail offer.attached_image.file 40x40 crop=1 upscale=1 %}" />

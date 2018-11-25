@@ -28,6 +28,7 @@ from cosinnus.utils.urls import group_aware_reverse
 from cosinnus.utils.permissions import check_object_write_access
 from cosinnus.core.decorators.views import require_read_access, redirect_to_not_logged_in, get_group_for_request
 from cosinnus.utils.exceptions import CosinnusPermissionDeniedException
+from cosinnus.views.common import DeleteElementView
 
 
 class MarketplaceIndexView(RequireReadMixin, RedirectView):
@@ -357,3 +358,8 @@ class CommentUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateView):
 
 comment_update = CommentUpdateView.as_view()
 
+
+class OfferDeleteElementView(DeleteElementView):
+    model = Offer
+
+delete_element_view = OfferDeleteElementView.as_view()

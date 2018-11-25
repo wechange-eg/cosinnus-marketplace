@@ -9,7 +9,7 @@ cosinnus_group_patterns = patterns('cosinnus_marketplace.views',
 
     url(r'^list/$', 'offer_list_view', name='list', kwargs={'offer_view': 'all'}),
     url(r'^list/mine/$', 'offer_list_view', name='list_mine', kwargs={'offer_view': 'mine'}),
-    
+    url(r'^list/delete_element/$', 'delete_element_view', name='delete-element'),
     
     url(r'^add/$', 'offer_add_view',  {'form_view': 'add'},  name='add'),
     url(r'^(?P<slug>[^/]+)/$', 'offer_detail_view', {'form_view': 'edit'},  name='detail'),
