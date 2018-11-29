@@ -22,7 +22,7 @@ from cosinnus.utils.files import _get_avatar_filename
 
 from phonenumber_field.modelfields import PhoneNumberField
 from cosinnus.utils.lanugages import MultiLanguageFieldMagicMixin
-from cosinnus.models.tagged import CosinnusBaseCategory
+from cosinnus.models.tagged import CosinnusBaseCategory, LikableObjectMixin
 from cosinnus_marketplace.managers import OfferManager
 
 
@@ -45,7 +45,7 @@ class OfferCategory(MultiLanguageFieldMagicMixin, CosinnusBaseCategory):
     
 
 @python_2_unicode_compatible
-class Offer(BaseTaggableObjectModel):
+class Offer(LikableObjectMixin, BaseTaggableObjectModel):
 
     SORT_FIELDS_ALIASES = [
         ('title', 'title'),
