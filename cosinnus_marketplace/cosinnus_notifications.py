@@ -55,6 +55,7 @@ notifications = {
             'object_url': 'get_absolute_url', 
             'object_text': 'description',
         },
+        'show_follow_button': True,
     }, 
     'offer_expired': {
         'label': _('One of your offers expired'), 
