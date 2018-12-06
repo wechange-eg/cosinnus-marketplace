@@ -14,6 +14,9 @@ offer_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
 offer_expired = dispatch.Signal(providing_args=["user", "obj", "audience"])
 offer_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
 tagged_offer_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
+followed_group_offer_created = dispatch.Signal(providing_args=["user", "obj", "audience"])
+following_offer_changed = dispatch.Signal(providing_args=["user", "obj", "audience"])
+following_offer_comment_posted = dispatch.Signal(providing_args=["user", "obj", "audience"])
 
 """ Notification definitions.
     These will be picked up by cosinnus_notfications automatically, as long as the 
@@ -55,6 +58,7 @@ notifications = {
             'object_url': 'get_absolute_url', 
             'object_text': 'description',
         },
+        'show_follow_button': True,
     }, 
     'offer_expired': {
         'label': _('One of your offers expired'), 
@@ -116,5 +120,67 @@ notifications = {
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
-    },  
+    },
+    
+    
+    
+    'followed_group_offer_created': {
+        'label': _('A user created a new offer in a team you are following'), 
+        'signals': [followed_group_offer_created],
+        'multi_preference_set': 'MULTI_followed_object_notification',
+        'supercedes_notifications': ['offer_created'],
+        'requires_object_state_check': 'group.is_user_following',
+        'hidden': True,
+        
+        'is_html': True,
+        'snippet_type': 'marketplace',
+        'event_text': _('New offer by %(sender_name)s in %(team_name)s (which you follow)'),
+        'notification_text': _('%(sender_name)s created a new offer in %(team_name)s (which you follow)'),
+        'subject_text': _('A new offer: "%(object_name)s" was created in %(team_name)s (which you follow).'),
+        'data_attributes': {
+            'object_name': 'title', 
+            'object_url': 'get_absolute_url', 
+            'object_text': 'description',
+        },
+    }, 
+    'following_offer_changed': {
+        'label': _('A user updated an offer you are following'), 
+        'signals': [following_offer_changed],
+        'multi_preference_set': 'MULTI_followed_object_notification',
+        'requires_object_state_check': 'is_user_following',
+        'hidden': True,
+        
+        'is_html': True,
+        'snippet_type': 'marketplace',
+        'event_text': _('%(sender_name)s updated an offer you are following'),
+        'notification_text': _('%(sender_name)s updated an offer you are following'),
+        'subject_text': _('An offer you are following: "%(object_name)s" was updated in %(team_name)s.'),
+        'data_attributes': {
+            'object_name': 'title', 
+            'object_url': 'get_absolute_url', 
+            'object_text': 'description',
+        },
+    }, 
+    'following_offer_comment_posted': {
+        'label': _('A user commented on an offer you are following'), 
+        'signals': [following_offer_comment_posted],
+        'multi_preference_set': 'MULTI_followed_object_notification',
+        'supercedes_notifications': ['tagged_offer_comment_posted', 'offer_comment_posted'],
+        'requires_object_state_check': 'offer.is_user_following',
+        'hidden': True,
+        
+        'is_html': True,
+        'snippet_type': 'marketplace',
+        'event_text': _('%(sender_name)s commented on on an offer you are following'),
+        'notification_text': _('%(sender_name)s commented on on an offer you are following'),
+        'subject_text': _('%(sender_name)s commented on on an offer you are following'),
+        'sub_event_text': _('%(sender_name)s'),
+        'data_attributes': {
+            'object_name': 'offer.title', 
+            'object_url': 'get_absolute_url', 
+            'image_url': 'offer.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
+            'sub_object_text': 'text',
+        },
+    }, 
 }
