@@ -142,6 +142,7 @@ notifications = {
             'object_url': 'get_absolute_url', 
             'object_text': 'description',
         },
+        'show_follow_button': True,
     }, 
     'following_offer_changed': {
         'label': _('A user updated an offer you are following'), 
