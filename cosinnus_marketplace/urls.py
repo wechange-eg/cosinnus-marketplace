@@ -11,6 +11,7 @@ cosinnus_group_patterns = [
 
     url(r'^list/$', views.offer_list_view, name='list', kwargs={'offer_view': 'all'}),
     url(r'^list/mine/$', views.offer_list_view, name='list_mine', kwargs={'offer_view': 'mine'}),
+    url(r'^list/delete_element/$', views.delete_element_view, name='delete-element'),
     
     
     url(r'^add/$', views.offer_add_view,  {'form_view': 'add'},  name='add'),

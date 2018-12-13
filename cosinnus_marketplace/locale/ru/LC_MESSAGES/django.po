@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 22:50+0200\n"
-"PO-Revision-Date: 2018-06-17 23:39+0200\n"
+"POT-Creation-Date: 2018-12-10 12:52+0100\n"
+"PO-Revision-Date: 2018-12-11 19:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -74,6 +74,39 @@ msgstr "%(sender_name)s прокомментировал объявление, �
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
 msgstr "%(sender_name)s прокомментировал объявление, в котором Вы были отмечены в %(team_name)s"
+
+msgid "A user created a new offer in a team you are following"
+msgstr "Пользователь создал новое предложение в команде, за которой Вы следите"
+
+#, python-format
+msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
+msgstr "Новое объявление у %(sender_name)s в %(team_name)s (за которой Вы следите)"
+
+#, python-format
+msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
+msgstr "%(sender_name)s создал новое предложение в %(team_name)s (за которой Вы следите)"
+
+#, python-format
+msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
+msgstr "Новое предложение: \"%(object_name)s\" было создано в %(team_name)s (за которой Вы следите)."
+
+msgid "A user updated an offer you are following"
+msgstr "Пользователь обновил предложение, за которым Вы следите"
+
+#, python-format
+msgid "%(sender_name)s updated an offer you are following"
+msgstr "%(sender_name)s обновил событие, за которым Вы следите"
+
+#, python-format
+msgid "An offer you are following: \"%(object_name)s\" was updated in %(team_name)s."
+msgstr "Новое предложение, за которым Вы следите: \"%(object_name)s\" было обновлено в %(team_name)s."
+
+msgid "A user commented on an offer you are following"
+msgstr "Пользователь прокомментировал предложение, за котором Вы следите"
+
+#, python-format
+msgid "%(sender_name)s commented on on an offer you are following"
+msgstr "%(sender_name)s прокомментировал предложение, за которым Вы следите"
 
 msgid "Current Offers"
 msgstr "Актуальные Объявления"
@@ -212,7 +245,7 @@ msgid "This offer is inactive. It is only visible to you and not listed in the m
 msgstr "Это объявление неактивно. Оно видно только Вам и не отображается на \"Доске объявлений\". Вы можете восстановить его ниже."
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr ""
+msgstr "Ошибка в одном из заполненных полей. Пожалуйста, исправьте перед сохранением!"
 
 msgid "Offer type"
 msgstr "Тип Объявления"

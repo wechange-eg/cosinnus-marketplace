@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 22:50+0200\n"
+"POT-Creation-Date: 2018-12-10 12:52+0100\n"
 "PO-Revision-Date: 2018-07-22 13:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -75,6 +75,51 @@ msgstr "%(sender_name)s hat ein Inserat kommentiert in dem du getaggt bist"
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
 msgstr "%(sender_name)s hat ein Inserat kommentiert in dem du getaggt bist in %(team_name)s"
+
+#, fuzzy
+#| msgid "A user created a new offer"
+msgid "A user created a new offer in a team you are following"
+msgstr "Ein Mitglied hat ein neues Inserat erstellt"
+
+#, fuzzy, python-format
+#| msgid "New offer by %(sender_name)s"
+msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
+msgstr "Neues Inserat von %(sender_name)s"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new offer"
+msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
+msgstr "%(sender_name)s hat ein neues Inserat erstellt"
+
+#, fuzzy, python-format
+#| msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
+msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
+msgstr "Ein neues Inserat  \"%(object_name)s\" wurde in %(team_name)s erstellt."
+
+#, fuzzy
+#| msgid "A user commented on an offer you were tagged in"
+msgid "A user updated an offer you are following"
+msgstr "Ein Mitglied hat ein Inserat kommentiert in dem du getaggt bist"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on an offer you were tagged in"
+msgid "%(sender_name)s updated an offer you are following"
+msgstr "%(sender_name)s hat ein Inserat kommentiert in dem du getaggt bist"
+
+#, fuzzy, python-format
+#| msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
+msgid "An offer you are following: \"%(object_name)s\" was updated in %(team_name)s."
+msgstr "Ein neues Inserat  \"%(object_name)s\" wurde in %(team_name)s erstellt."
+
+#, fuzzy
+#| msgid "A user commented on an offer you were tagged in"
+msgid "A user commented on an offer you are following"
+msgstr "Ein Mitglied hat ein Inserat kommentiert in dem du getaggt bist"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on an offer you were tagged in"
+msgid "%(sender_name)s commented on on an offer you are following"
+msgstr "%(sender_name)s hat ein Inserat kommentiert in dem du getaggt bist"
 
 msgid "Current Offers"
 msgstr "Aktuelle Inserate"

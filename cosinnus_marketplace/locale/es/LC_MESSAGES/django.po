@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-18 22:50+0200\n"
+"POT-Creation-Date: 2018-12-10 12:52+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,6 +73,39 @@ msgstr ""
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
+msgstr ""
+
+msgid "A user created a new offer in a team you are following"
+msgstr ""
+
+#, python-format
+msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
+msgstr ""
+
+#, python-format
+msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
+msgstr ""
+
+msgid "A user updated an offer you are following"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s updated an offer you are following"
+msgstr ""
+
+#, python-format
+msgid "An offer you are following: \"%(object_name)s\" was updated in %(team_name)s."
+msgstr ""
+
+msgid "A user commented on an offer you are following"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s commented on on an offer you are following"
 msgstr ""
 
 msgid "Current Offers"

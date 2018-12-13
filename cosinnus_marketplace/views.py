@@ -28,6 +28,10 @@ from cosinnus.utils.urls import group_aware_reverse
 from cosinnus.utils.permissions import check_object_write_access
 from cosinnus.core.decorators.views import require_read_access, redirect_to_not_logged_in, get_group_for_request
 from cosinnus.utils.exceptions import CosinnusPermissionDeniedException
+from cosinnus.views.common import DeleteElementView
+from cosinnus.views.mixins.tagged import EditViewWatchChangesMixin
+from cosinnus_marketplace import cosinnus_notifications
+from django.contrib.auth import get_user_model
 from cosinnus.utils.functions import ensure_list_of_ints
 
 
@@ -157,13 +161,21 @@ class OfferAddView(OfferFormMixin, AttachableViewMixin, MyActiveOfferCountMixin,
 offer_add_view = OfferAddView.as_view()
 
 
-class OfferEditView(OfferFormMixin, AttachableViewMixin, MyActiveOfferCountMixin, UpdateWithInlinesView):
+class OfferEditView(EditViewWatchChangesMixin, OfferFormMixin, AttachableViewMixin, 
+                    MyActiveOfferCountMixin, UpdateWithInlinesView):
+    
+    changed_attr_watchlist = ['title', 'description', 'phone_number', 'get_attached_objects_hash']
     
     def get_object(self, queryset=None):
         obj = super(OfferEditView, self).get_object(queryset=queryset)
         self.object = obj
         return obj
     
+    def on_save_changed_attrs(self, obj, changed_attr_dict):
+        # send out a notification to all followers for the change
+        followers_except_creator = [pk for pk in obj.get_followed_user_ids() if not pk in [obj.creator_id]]
+        cosinnus_notifications.following_offer_changed.send(sender=self, user=obj.creator, obj=obj, audience=get_user_model().objects.filter(id__in=followers_except_creator))
+        
 offer_edit_view = OfferEditView.as_view()
 
 
@@ -360,3 +372,8 @@ class CommentUpdateView(RequireWriteMixin, FilterGroupMixin, UpdateView):
 
 comment_update = CommentUpdateView.as_view()
 
+
+class OfferDeleteElementView(DeleteElementView):
+    model = Offer
+
+delete_element_view = OfferDeleteElementView.as_view()
