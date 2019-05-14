@@ -12,9 +12,10 @@ class OfferRenderer(BaseRenderer):
     model = Offer
     
     template = 'cosinnus_marketplace/attached_offers.html'
+    template_v2 = 'cosinnus_marketplace/v2/attached_offers.html'
     template_single = 'cosinnus_marketplace/single_offer.html'
     template_list = 'cosinnus_marketplace/offer_list_standalone.html'
     
     @classmethod
-    def render(cls, context, myobjs):
-        return super(OfferRenderer, cls).render(context, offers=myobjs)
+    def render(cls, context, myobjs, **kwargs):
+        return super(OfferRenderer, cls).render(context, offers=myobjs, **kwargs)

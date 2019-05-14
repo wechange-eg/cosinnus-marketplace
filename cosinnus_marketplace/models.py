@@ -135,6 +135,9 @@ class Offer(LikeableObjectMixin, BaseTaggableObjectModel):
     def get_categories_grouped(self):
         return get_categories_grouped(OfferCategory.objects.all())
     
+    def get_comment_post_url(self):
+        return group_aware_reverse('cosinnus:marketplace:comment', kwargs={'group': self.group, 'offer_slug': self.slug})
+    
 
 @python_2_unicode_compatible
 class Comment(models.Model):
