@@ -29,7 +29,8 @@ from cosinnus.utils.permissions import check_object_write_access
 from cosinnus.core.decorators.views import require_read_access, redirect_to_not_logged_in, get_group_for_request
 from cosinnus.utils.exceptions import CosinnusPermissionDeniedException
 from cosinnus.views.common import DeleteElementView
-from cosinnus.views.mixins.tagged import EditViewWatchChangesMixin
+from cosinnus.views.mixins.tagged import EditViewWatchChangesMixin,\
+    RecordLastVisitedMixin
 from cosinnus_marketplace import cosinnus_notifications
 from django.contrib.auth import get_user_model
 from cosinnus.utils.functions import ensure_list_of_ints
@@ -189,7 +190,8 @@ class OfferDeleteView(OfferFormMixin, DeleteView):
 offer_delete_view = OfferDeleteView.as_view()
 
 
-class OfferDetailView(RequireReadMixin, FilterGroupMixin, MyActiveOfferCountMixin, DetailView):
+class OfferDetailView(RequireReadMixin, RecordLastVisitedMixin,
+        FilterGroupMixin, MyActiveOfferCountMixin, DetailView):
 
     model = Offer
     
