@@ -54,15 +54,6 @@
     			</span>
     		{% endif %}
     	{% endwith %}
-    	<br/>
-    	<span>
-    		{% if offer.is_active %}
-	    		{% trans "expires on" %}: 
-    		{% else %}
-    			{% trans "expired on" %}:
-    		{% endif %}
-    		<span class="moment-data-date" data-date="{{ offer.expires_on|date:'c' }}"></span>
-    	</span>
     </p>
     
     <br/>
@@ -99,6 +90,18 @@
     <br/>
 	{% if offer.attached_images %}
 	    {% include 'cosinnus/common/attached_images_gallery.html' with object=offer %}
+	{% endif %}
+	
+	{% if offer.creator == user %}
+    	<br/>
+    	<span>
+    		{% if offer.is_active %}
+	    		{% trans "expires on" %}: 
+    		{% else %}
+    			{% trans "expired on" %}:
+    		{% endif %}
+    		<span class="moment-data-date" data-date="{{ offer.expires_on|date:'c' }}"></span>
+    	</span>
 	{% endif %}
     
 </div>
