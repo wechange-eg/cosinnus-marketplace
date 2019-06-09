@@ -7,16 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-25 12:16+0100\n"
+"POT-Creation-Date: 2019-06-09 12:59+0200\n"
 "PO-Revision-Date: 2019-05-06 16:54+0100\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: be\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 1.5.4\n"
 
 msgid "Marketplace"
@@ -67,23 +66,18 @@ msgid "%(sender_name)s"
 msgstr "%(sender_name)s"
 
 msgid "A user commented on an offer you were tagged in"
-msgstr ""
-"Карыстальнік(-ца) пракаментаваў(-ла) прапанову, у якой Вы былі пазначаны"
+msgstr "Карыстальнік(-ца) пракаментаваў(-ла) прапанову, у якой Вы былі пазначаны"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
 msgstr "%(sender_name)s пракаментаваў(-ла) прапанову, у якой Вы былі пазначаны"
 
 #, python-format
-msgid ""
-"%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
-msgstr ""
-"%(sender_name)s пракаментаваў(-ла) прапанову, у якой Вы былі пазначаны, у "
-"%(team_name)s"
+msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
+msgstr "%(sender_name)s пракаментаваў(-ла) прапанову, у якой Вы былі пазначаны, у %(team_name)s"
 
 msgid "A user created a new offer in a team you are following"
-msgstr ""
-"Карыстальнік(-ца) стварыў(-ла) новую прапанову ў камандзе, за якой вы сочыце"
+msgstr "Карыстальнік(-ца) стварыў(-ла) новую прапанову ў камандзе, за якой вы сочыце"
 
 #, python-format
 msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
@@ -91,17 +85,11 @@ msgstr "Новая прапанова ад %(sender_name)s у %(team_name)s (з�
 
 #, python-format
 msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
-msgstr ""
-"%(sender_name)s стварыў(-ла) новую прапанову ў %(team_name)s (за якой вы "
-"сочыце)"
+msgstr "%(sender_name)s стварыў(-ла) новую прапанову ў %(team_name)s (за якой вы сочыце)"
 
 #, python-format
-msgid ""
-"A new offer: \"%(object_name)s\" was created in %(team_name)s (which you "
-"follow)."
-msgstr ""
-"Новая прапанова \"%(object_name)s\" створана ў %(team_name)s (за якой вы "
-"сочыце)."
+msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
+msgstr "Новая прапанова \"%(object_name)s\" створана ў %(team_name)s (за якой вы сочыце)."
 
 msgid "A user updated an offer you are following"
 msgstr "Карыстальнік(-ца) абнавіў(-ла) прапанову, за якой Вы сочыце"
@@ -111,10 +99,8 @@ msgid "%(sender_name)s updated an offer you are following"
 msgstr "%(sender_name)s абнавіў(-ла) прапанову, за якой Вы сочыце"
 
 #, python-format
-msgid ""
-"An offer you are following: \"%(object_name)s\" was updated in %(team_name)s."
-msgstr ""
-"Прапанова, за якой Вы сочыце: \"%(object_name)s\" абноўлена ў %(team_name)s."
+msgid "An offer you are following: \"%(object_name)s\" was updated in %(team_name)s."
+msgstr "Прапанова, за якой Вы сочыце: \"%(object_name)s\" абноўлена ў %(team_name)s."
 
 msgid "A user commented on an offer you are following"
 msgstr "Карыстальнік(-ца) пракаментаваў(-ла) прапанову, за якой Вы сочыце"
@@ -196,6 +182,12 @@ msgstr "Мае прапановы"
 msgid "Add Offer"
 msgstr "Дадаць прапанову"
 
+msgid "Misc"
+msgstr "Рознае"
+
+msgid "Filter"
+msgstr "Фільтр"
+
 #, python-format
 msgid "%(link_start)s%(username)s%(link_end)s is looking for"
 msgstr "%(link_start)s%(username)s%(link_end)s шукае"
@@ -256,19 +248,11 @@ msgstr "Напішыце каментар..."
 msgid "Post"
 msgstr "Апублікаваць"
 
-msgid ""
-"This offer is inactive. It is only visible to you and not listed in the "
-"marketplace. You can reactivate it below."
-msgstr ""
-"Гэта прапанова неактыўная. Яна бачная толькі вам і не адлюстроўваецца на "
-"дошцы аб'яў. Вы можаце ўзнавіць яе ніжэй."
+msgid "This offer is inactive. It is only visible to you and not listed in the marketplace. You can reactivate it below."
+msgstr "Гэта прапанова неактыўная. Яна бачная толькі вам і не адлюстроўваецца на дошцы аб'яў. Вы можаце ўзнавіць яе ніжэй."
 
-msgid ""
-"There was an error in one of the fields you entered. Please correct it "
-"before saving!"
-msgstr ""
-"У адным з палёў, якія вы запоўнілі, ёсць памылка. Калі ласка, выпраўце яе "
-"перш чым захаваць старонку!"
+msgid "There was an error in one of the fields you entered. Please correct it before saving!"
+msgstr "У адным з палёў, якія вы запоўнілі, ёсць памылка. Калі ласка, выпраўце яе перш чым захаваць старонку!"
 
 msgid "Offer type"
 msgstr "Тып прапановы"
@@ -291,9 +275,6 @@ msgstr "Катэгорыі"
 msgid "Check all categories that fit your offer"
 msgstr "Адзначце ўсе катэгорыі, што падыходзяць да Вашай прапановы"
 
-msgid "Misc"
-msgstr "Рознае"
-
 msgid "Upload a file or image or attach an existing one"
 msgstr "Зацягніце файл ці выяву або далучыце ўжо існуючыя"
 
@@ -303,22 +284,14 @@ msgstr "Першая зацягнутая выява будзе адлюстро
 msgid "Offer is active"
 msgstr "Прапанова актыўная"
 
-msgid ""
-"Only active offers will be listed in the Marketplace. Your offer will stay "
-"active for 4 weeks. After that, you can reactivate it at any time."
-msgstr ""
-"Толькі актыўныя прапановы будуць адлюстроўвацца на Дошцы аб'яў. Ваша "
-"прапанова будзе актыўнай на працягу 4 тыдняў. Пасля гэтага Вы зможаце яе "
-"ўзнавіць у любы момант."
+msgid "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
+msgstr "Толькі актыўныя прапановы будуць адлюстроўвацца на Дошцы аб'яў. Ваша прапанова будзе актыўнай на працягу 4 тыдняў. Пасля гэтага Вы зможаце яе ўзнавіць у любы момант."
 
 msgid "Create"
 msgstr "Стварыць"
 
 msgid "Save"
 msgstr "Захаваць"
-
-msgid "Filter"
-msgstr "Фільтр"
 
 msgid "All"
 msgstr "Усе"
@@ -338,12 +311,6 @@ msgstr "(Апісанне не прызначана)"
 msgid "offered in"
 msgstr "прапанавана ў катэгорыі"
 
-msgid "expires on"
-msgstr "сканчаецца"
-
-msgid "expired on"
-msgstr "скончылася"
-
 #, python-format
 msgid "Contact %(username)s directly"
 msgstr "Звяжыцеся з %(username)s наўпрост"
@@ -353,6 +320,12 @@ msgstr "Паказваецца толькі зарэгістраваным ка�
 
 msgid "Send Message"
 msgstr "Даслаць паведамленне"
+
+msgid "expires on"
+msgstr "сканчаецца"
+
+msgid "expired on"
+msgstr "скончылася"
 
 msgid "There are no current offers"
 msgstr "Няма бягучых прапаноў"
@@ -392,8 +365,7 @@ msgid "The complete request can only be sent via POST!"
 msgstr "Поўны запыт можа быць адпраўлены толькі ПОШТАЙ!"
 
 msgid "Invalid action for this offer. The request could not be completed!"
-msgstr ""
-"Недапушчальнае дзеянне для гэтай прапановы. Запыт немагчыма апрацаваць!"
+msgstr "Недапушчальнае дзеянне для гэтай прапановы. Запыт немагчыма апрацаваць!"
 
 msgid "The offer is already active"
 msgstr "Прапанова ўжо актыўная"

@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 12:52+0100\n"
+"POT-Creation-Date: 2019-06-09 12:59+0200\n"
 "PO-Revision-Date: 2018-12-11 19:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"Language: ru\n"
 "X-Generator: Poedit 2.0.6\n"
 
 msgid "Marketplace"
@@ -181,6 +181,12 @@ msgstr "Мои Объявления"
 msgid "Add Offer"
 msgstr "Создать объявление"
 
+msgid "Misc"
+msgstr "Разное"
+
+msgid "Filter"
+msgstr "Фильтровать"
+
 #, python-format
 msgid "%(link_start)s%(username)s%(link_end)s is looking for"
 msgstr "%(link_start)s%(username)s%(link_end)s ищет"
@@ -268,9 +274,6 @@ msgstr "Категории"
 msgid "Check all categories that fit your offer"
 msgstr "Проверьте все категории, которые соответствуют Вашему предложению"
 
-msgid "Misc"
-msgstr "Разное"
-
 msgid "Upload a file or image or attach an existing one"
 msgstr "Загрузите файл или изображение или прикрепите существующее"
 
@@ -288,9 +291,6 @@ msgstr "Создать"
 
 msgid "Save"
 msgstr "Сохранить"
-
-msgid "Filter"
-msgstr "Фильтровать"
 
 msgid "All"
 msgstr "Все"
@@ -310,12 +310,6 @@ msgstr "(Нет описания)"
 msgid "offered in"
 msgstr "предлагается в"
 
-msgid "expires on"
-msgstr "истекает"
-
-msgid "expired on"
-msgstr "истёк"
-
 #, python-format
 msgid "Contact %(username)s directly"
 msgstr "Контактировать непосредственно %(username)s"
@@ -325,6 +319,12 @@ msgstr "Видимо только для зарегистрированных п
 
 msgid "Send Message"
 msgstr "Отправить сообщение"
+
+msgid "expires on"
+msgstr "истекает"
+
+msgid "expired on"
+msgstr "истёк"
 
 msgid "There are no current offers"
 msgstr "Активных предложений нет"

@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-10 12:52+0100\n"
+"POT-Creation-Date: 2019-06-09 12:59+0200\n"
 "PO-Revision-Date: 2018-07-22 13:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: de\n"
 "X-Generator: Poedit 1.8.4\n"
 
 msgid "Marketplace"
@@ -194,6 +194,12 @@ msgstr "Meine Inserate"
 msgid "Add Offer"
 msgstr "Inserat erstellen"
 
+msgid "Misc"
+msgstr "Verschiedenes"
+
+msgid "Filter"
+msgstr "Filtern"
+
 #, python-format
 msgid "%(link_start)s%(username)s%(link_end)s is looking for"
 msgstr "%(link_start)s%(username)s%(link_end)s sucht "
@@ -281,9 +287,6 @@ msgstr "Kategorien"
 msgid "Check all categories that fit your offer"
 msgstr "Markiere alle Kategorien, die auf dein Inserat zutreffen"
 
-msgid "Misc"
-msgstr "Verschiedenes"
-
 msgid "Upload a file or image or attach an existing one"
 msgstr "Lade eine Datei oder Bild hoch oder wähle ein vorhandes zum Anhängen aus"
 
@@ -301,9 +304,6 @@ msgstr "Erstellen"
 
 msgid "Save"
 msgstr "Speichern"
-
-msgid "Filter"
-msgstr "Filtern"
 
 msgid "All"
 msgstr "Alle"
@@ -323,12 +323,6 @@ msgstr "(Keine Beschreibung erstellt)"
 msgid "offered in"
 msgstr "angeboten in"
 
-msgid "expires on"
-msgstr "läuft ab am"
-
-msgid "expired on"
-msgstr "abgelaufen am"
-
 #, python-format
 msgid "Contact %(username)s directly"
 msgstr "Kontaktiere %(username)s direkt"
@@ -338,6 +332,12 @@ msgstr "Nur für registrierte Mitglieder sichtbar"
 
 msgid "Send Message"
 msgstr "Nachricht schicken"
+
+msgid "expires on"
+msgstr "läuft ab am"
+
+msgid "expired on"
+msgstr "abgelaufen am"
 
 msgid "There are no current offers"
 msgstr "Es gibt aktuell keine Inserate"
