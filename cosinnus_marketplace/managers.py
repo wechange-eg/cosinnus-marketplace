@@ -8,10 +8,12 @@ from taggit.models import TaggedItem
 
 
 class OfferManager(models.Manager):
+    
     def public(self):
-        # Django 1.5: get_query_set, 1.7: get_queryset
-        qs = getattr(self, 'get_queryset', self.get_query_set)()
-        return qs.filter(public=True, is_active=True)
+        return self.get_queryset().filter(public=True, is_active=True)
+    
+    def all_active(self):
+        return self.get_queryset().filter(is_active=True)
 
     def tags(self):
         offer_type = ContentType.objects.get(app_label="cosinnus_marketplace", model="offer")

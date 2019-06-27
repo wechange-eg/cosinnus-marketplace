@@ -77,6 +77,7 @@ class Offer(LikeableObjectMixin, BaseTaggableObjectModel):
 
     objects = OfferManager()
     
+    timeline_template = 'cosinnus_marketplace/v2/dashboard/timeline_item.html'
 
     class Meta(BaseTaggableObjectModel.Meta):
         ordering = ['-created']
@@ -108,6 +109,14 @@ class Offer(LikeableObjectMixin, BaseTaggableObjectModel):
     def get_absolute_url(self):
         kwargs = {'group': self.group, 'slug': self.slug}
         return group_aware_reverse('cosinnus:marketplace:detail', kwargs=kwargs)
+    
+    def get_edit_url(self):
+        kwargs = {'group': self.group, 'slug': self.slug}
+        return group_aware_reverse('cosinnus:marketplace:edit', kwargs=kwargs)
+    
+    def get_delete_url(self):
+        kwargs = {'group': self.group, 'slug': self.slug}
+        return group_aware_reverse('cosinnus:marketplace:delete', kwargs=kwargs)
 
     @classmethod
     def get_current(self, group, user):
@@ -162,6 +171,12 @@ class Comment(models.Model):
         if self.pk:
             return '%s#comment-%d' % (self.offer.get_absolute_url(), self.pk)
         return self.offer.get_absolute_url()
+    
+    def get_edit_url(self):
+        return group_aware_reverse('cosinnus:marketplace:comment-update', kwargs={'group': self.offer.group, 'pk': self.pk})
+
+    def get_delete_url(self):
+        return group_aware_reverse('cosinnus:marketplace:comment-delete', kwargs={'group': self.offer.group, 'pk': self.pk})
     
     def is_user_following(self, user):
         """ Delegates to parent object """
