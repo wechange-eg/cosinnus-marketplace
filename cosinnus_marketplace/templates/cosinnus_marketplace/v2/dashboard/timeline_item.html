@@ -10,9 +10,9 @@
 		{% trans "created an offer" context "This appears next to new items in the timeline, as in '<Jane> created a new item'" %}
 	{% endif %}
 	
-	{% if offer.type == 1 %}
+	{% if item.type == 1 %}
 		({% trans "Looking for" %})
-	{% elif offer.type == 2 %}
+	{% elif item.type == 2 %}
 		({% trans "Offering" %})
 	{% endif %}
 {% endblock %}
