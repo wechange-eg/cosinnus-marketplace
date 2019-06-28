@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-09 13:20+0200\n"
-"PO-Revision-Date: 2018-07-22 13:30+0200\n"
+"POT-Creation-Date: 2019-06-28 16:30+0200\n"
+"PO-Revision-Date: 2019-06-28 16:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.5.4\n"
 
 msgid "Marketplace"
 msgstr "Marktplatz"
@@ -38,7 +38,8 @@ msgstr "%(sender_name)s hat ein neues Inserat erstellt"
 
 #, python-format
 msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
-msgstr "Ein neues Inserat  \"%(object_name)s\" wurde in %(team_name)s erstellt."
+msgstr ""
+"Ein neues Inserat  \"%(object_name)s\" wurde in %(team_name)s erstellt."
 
 msgid "One of your offers expired"
 msgstr "Eins deiner Inserate ist abgelaufen"
@@ -73,8 +74,11 @@ msgid "%(sender_name)s commented on an offer you were tagged in"
 msgstr "%(sender_name)s hat ein Inserat kommentiert in dem du getaggt bist"
 
 #, python-format
-msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
-msgstr "%(sender_name)s hat ein Inserat kommentiert in dem du getaggt bist in %(team_name)s"
+msgid ""
+"%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
+msgstr ""
+"%(sender_name)s hat ein Inserat kommentiert in dem du getaggt bist in "
+"%(team_name)s"
 
 #, fuzzy
 #| msgid "A user created a new offer"
@@ -93,8 +97,11 @@ msgstr "%(sender_name)s hat ein neues Inserat erstellt"
 
 #, fuzzy, python-format
 #| msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
-msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
-msgstr "Ein neues Inserat  \"%(object_name)s\" wurde in %(team_name)s erstellt."
+msgid ""
+"A new offer: \"%(object_name)s\" was created in %(team_name)s (which you "
+"follow)."
+msgstr ""
+"Ein neues Inserat  \"%(object_name)s\" wurde in %(team_name)s erstellt."
 
 #, fuzzy
 #| msgid "A user commented on an offer you were tagged in"
@@ -108,8 +115,10 @@ msgstr "%(sender_name)s hat ein Inserat kommentiert in dem du getaggt bist"
 
 #, fuzzy, python-format
 #| msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
-msgid "An offer you are following: \"%(object_name)s\" was updated in %(team_name)s."
-msgstr "Ein neues Inserat  \"%(object_name)s\" wurde in %(team_name)s erstellt."
+msgid ""
+"An offer you are following: \"%(object_name)s\" was updated in %(team_name)s."
+msgstr ""
+"Ein neues Inserat  \"%(object_name)s\" wurde in %(team_name)s erstellt."
 
 #, fuzzy
 #| msgid "A user commented on an offer you were tagged in"
@@ -260,11 +269,19 @@ msgstr "Kommentar schreiben..."
 msgid "Post"
 msgstr "Posten"
 
-msgid "This offer is inactive. It is only visible to you and not listed in the marketplace. You can reactivate it below."
-msgstr "Dieses Inserat is inaktiv. Es ist nur für dich sichtbar und wird nicht im Marktplatz angezeigt. Du kannst es unten reaktivieren."
+msgid ""
+"This offer is inactive. It is only visible to you and not listed in the "
+"marketplace. You can reactivate it below."
+msgstr ""
+"Dieses Inserat is inaktiv. Es ist nur für dich sichtbar und wird nicht im "
+"Marktplatz angezeigt. Du kannst es unten reaktivieren."
 
-msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr "In einem der eingegebenen Felder trat ein Fehler auf. Bitte korrigiere ihn vor dem Speichern!"
+msgid ""
+"There was an error in one of the fields you entered. Please correct it "
+"before saving!"
+msgstr ""
+"In einem der eingegebenen Felder trat ein Fehler auf. Bitte korrigiere ihn "
+"vor dem Speichern!"
 
 msgid "Offer type"
 msgstr "Inseratstyp"
@@ -288,7 +305,8 @@ msgid "Check all categories that fit your offer"
 msgstr "Markiere alle Kategorien, die auf dein Inserat zutreffen"
 
 msgid "Upload a file or image or attach an existing one"
-msgstr "Lade eine Datei oder Bild hoch oder wähle ein vorhandes zum Anhängen aus"
+msgstr ""
+"Lade eine Datei oder Bild hoch oder wähle ein vorhandes zum Anhängen aus"
 
 msgid "The first uploaded image will be displayed as a wallpaper"
 msgstr "Das erste hochgeladene Bild wird als Hintergrundbild angezeigt"
@@ -296,8 +314,12 @@ msgstr "Das erste hochgeladene Bild wird als Hintergrundbild angezeigt"
 msgid "Offer is active"
 msgstr "Inserat ist aktiv"
 
-msgid "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
-msgstr "Nur aktive Inserate werden im Marktplatz angezeigt. Dein Inserat wird 4 Wochen lang aktiv bleiben. Danach kannst du es jederzeit reaktivieren."
+msgid ""
+"Only active offers will be listed in the Marketplace. Your offer will stay "
+"active for 4 weeks. After that, you can reactivate it at any time."
+msgstr ""
+"Nur aktive Inserate werden im Marktplatz angezeigt. Dein Inserat wird 4 "
+"Wochen lang aktiv bleiben. Danach kannst du es jederzeit reaktivieren."
 
 msgid "Create"
 msgstr "Erstellen"
@@ -339,6 +361,22 @@ msgstr "läuft ab am"
 msgid "expired on"
 msgstr "abgelaufen am"
 
+#, fuzzy
+#| msgid "A user created a new offer"
+msgid "You created an offer"
+msgstr "Ein Mitglied hat ein neues Inserat erstellt"
+
+#, fuzzy
+#| msgid "A user created a new offer"
+msgctxt ""
+"This appears next to new items in the timeline, as in '<Jane> created a new "
+"item'"
+msgid "created an offer"
+msgstr "Ein Mitglied hat ein neues Inserat erstellt"
+
+msgid "Contact"
+msgstr "Kontakt"
+
 msgid "There are no current offers"
 msgstr "Es gibt aktuell keine Inserate"
 
@@ -356,7 +394,8 @@ msgstr "Inserat \"%(title)s\" wurde erfolgreich eingestellt."
 
 #, python-format
 msgid "Offer \"%(title)s\" was saved successfully, but is not active yet."
-msgstr "Inserat \"%(title)s\" wurde erfolgreich erstellt, ist aber noch nicht aktiv."
+msgstr ""
+"Inserat \"%(title)s\" wurde erfolgreich erstellt, ist aber noch nicht aktiv."
 
 #, python-format
 msgid "Offer \"%(title)s\" could not be added."

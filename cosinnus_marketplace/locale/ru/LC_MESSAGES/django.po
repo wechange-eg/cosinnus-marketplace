@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-09 13:20+0200\n"
+"POT-Creation-Date: 2019-06-28 16:30+0200\n"
 "PO-Revision-Date: 2018-12-11 19:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -325,6 +325,20 @@ msgstr "истекает"
 
 msgid "expired on"
 msgstr "истёк"
+
+#, fuzzy
+#| msgid "A user created a new offer"
+msgid "You created an offer"
+msgstr "Пользователь создал новое объявление"
+
+#, fuzzy
+#| msgid "A user created a new offer"
+msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
+msgid "created an offer"
+msgstr "Пользователь создал новое объявление"
+
+msgid "Contact"
+msgstr ""
 
 msgid "There are no current offers"
 msgstr "Активных предложений нет"
