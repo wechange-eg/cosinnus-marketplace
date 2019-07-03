@@ -191,7 +191,7 @@ class Comment(models.Model):
             if not self.offer.creator == self.creator:
                 cosinnus_notifications.offer_comment_posted.send(sender=self, user=self.creator, obj=self, audience=[self.offer.creator], session_id=session_id)
             
-            # message all followers of the note
+            # message all followers of the offer
             followers_except_creator = [pk for pk in self.offer.get_followed_user_ids() if not pk in [self.creator_id, self.offer.creator_id]]
             cosinnus_notifications.following_offer_comment_posted.send(sender=self, user=self.creator, obj=self, audience=get_user_model().objects.filter(id__in=followers_except_creator), session_id=session_id)
             
