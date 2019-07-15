@@ -72,7 +72,7 @@
     	{% endif %}
     	
     	{% if not SETTINGS.COSINNUS_IS_INTEGRATED_PORTAL %}
-	        <button type="button" class="btn btn-emphasized" style="float: none; margin: 0;" {% if not offer.creator == user %}href="{% url 'postman:write' recipients=offer.creator.username %}"{% else %}disabled="true"{% endif %}>
+	        <button type="button" class="btn btn-emphasized" style="float: none; margin: 0;" {% if not offer.creator == user %}href="{% url 'cosinnus:message-write' username=offer.creator.username %}"{% else %}disabled="true"{% endif %}>
 	            <ul class="media-list">
 	                <li class="media">
 	                    <a class="pull-left" href="#">

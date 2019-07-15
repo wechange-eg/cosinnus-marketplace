@@ -41,7 +41,7 @@
 				</span>
 			{% endif %}
 			<span class="">
-				<a {% if not item.creator == user %}href="{% url 'postman:write' recipients=item.creator.username %}"{% else %}disabled="true" class="pale-color no-select"{% endif %}>
+				<a {% if not item.creator == user %}href="{% url 'cosinnus:message-write' username=item.creator.username %}"{% else %}disabled="true" class="pale-color no-select"{% endif %}>
 					<i class="fas fa-fw fa-envelope"></i>
 		            {% trans "Send Message" %}
 				</a>
