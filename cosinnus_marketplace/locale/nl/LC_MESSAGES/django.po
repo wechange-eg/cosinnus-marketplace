@@ -3,397 +3,397 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-03 17:47+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2019-09-05 13:50+0200\n"
+"PO-Revision-Date: 2019-09-19 22:59+0200\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2.3\n"
 
 msgid "Marketplace"
-msgstr ""
+msgstr "Marktplaats"
 
 msgctxt "the_app"
 msgid "marketplace"
-msgstr ""
+msgstr "marktplaats"
 
 msgid "A user created a new offer"
-msgstr ""
+msgstr "Een gebruiker heeft een nieuwe aanbieding aangemaakt"
 
 #, python-format
 msgid "New offer by %(sender_name)s"
-msgstr ""
+msgstr "Nieuwe aanbieding door %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new offer"
-msgstr ""
+msgstr "%(sender_name)s heeft een nieuwe aanbieding aangemaakt"
 
 #, python-format
 msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
-msgstr ""
+msgstr "Een nieuwe aanbieding: “%(object_name)s” is aangemaakt in %(team_name)s."
 
 msgid "One of your offers expired"
-msgstr ""
+msgstr "Eén van uw aanbiedingen is verlopen"
 
 msgid "Your offer has expired"
-msgstr ""
+msgstr "Uw aanbieding is verlopen"
 
 #, python-format
 msgid "Offer \"%(object_name)s\" has expired."
-msgstr ""
+msgstr "Aanbieding “%(object_name)s” is verlopen."
 
 msgid "A user commented on one of your offers"
-msgstr ""
+msgstr "Een gebruiker heeft gereageerd op één van uw aanbiedingen"
 
 #, python-format
 msgid "%(sender_name)s commented on your offer"
-msgstr ""
+msgstr "%(sender_name)s heeft gereageerd op uw aanbieding"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your offers"
-msgstr ""
+msgstr "%(sender_name)s heeft gereageerd op één van uw aanbiedingen"
 
 #, python-format
 msgid "%(sender_name)s"
-msgstr ""
+msgstr "%(sender_name)s"
 
 msgid "A user commented on an offer you were tagged in"
-msgstr ""
+msgstr "Een gebruiker heeft gereageerd op een aanbieding waarin u bent getagt"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
-msgstr ""
+msgstr "%(sender_name)s heeft gereageerd op een aanbieding waarin u bent getagt"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
-msgstr ""
+msgstr "%(sender_name)s heeft gereageerd op een aanbieding waarin u bent getagt in %(team_name)s"
 
 msgid "A user created a new offer in a team you are following"
-msgstr ""
+msgstr "Een gebruiker heeft een nieuwe aanbieding aangemaakt in een team die u volgt"
 
 #, python-format
 msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr ""
+msgstr "Nieuwe aanbieding door %(sender_name)s in %(team_name)s (die u volgt)"
 
 #, python-format
 msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
-msgstr ""
+msgstr "%(sender_name)s heeft een nieuwe aanbieding aangemaakt in %(team_name)s (die u volgt)"
 
 #, python-format
 msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
-msgstr ""
+msgstr "Een nieuwe aanbieding: “%(object_name)s” is aangemaakt in %(team_name)s (die u volgt)."
 
 msgid "A user updated an offer you are following"
-msgstr ""
+msgstr "Een gebruiker heeft een aanbieding die u volgt bijgewerkt"
 
 #, python-format
 msgid "%(sender_name)s updated an offer you are following"
-msgstr ""
+msgstr "%(sender_name)s heeft een aanbieding die u volgt bijgewerkt"
 
 #, python-format
 msgid "An offer you are following: \"%(object_name)s\" was updated in %(team_name)s."
-msgstr ""
+msgstr "Een aanbieding die u volgt: “%(object_name)s” is bijgewerkt in %(team_name)s."
 
 msgid "A user commented on an offer you are following"
-msgstr ""
+msgstr "Een gebruiker heeft gereageerd op een aanbieding die u volgt"
 
 #, python-format
 msgid "%(sender_name)s commented on on an offer you are following"
-msgstr ""
+msgstr "%(sender_name)s heeft gereageerd op een aanbieding die u volgt"
 
 msgid "Current Offers"
-msgstr ""
+msgstr "Huidige Aanbiedingen"
 
 msgid "No current offers"
-msgstr ""
+msgstr "Geen huidige aanbiedingen"
 
 msgid "Created By"
-msgstr ""
+msgstr "Aangemaakt door"
 
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 msgid "Newest Created"
-msgstr ""
+msgstr "Nieuwste aangemaakt"
 
 msgid "Title"
-msgstr ""
+msgstr "Titel"
 
 msgid "Order Key"
-msgstr ""
+msgstr "Bestelsleutel"
 
 msgid "Looking for"
-msgstr ""
+msgstr "Is opzoek naar"
 
 msgid "Offering"
-msgstr ""
+msgstr "Biedt aan"
 
 msgid "Offer currently active?"
-msgstr ""
+msgstr "Aanbieding momenteel actief?"
 
 msgid "Description"
-msgstr ""
+msgstr "Beschrijving"
 
 msgid "Offer Category"
-msgstr ""
+msgstr "Aanbieding Categorie"
 
 msgid "Offer"
-msgstr ""
+msgstr "Aanbieding"
 
 msgid "Offers"
-msgstr ""
+msgstr "Aanbiedingen"
 
 #, python-format
 msgid "Offer: %(offer)s (%(type)s)"
-msgstr ""
+msgstr "Aanbieding: %(offer)s (%(type)s)"
 
 msgid "Creator"
-msgstr ""
+msgstr "Aanmaker"
 
 msgid "Created"
-msgstr ""
+msgstr "Aangemaakt"
 
 msgid "Last modified"
-msgstr ""
+msgstr "Laatst aangepast"
 
 msgid "Text"
-msgstr ""
+msgstr "Tekst"
 
 msgid "Comment"
-msgstr ""
+msgstr "Opmerking"
 
 msgid "Comments"
-msgstr ""
+msgstr "Opmerkingen"
 
 msgid "Back to Offers"
-msgstr ""
+msgstr "Terug naar Aanbiedingen"
 
 msgid "My Offers"
-msgstr ""
+msgstr "Mijn Aanbiedingen"
 
 msgid "Add Offer"
-msgstr ""
+msgstr "Voeg aanbieding toe"
 
 msgid "Misc"
-msgstr ""
+msgstr "Misc"
 
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 #, python-format
 msgid "%(link_start)s%(username)s%(link_end)s is looking for"
-msgstr ""
+msgstr "%(link_start)s%(username)s%(link_end)s is opzoek naar"
 
 #, python-format
 msgid "%(link_start)s%(username)s%(link_end)s is offering"
-msgstr ""
+msgstr "%(link_start)s%(username)s%(link_end)s heeft een aanbieding"
 
 msgid "Inactive"
-msgstr ""
+msgstr "Inactief"
 
 msgid "Delete"
-msgstr ""
+msgstr "Verwijder"
 
 msgid "Edit"
-msgstr ""
+msgstr "Wijzig"
 
 msgid "Deactivate"
-msgstr ""
+msgstr "Deactiveer"
 
 msgid "Reactivate"
-msgstr ""
+msgstr "Reactiveer"
 
 msgid "Activate"
-msgstr ""
+msgstr "Activeer"
 
 #, python-format
 msgid "Do you really want to delete offer „%(title)s“?"
-msgstr ""
+msgstr "Weet u zeker dat u „%(title)s“ wilt verwijderen?"
 
 msgid "Delete offer"
-msgstr ""
+msgstr "Verwijder aanbieding"
 
 #, python-format
 msgid "Do you really want to deactivate offer „%(title)s“?"
-msgstr ""
+msgstr "Weet u zeker dat u „%(title)s“ aanbieding wilt deactiveren?"
 
 msgid "Deactivate offer"
-msgstr ""
+msgstr "Deactiveer aanbieding"
 
 #, python-format
 msgid "Do you really want to reactivate offer „%(title)s“?"
-msgstr ""
+msgstr "Weet u zeker dat u de aanbieding „%(title)s“ wilt reactiveren?"
 
 #, python-format
 msgid "Do you really want to activate offer „%(title)s“?"
-msgstr ""
+msgstr "Weet u zeker dat u de aanbieding „%(title)s“ wilt activeren?"
 
 msgid "Reactivate offer"
-msgstr ""
+msgstr "Reactiveer aanbieding"
 
 msgid "Activate offer"
-msgstr ""
+msgstr "Activeer aanbieding"
 
 msgid "Write comment..."
-msgstr ""
+msgstr "Schrijf opmerking…"
 
 msgid "Post"
-msgstr ""
+msgstr "Plaats"
 
 msgid "This offer is inactive. It is only visible to you and not listed in the marketplace. You can reactivate it below."
-msgstr ""
+msgstr "Deze aanbieding is inactief. Het is alleen zichtbaar voor u en wordt dus niet getoond op de marktplaats. U kunt het hieronder reactiveren."
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr ""
+msgstr "Er is een fout opgetreden in een van de velden die u heeft ingevoerd. Corrigeer dit voordat u opslaat!"
 
 msgid "Offer type"
-msgstr ""
+msgstr "Aanbieding type"
 
 msgid "Offer Title"
-msgstr ""
+msgstr "Aanbieding Titel"
 
 msgid "Enter a description for your offer."
-msgstr ""
+msgstr "Voer een beschrijving in voor uw aanbieding."
 
 msgid "Phone number"
-msgstr ""
+msgstr "Telefoonnummer"
 
 msgid "Your phone number is only visible for registered users"
-msgstr ""
+msgstr "Uw telefoonnummer is alleen zichtbaar voor geregistreerde gebruikers"
 
 msgid "Categories"
-msgstr ""
+msgstr "Categorieën"
 
 msgid "Check all categories that fit your offer"
-msgstr ""
+msgstr "Vink alle categorieën aan die bij uw aanbieding passen"
 
 msgid "Upload a file or image or attach an existing one"
-msgstr ""
+msgstr "Upload een bestand of afbeelding of voeg een bestaande toe"
 
 msgid "The first uploaded image will be displayed as a wallpaper"
-msgstr ""
+msgstr "De eerste geüploade afbeelding wordt als achtergrond weergegeven"
 
 msgid "Offer is active"
-msgstr ""
+msgstr "Aanbieding is actief"
 
 msgid "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
-msgstr ""
+msgstr "Alleen actieve aanbiedingen worden op de Marktplaats weergegeven. Uw aanbieding blijft 4 weken actief. Daarna kunt u het op elk gewenst moment opnieuw activeren."
 
 msgid "Create"
-msgstr ""
+msgstr "Maak aan"
 
 msgid "Save"
-msgstr ""
+msgstr "Opslaan"
 
 msgid "All"
-msgstr ""
+msgstr "Alles"
 
 msgid "Wanted"
-msgstr ""
+msgstr "Gezocht"
 
 msgid "No offers"
-msgstr ""
+msgstr "Geen aanbiedingen"
 
 msgid "There are no offers"
-msgstr ""
+msgstr "Er zijn geen aanbiedingen"
 
 msgid "(No description set)"
-msgstr ""
+msgstr "(Geen beschrijving toegewezen)"
 
 msgid "offered in"
-msgstr ""
+msgstr "aangeboden in"
 
 #, python-format
 msgid "Contact %(username)s directly"
-msgstr ""
+msgstr "Contact %(username)s direct"
 
 msgid "Only shown for registered users"
-msgstr ""
+msgstr "Alleen getoond voor geregistreerde gebruikers"
 
 msgid "Send Message"
-msgstr ""
+msgstr "Verzonden Bericht"
 
 msgid "expires on"
-msgstr ""
+msgstr "verloopt op"
 
 msgid "expired on"
-msgstr ""
+msgstr "is verlopen op"
 
 msgid "You created an offer"
-msgstr ""
+msgstr "U heeft een evenement aangemaakt"
 
 msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "created an offer"
-msgstr ""
+msgstr "heeft een evenement aangemaakt"
 
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 msgid "There are no current offers"
-msgstr ""
+msgstr "Er zijn geen huidige aanbiedingen"
 
 #, python-format
 msgid "Offer \"%(title)s\" was edited successfully."
-msgstr ""
+msgstr "Aanbieding “%(title)s” is succesvol gewijzigd."
 
 #, python-format
 msgid "Offer \"%(title)s\" could not be edited."
-msgstr ""
+msgstr "Aanbieding “%(title)s” kon niet worden gewijzigd."
 
 #, python-format
 msgid "Offer \"%(title)s\" was added successfully."
-msgstr ""
+msgstr "Aanbieding “%(title)s” kon niet succesvol worden toegevoegd."
 
 #, python-format
 msgid "Offer \"%(title)s\" was saved successfully, but is not active yet."
-msgstr ""
+msgstr "Aanbieding “%(title)s” is succesvol opgeslagen, maar nog niet actief."
 
 #, python-format
 msgid "Offer \"%(title)s\" could not be added."
-msgstr ""
+msgstr "Aanbieding “%(title)s” kon niet worden toegevoegd."
 
 #, python-format
 msgid "Offer \"%(title)s\" was deleted successfully."
-msgstr ""
+msgstr "Aanbieding “%(title)s” is succesvol verwijderd."
 
 #, python-format
 msgid "Offer \"%(title)s\" could not be deleted."
-msgstr ""
+msgstr "Aanbieding “%(title)s” kon niet succesvol worden verwijderd."
 
 msgid "The offer you requested is no longer active. Sorry!"
-msgstr ""
+msgstr "De aangevraagde aanbieding is niet langer actief. Sorry!"
 
 msgid "The complete request can only be sent via POST!"
-msgstr ""
+msgstr "Het volledige verzoek kan alleen via POST worden verzonden!"
 
 msgid "Invalid action for this offer. The request could not be completed!"
-msgstr ""
+msgstr "Ongeldige actie voor deze aanbieding. Het verzoek kon niet worden voltooid!"
 
 msgid "The offer is already active"
-msgstr ""
+msgstr "Het aanbod is al actief"
 
 msgid "The offer is already deactivated"
-msgstr ""
+msgstr "Het aanbod is al gedeactiveerd"
 
 msgid "The offer was deactivated successfully."
-msgstr ""
+msgstr "Het aanbod is succesvol gedeactiveerd."
 
 msgid "The offer was reactivated successfully."
-msgstr ""
+msgstr "Het aanbod is succesvol gereactiveerd."
 
 msgid "The offer was activated successfully."
-msgstr ""
+msgstr "Het aanbod is succesvol geactiveerd."
 
 msgid "Your comment was added successfully."
-msgstr ""
+msgstr "Uw opmerking is succesvol toegevoegd."
 
 msgid "Your comment was deleted successfully."
-msgstr ""
+msgstr "Uw opmerking is succesvol verwijderd."
