@@ -95,6 +95,10 @@ class Offer(LikeableObjectMixin, BaseTaggableObjectModel):
         readable = _('Offer: %(offer)s (%(type)s)') % {'offer': self.title, 'type': type_verbose}
         return readable
     
+    def get_icon(self):
+        """ Returns the font-awesome icon specific to this object type """
+        return 'fa-exchange-alt'
+    
     def save(self, *args, **kwargs):
         created = bool(self.pk) == False
         super(Offer, self).save(*args, **kwargs)
