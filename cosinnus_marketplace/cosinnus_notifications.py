@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 import django.dispatch as dispatch
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext_lazy as _, ngettext_lazy as n_
 
 """ Cosinnus:Notifications configuration etherpad. 
     See http://git.sinnwerkstatt.com/cosinnus/cosinnus-core/wikis/cosinnus-notifications-guidelines.
@@ -48,6 +48,10 @@ notifications = {
         'default': True,
         'moderatable_content': True,
         
+        'alert_text': _('%(sender_name)s created the offer %(object_name)s'),
+        'alert_text_multi': _('%(sender_name)s created %(count)d offers'),
+        'alert_multi_type': 2,
+        
         'is_html': True,
         'snippet_type': 'marketplace',
         'event_text': _('New offer by %(sender_name)s'),
@@ -68,6 +72,10 @@ notifications = {
         'default': True,
         'allow_creator_as_audience': True,
         
+        'alert_text': _('Your offer %(object_name)s expired'),
+        'alert_text_multi': _('%(count)d of your offers expired'),
+        'alert_multi_type': 2,
+        
         'is_html': True,
         'snippet_type': 'marketplace',
         'event_text': _("Your offer has expired"),
@@ -87,6 +95,11 @@ notifications = {
         'default': True,
         'moderatable_content': True,
         
+        'alert_text': _('%(sender_name)s commented on your offer %(object_name)s'),
+        'alert_text_multi': n_('%(sender_name)s and %(count_minus_one)d other commented on your offer %(object_name)s',
+                               '%(sender_name)s and %(count_minus_one)d others commented on your offer %(object_name)s', 'count_minus_one'),
+        'alert_multi_type': 1,
+        
         'is_html': True,
         'snippet_type': 'marketplace',
         'event_text': _('%(sender_name)s commented on your offer'),
@@ -97,6 +110,7 @@ notifications = {
             'object_name': 'offer.title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'offer.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'alert_image_url': 'get_icon',
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
@@ -108,6 +122,12 @@ notifications = {
         'signals': [tagged_offer_comment_posted],
         'default': True,
         
+        'alert_text': _('%(sender_name)s commented on the offer %(object_name)s'),
+        'alert_text_multi': n_('%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s',
+                               '%(sender_name)s and %(count_minus_one)d others commented on the offer %(object_name)s', 'count_minus_one'),
+        'alert_multi_type': 1,
+        'alert_reason': _('You were tagged in this offer'),
+        
         'is_html': True,
         'snippet_type': 'marketplace',
         'event_text': _('%(sender_name)s commented on an offer you were tagged in'),
@@ -117,6 +137,7 @@ notifications = {
             'object_name': 'offer.title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'offer.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'alert_image_url': 'get_icon',
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
@@ -131,6 +152,10 @@ notifications = {
         'supercedes_notifications': ['offer_created'],
         'requires_object_state_check': 'group.is_user_following',
         'hidden': True,
+        
+        'alert_text': _('%(sender_name)s created the offer %(object_name)s'),
+        'alert_text_multi': _('%(sender_name)s created %(count)d offers'),
+        'alert_multi_type': 2,
         
         'is_html': True,
         'snippet_type': 'marketplace',
@@ -151,6 +176,10 @@ notifications = {
         'requires_object_state_check': 'is_user_following',
         'hidden': True,
         
+        'alert_text': _('%(sender_name)s updated the offer %(object_name)s'),
+        'alert_multi_type': 1,
+        'alert_reason': _('You are following this offer'),
+        
         'is_html': True,
         'snippet_type': 'marketplace',
         'event_text': _('%(sender_name)s updated an offer you are following'),
@@ -170,6 +199,12 @@ notifications = {
         'requires_object_state_check': 'offer.is_user_following',
         'hidden': True,
         
+        'alert_text': _('%(sender_name)s commented on the offer %(object_name)s'),
+        'alert_text_multi': n_('%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s',
+                               '%(sender_name)s and %(count_minus_one)d others commented on the offer %(object_name)s', 'count_minus_one'),
+        'alert_multi_type': 1,
+        'alert_reason': _('You are following this offer'),
+        
         'is_html': True,
         'snippet_type': 'marketplace',
         'event_text': _('%(sender_name)s commented on on an offer you are following'),
@@ -180,6 +215,7 @@ notifications = {
             'object_name': 'offer.title', 
             'object_url': 'get_absolute_url', 
             'image_url': 'offer.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
+            'alert_image_url': 'get_icon',
             'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
             'sub_object_text': 'text',
         },
