@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 import django.dispatch as dispatch
-from django.utils.translation import ugettext_lazy as _, ngettext_lazy as n_
+from django.utils.translation import ugettext_lazy as _, ngettext_lazy
 
 """ Cosinnus:Notifications configuration etherpad. 
     See http://git.sinnwerkstatt.com/cosinnus/cosinnus-core/wikis/cosinnus-notifications-guidelines.
@@ -96,7 +96,7 @@ notifications = {
         'moderatable_content': True,
         
         'alert_text': _('%(sender_name)s commented on your offer %(object_name)s'),
-        'alert_text_multi': n_('%(sender_name)s and %(count_minus_one)d other commented on your offer %(object_name)s',
+        'alert_text_multi': ngettext_lazy('%(sender_name)s and %(count_minus_one)d other commented on your offer %(object_name)s',
                                '%(sender_name)s and %(count_minus_one)d others commented on your offer %(object_name)s', 'count_minus_one'),
         'alert_multi_type': 1,
         
@@ -123,7 +123,7 @@ notifications = {
         'default': True,
         
         'alert_text': _('%(sender_name)s commented on the offer %(object_name)s'),
-        'alert_text_multi': n_('%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s',
+        'alert_text_multi': ngettext_lazy('%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s',
                                '%(sender_name)s and %(count_minus_one)d others commented on the offer %(object_name)s', 'count_minus_one'),
         'alert_multi_type': 1,
         'alert_reason': _('You were tagged in this offer'),
@@ -200,7 +200,7 @@ notifications = {
         'hidden': True,
         
         'alert_text': _('%(sender_name)s commented on the offer %(object_name)s'),
-        'alert_text_multi': n_('%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s',
+        'alert_text_multi': ngettext_lazy('%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s',
                                '%(sender_name)s and %(count_minus_one)d others commented on the offer %(object_name)s', 'count_minus_one'),
         'alert_multi_type': 1,
         'alert_reason': _('You are following this offer'),

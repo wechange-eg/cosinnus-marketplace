@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 19:31+0100\n"
+"POT-Creation-Date: 2020-02-02 16:09+0100\n"
 "PO-Revision-Date: 2016-10-18 16:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -28,6 +28,14 @@ msgid "A user created a new offer"
 msgstr ""
 
 #, python-format
+msgid "%(sender_name)s created the offer %(object_name)s"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s created %(count)d offers"
+msgstr ""
+
+#, python-format
 msgid "New offer by %(sender_name)s"
 msgstr ""
 
@@ -42,6 +50,14 @@ msgstr ""
 msgid "One of your offers expired"
 msgstr ""
 
+#, python-format
+msgid "Your offer %(object_name)s expired"
+msgstr ""
+
+#, python-format
+msgid "%(count)d of your offers expired"
+msgstr ""
+
 msgid "Your offer has expired"
 msgstr ""
 
@@ -51,6 +67,16 @@ msgstr ""
 
 msgid "A user commented on one of your offers"
 msgstr ""
+
+#, python-format
+msgid "%(sender_name)s commented on your offer %(object_name)s"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your offer %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your offer %(object_name)s"
+msgstr[0] ""
+msgstr[1] ""
 
 #, python-format
 msgid "%(sender_name)s commented on your offer"
@@ -65,6 +91,19 @@ msgid "%(sender_name)s"
 msgstr ""
 
 msgid "A user commented on an offer you were tagged in"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s commented on the offer %(object_name)s"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the offer %(object_name)s"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "You were tagged in this offer"
 msgstr ""
 
 #, python-format
@@ -91,6 +130,13 @@ msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s (which you 
 msgstr ""
 
 msgid "A user updated an offer you are following"
+msgstr ""
+
+#, python-format
+msgid "%(sender_name)s updated the offer %(object_name)s"
+msgstr ""
+
+msgid "You are following this offer"
 msgstr ""
 
 #, python-format

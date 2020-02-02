@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 19:31+0100\n"
+"POT-Creation-Date: 2020-02-02 16:09+0100\n"
 "PO-Revision-Date: 2019-05-02 15:44+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -28,6 +28,16 @@ msgstr "дошка аб'яў"
 msgid "A user created a new offer"
 msgstr "Карыстальнік(-ца) стварыў(-ла) новую прапанову"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new offer"
+msgid "%(sender_name)s created the offer %(object_name)s"
+msgstr "%(sender_name)s стварыў(-ла) новую прапанову"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new offer"
+msgid "%(sender_name)s created %(count)d offers"
+msgstr "%(sender_name)s стварыў(-ла) новую прапанову"
+
 #, python-format
 msgid "New offer by %(sender_name)s"
 msgstr "Новая прапанова ад %(sender_name)s"
@@ -43,6 +53,16 @@ msgstr "Новая прапанова: \"%(object_name)s\" створана ў %
 msgid "One of your offers expired"
 msgstr "Адна з Вашых прапаноў скончылася"
 
+#, fuzzy, python-format
+#| msgid "Offer \"%(object_name)s\" has expired."
+msgid "Your offer %(object_name)s expired"
+msgstr "Прапанова \"%(object_name)s\" скончылася."
+
+#, fuzzy, python-format
+#| msgid "One of your offers expired"
+msgid "%(count)d of your offers expired"
+msgstr "Адна з Вашых прапаноў скончылася"
+
 msgid "Your offer has expired"
 msgstr "Ваша прапанова скончылася"
 
@@ -52,6 +72,20 @@ msgstr "Прапанова \"%(object_name)s\" скончылася."
 
 msgid "A user commented on one of your offers"
 msgstr "Карыстальнік(-ца) пракаментаваў(-ла) адну з Вашых прапаноў"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid "%(sender_name)s commented on your offer %(object_name)s"
+msgstr "%(sender_name)s пракаментаваў(-ла) Вашу прапанову"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your offer %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your offer %(object_name)s"
+msgstr[0] "%(sender_name)s пракаментаваў(-ла) Вашу прапанову"
+msgstr[1] "%(sender_name)s пракаментаваў(-ла) Вашу прапанову"
+msgstr[2] "%(sender_name)s пракаментаваў(-ла) Вашу прапанову"
+msgstr[3] "%(sender_name)s пракаментаваў(-ла) Вашу прапанову"
 
 #, python-format
 msgid "%(sender_name)s commented on your offer"
@@ -67,6 +101,25 @@ msgstr "%(sender_name)s"
 
 msgid "A user commented on an offer you were tagged in"
 msgstr "Карыстальнік(-ца) пракаментаваў(-ла) прапанову, у якой Вы былі пазначаны"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid "%(sender_name)s commented on the offer %(object_name)s"
+msgstr "%(sender_name)s пракаментаваў(-ла) Вашу прапанову"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the offer %(object_name)s"
+msgstr[0] "%(sender_name)s пракаментаваў(-ла) Вашу прапанову"
+msgstr[1] "%(sender_name)s пракаментаваў(-ла) Вашу прапанову"
+msgstr[2] "%(sender_name)s пракаментаваў(-ла) Вашу прапанову"
+msgstr[3] "%(sender_name)s пракаментаваў(-ла) Вашу прапанову"
+
+#, fuzzy
+#| msgid "A user created a new offer"
+msgid "You were tagged in this offer"
+msgstr "Карыстальнік(-ца) стварыў(-ла) новую прапанову"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
@@ -93,6 +146,14 @@ msgstr "Новая прапанова \"%(object_name)s\" створана ў %(
 
 msgid "A user updated an offer you are following"
 msgstr "Карыстальнік(-ца) абнавіў(-ла) прапанову, за якой Вы сочыце"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s updated an offer you are following"
+msgid "%(sender_name)s updated the offer %(object_name)s"
+msgstr "%(sender_name)s абнавіў(-ла) прапанову, за якой Вы сочыце"
+
+msgid "You are following this offer"
+msgstr ""
 
 #, python-format
 msgid "%(sender_name)s updated an offer you are following"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 19:31+0100\n"
+"POT-Creation-Date: 2020-02-02 16:09+0100\n"
 "PO-Revision-Date: 2018-09-14 18:29+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -28,6 +28,16 @@ msgstr "marché virtuel"
 msgid "A user created a new offer"
 msgstr "Un utilisateur a créé une nouvelle offre"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new offer"
+msgid "%(sender_name)s created the offer %(object_name)s"
+msgstr "%(sender_name)s a créé une nouvelle offre"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new offer"
+msgid "%(sender_name)s created %(count)d offers"
+msgstr "%(sender_name)s a créé une nouvelle offre"
+
 #, python-format
 msgid "New offer by %(sender_name)s"
 msgstr "Nouvelle offre de %(sender_name)s"
@@ -43,6 +53,16 @@ msgstr "Une nouvelle offre : \"%(object_name)s\" a été créée dans %(team_nam
 msgid "One of your offers expired"
 msgstr "L’une de tes offres a expiré"
 
+#, fuzzy, python-format
+#| msgid "Offer \"%(object_name)s\" has expired."
+msgid "Your offer %(object_name)s expired"
+msgstr "L'offre \"%(object_name)s\" a expiré."
+
+#, fuzzy, python-format
+#| msgid "One of your offers expired"
+msgid "%(count)d of your offers expired"
+msgstr "L’une de tes offres a expiré"
+
 msgid "Your offer has expired"
 msgstr "Ton offre a expiré"
 
@@ -52,6 +72,18 @@ msgstr "L'offre \"%(object_name)s\" a expiré."
 
 msgid "A user commented on one of your offers"
 msgstr "Un utilisateur a commenté l'une de tes offres"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid "%(sender_name)s commented on your offer %(object_name)s"
+msgstr "%(sender_name)s a commenté ton offre"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your offer %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your offer %(object_name)s"
+msgstr[0] "%(sender_name)s a commenté ton offre"
+msgstr[1] "%(sender_name)s a commenté ton offre"
 
 #, python-format
 msgid "%(sender_name)s commented on your offer"
@@ -67,6 +99,23 @@ msgstr "%(sender_name)s"
 
 msgid "A user commented on an offer you were tagged in"
 msgstr "Un utilisateur a commenté une offre sur laquelle tu es tagué"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid "%(sender_name)s commented on the offer %(object_name)s"
+msgstr "%(sender_name)s a commenté ton offre"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the offer %(object_name)s"
+msgstr[0] "%(sender_name)s a commenté ton offre"
+msgstr[1] "%(sender_name)s a commenté ton offre"
+
+#, fuzzy
+#| msgid "A user created a new offer"
+msgid "You were tagged in this offer"
+msgstr "Un utilisateur a créé une nouvelle offre"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
@@ -100,6 +149,14 @@ msgstr "Une nouvelle offre : \"%(object_name)s\" a été créée dans %(team_nam
 #| msgid "A user commented on an offer you were tagged in"
 msgid "A user updated an offer you are following"
 msgstr "Un utilisateur a commenté une offre sur laquelle tu es tagué"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on an offer you were tagged in"
+msgid "%(sender_name)s updated the offer %(object_name)s"
+msgstr "%(sender_name)s a commenté une offre sur laquelle tu es tagué"
+
+msgid "You are following this offer"
+msgstr ""
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s commented on an offer you were tagged in"

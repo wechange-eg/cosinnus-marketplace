@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-14 19:31+0100\n"
-"PO-Revision-Date: 2019-07-07 14:02+0100\n"
+"POT-Creation-Date: 2020-02-02 16:09+0100\n"
+"PO-Revision-Date: 2020-02-02 16:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -29,6 +29,16 @@ msgid "A user created a new offer"
 msgstr "Ein Mitglied hat ein neues Inserat erstellt"
 
 #, python-format
+#| msgid "%(sender_name)s created a new offer"
+msgid "%(sender_name)s created the offer %(object_name)s"
+msgstr "%(sender_name)s hat das Inserat %(object_name)s erstellt"
+
+#, python-format
+#| msgid "%(sender_name)s created a new offer"
+msgid "%(sender_name)s created %(count)d offers"
+msgstr "%(sender_name)s hat %(count)d neue Inserate erstellt"
+
+#, python-format
 msgid "New offer by %(sender_name)s"
 msgstr "Neues Inserat von %(sender_name)s"
 
@@ -38,10 +48,21 @@ msgstr "%(sender_name)s hat ein neues Inserat erstellt"
 
 #, python-format
 msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
-msgstr "Ein neues Inserat  \"%(object_name)s\" wurde in %(team_name)s erstellt."
+msgstr ""
+"Ein neues Inserat  \"%(object_name)s\" wurde in %(team_name)s erstellt."
 
 msgid "One of your offers expired"
 msgstr "Eins deiner Inserate ist abgelaufen"
+
+#, python-format
+#| msgid "Offer \"%(object_name)s\" has expired."
+msgid "Your offer %(object_name)s expired"
+msgstr "Dein Inserat %(object_name)s ist abgelaufen"
+
+#, python-format
+#| msgid "One of your offers expired"
+msgid "%(count)d of your offers expired"
+msgstr "%(count)d deiner Inserate sind abgelaufen"
 
 msgid "Your offer has expired"
 msgstr "Dein Inserat ist abgelaufen"
@@ -52,6 +73,26 @@ msgstr "Inserat  \"%(object_name)s\" ist abgelaufen."
 
 msgid "A user commented on one of your offers"
 msgstr "Ein Benutzer hat eines deiner Inserate kommentiert"
+
+#, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid "%(sender_name)s commented on your offer %(object_name)s"
+msgstr "%(sender_name)s hat dein Inserat %(object_name)s kommentiert"
+
+#, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid ""
+"%(sender_name)s and %(count_minus_one)d other commented on your offer "
+"%(object_name)s"
+msgid_plural ""
+"%(sender_name)s and %(count_minus_one)d others commented on your offer "
+"%(object_name)s"
+msgstr[0] ""
+"%(sender_name)s und %(count_minus_one)d weiterer Benutzer haben dein Inserat "
+"%(object_name)s kommentiert"
+msgstr[1] ""
+"%(sender_name)s und %(count_minus_one)d weitere Benutzer haben dein Inserat "
+"%(object_name)s kommentiert"
 
 #, python-format
 msgid "%(sender_name)s commented on your offer"
@@ -69,15 +110,44 @@ msgid "A user commented on an offer you were tagged in"
 msgstr "Ein Mitglied hat ein Inserat kommentiert in dem du getaggt bist"
 
 #, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid "%(sender_name)s commented on the offer %(object_name)s"
+msgstr "%(sender_name)s hat das Inserat %(object_name)s kommentiert"
+
+#, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid ""
+"%(sender_name)s and %(count_minus_one)d other commented on the offer "
+"%(object_name)s"
+msgid_plural ""
+"%(sender_name)s and %(count_minus_one)d others commented on the offer "
+"%(object_name)s"
+msgstr[0] ""
+"%(sender_name)s und %(count_minus_one)d weiterer Benutzer haben das Inserat "
+"%(object_name)s kommentiert"
+msgstr[1] ""
+"%(sender_name)s und %(count_minus_one)d weitere Benutzer haben dein Inserat "
+"%(object_name)s kommentiert"
+
+#| msgid "You created an offer"
+msgid "You were tagged in this offer"
+msgstr "Du wurdest in diesem Inserat getaggt"
+
+#, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
 msgstr "%(sender_name)s hat ein Inserat kommentiert in dem du getaggt bist"
 
 #, python-format
-msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
-msgstr "%(sender_name)s hat ein Inserat kommentiert in dem du getaggt bist in %(team_name)s"
+msgid ""
+"%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
+msgstr ""
+"%(sender_name)s hat ein Inserat kommentiert in dem du getaggt bist in "
+"%(team_name)s"
 
 msgid "A user created a new offer in a team you are following"
-msgstr "Ein Mitglied hat ein neues Inserat in einem Projekt oder Gruppe (dem du folgst) erstellt"
+msgstr ""
+"Ein Mitglied hat ein neues Inserat in einem Projekt oder Gruppe (dem du "
+"folgst) erstellt"
 
 #, python-format
 msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
@@ -85,22 +155,39 @@ msgstr "Neues Inserat von %(sender_name)s in %(team_name)s (dem du folgst)"
 
 #, python-format
 msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
-msgstr "%(sender_name)s hat ein neues Inserat erstellt in %(team_name)s (dem du folgst)"
+msgstr ""
+"%(sender_name)s hat ein neues Inserat erstellt in %(team_name)s (dem du "
+"folgst)"
 
 #, python-format
-msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
-msgstr "Ein neues Inserat  \"%(object_name)s\" wurde in %(team_name)s (dem du folgst) erstellt."
+msgid ""
+"A new offer: \"%(object_name)s\" was created in %(team_name)s (which you "
+"follow)."
+msgstr ""
+"Ein neues Inserat  \"%(object_name)s\" wurde in %(team_name)s (dem du "
+"folgst) erstellt."
 
 msgid "A user updated an offer you are following"
 msgstr "Ein Mitglied hat ein Inserat (dem du folgst) geändert"
+
+#, python-format
+#| msgid "%(sender_name)s updated an offer you are following"
+msgid "%(sender_name)s updated the offer %(object_name)s"
+msgstr "%(sender_name)s hat das Inserat %(object_name)s geändert"
+
+msgid "You are following this offer"
+msgstr "Du folgst diesem Inserat"
 
 #, python-format
 msgid "%(sender_name)s updated an offer you are following"
 msgstr "%(sender_name)s hat ein Inserat (dem du folgst) geändert"
 
 #, python-format
-msgid "An offer you are following: \"%(object_name)s\" was updated in %(team_name)s."
-msgstr "Ein Inserat  \"%(object_name)s\" (dem du folgst) wurde in %(team_name)s geändert."
+msgid ""
+"An offer you are following: \"%(object_name)s\" was updated in %(team_name)s."
+msgstr ""
+"Ein Inserat  \"%(object_name)s\" (dem du folgst) wurde in %(team_name)s "
+"geändert."
 
 msgid "A user commented on an offer you are following"
 msgstr "Ein Mitglied hat ein Inserat (dem du folgst) kommentiert"
@@ -248,11 +335,19 @@ msgstr "Kommentar schreiben..."
 msgid "Post"
 msgstr "Posten"
 
-msgid "This offer is inactive. It is only visible to you and not listed in the marketplace. You can reactivate it below."
-msgstr "Dieses Inserat is inaktiv. Es ist nur für dich sichtbar und wird nicht im Marktplatz angezeigt. Du kannst es unten reaktivieren."
+msgid ""
+"This offer is inactive. It is only visible to you and not listed in the "
+"marketplace. You can reactivate it below."
+msgstr ""
+"Dieses Inserat is inaktiv. Es ist nur für dich sichtbar und wird nicht im "
+"Marktplatz angezeigt. Du kannst es unten reaktivieren."
 
-msgid "There was an error in one of the fields you entered. Please correct it before saving!"
-msgstr "In einem der eingegebenen Felder trat ein Fehler auf. Bitte korrigiere ihn vor dem Speichern!"
+msgid ""
+"There was an error in one of the fields you entered. Please correct it "
+"before saving!"
+msgstr ""
+"In einem der eingegebenen Felder trat ein Fehler auf. Bitte korrigiere ihn "
+"vor dem Speichern!"
 
 msgid "Offer type"
 msgstr "Inseratstyp"
@@ -276,7 +371,8 @@ msgid "Check all categories that fit your offer"
 msgstr "Markiere alle Kategorien, die auf dein Inserat zutreffen"
 
 msgid "Upload a file or image or attach an existing one"
-msgstr "Lade eine Datei oder Bild hoch oder wähle ein vorhandes zum Anhängen aus"
+msgstr ""
+"Lade eine Datei oder Bild hoch oder wähle ein vorhandes zum Anhängen aus"
 
 msgid "The first uploaded image will be displayed as a wallpaper"
 msgstr "Das erste hochgeladene Bild wird als Hintergrundbild angezeigt"
@@ -284,8 +380,12 @@ msgstr "Das erste hochgeladene Bild wird als Hintergrundbild angezeigt"
 msgid "Offer is active"
 msgstr "Inserat ist aktiv"
 
-msgid "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
-msgstr "Nur aktive Inserate werden im Marktplatz angezeigt. Dein Inserat wird 4 Wochen lang aktiv bleiben. Danach kannst du es jederzeit reaktivieren."
+msgid ""
+"Only active offers will be listed in the Marketplace. Your offer will stay "
+"active for 4 weeks. After that, you can reactivate it at any time."
+msgstr ""
+"Nur aktive Inserate werden im Marktplatz angezeigt. Dein Inserat wird 4 "
+"Wochen lang aktiv bleiben. Danach kannst du es jederzeit reaktivieren."
 
 msgid "Create"
 msgstr "Erstellen"
@@ -330,7 +430,9 @@ msgstr "abgelaufen am"
 msgid "You created an offer"
 msgstr "Du hast ein Inserat erstellt"
 
-msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
+msgctxt ""
+"This appears next to new items in the timeline, as in '<Jane> created a new "
+"item'"
 msgid "created an offer"
 msgstr "hat ein Inserat erstellt"
 
@@ -354,7 +456,8 @@ msgstr "Inserat \"%(title)s\" wurde erfolgreich eingestellt."
 
 #, python-format
 msgid "Offer \"%(title)s\" was saved successfully, but is not active yet."
-msgstr "Inserat \"%(title)s\" wurde erfolgreich erstellt, ist aber noch nicht aktiv."
+msgstr ""
+"Inserat \"%(title)s\" wurde erfolgreich erstellt, ist aber noch nicht aktiv."
 
 #, python-format
 msgid "Offer \"%(title)s\" could not be added."
