@@ -53,9 +53,7 @@ notifications = {
         'alert_multi_type': 2,
         
         'is_html': True,
-        'snippet_type': 'marketplace',
-        'event_text': _('New offer by %(sender_name)s'),
-        'notification_text': _('%(sender_name)s created a new offer'),
+        'event_text': _('%(sender_name)s created a new offer'),
         'subject_text': _('A new offer: "%(object_name)s" was created in %(team_name)s.'),
         'data_attributes': {
             'object_name': 'title', 
@@ -77,9 +75,7 @@ notifications = {
         'alert_multi_type': 2,
         
         'is_html': True,
-        'snippet_type': 'marketplace',
-        'event_text': _("Your offer has expired"),
-        'notification_text': _('Your offer has expired'),
+        'event_text': _('Your offer has expired'),
         'subject_text': _('Offer "%(object_name)s" has expired.'),
         'data_attributes': {
             'object_name': 'title', 
@@ -101,18 +97,18 @@ notifications = {
         'alert_multi_type': 1,
         
         'is_html': True,
-        'snippet_type': 'marketplace',
         'event_text': _('%(sender_name)s commented on your offer'),
-        'notification_text': _('%(sender_name)s commented on one of your offers'),
         'subject_text': _('%(sender_name)s commented on one of your offers'),
-        'sub_event_text': _('%(sender_name)s'),
+        'display_object_name': False,
         'data_attributes': {
             'object_name': 'offer.title', 
+            'object_text': 'text',
             'object_url': 'get_absolute_url', 
             'image_url': 'offer.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
-            'sub_object_text': 'text',
+            'sub_object_name': 'offer.title', 
+            'sub_object_text': 'offer.note',
+            'sub_object_icon': 'offer.get_icon',
         },
     },    
     'tagged_offer_comment_posted': {
@@ -129,22 +125,20 @@ notifications = {
         'alert_reason': _('You were tagged in this offer'),
         
         'is_html': True,
-        'snippet_type': 'marketplace',
         'event_text': _('%(sender_name)s commented on an offer you were tagged in'),
         'subject_text': _('%(sender_name)s commented on an offer you were tagged in in %(team_name)s'),
-        'sub_event_text': _('%(sender_name)s'),
+        'display_object_name': False,
         'data_attributes': {
             'object_name': 'offer.title', 
+            'object_text': 'text',
             'object_url': 'get_absolute_url', 
             'image_url': 'offer.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
-            'sub_object_text': 'text',
+            'sub_object_name': 'offer.title', 
+            'sub_object_text': 'offer.note',
+            'sub_object_icon': 'offer.get_icon',
         },
     },
-    
-    
-    
     'followed_group_offer_created': {
         'label': _('A user created a new offer in a team you are following'), 
         'signals': [followed_group_offer_created],
@@ -158,9 +152,7 @@ notifications = {
         'alert_multi_type': 2,
         
         'is_html': True,
-        'snippet_type': 'marketplace',
-        'event_text': _('New offer by %(sender_name)s in %(team_name)s (which you follow)'),
-        'notification_text': _('%(sender_name)s created a new offer in %(team_name)s (which you follow)'),
+        'event_text': _('%(sender_name)s created a new offer in %(team_name)s (which you follow)'),
         'subject_text': _('A new offer: "%(object_name)s" was created in %(team_name)s (which you follow).'),
         'data_attributes': {
             'object_name': 'title', 
@@ -181,9 +173,7 @@ notifications = {
         'alert_reason': _('You are following this offer'),
         
         'is_html': True,
-        'snippet_type': 'marketplace',
         'event_text': _('%(sender_name)s updated an offer you are following'),
-        'notification_text': _('%(sender_name)s updated an offer you are following'),
         'subject_text': _('An offer you are following: "%(object_name)s" was updated in %(team_name)s.'),
         'data_attributes': {
             'object_name': 'title', 
@@ -206,18 +196,18 @@ notifications = {
         'alert_reason': _('You are following this offer'),
         
         'is_html': True,
-        'snippet_type': 'marketplace',
         'event_text': _('%(sender_name)s commented on on an offer you are following'),
-        'notification_text': _('%(sender_name)s commented on on an offer you are following'),
         'subject_text': _('%(sender_name)s commented on on an offer you are following'),
-        'sub_event_text': _('%(sender_name)s'),
+        'display_object_name': False,
         'data_attributes': {
             'object_name': 'offer.title', 
+            'object_text': 'text',
             'object_url': 'get_absolute_url', 
             'image_url': 'offer.creator.cosinnus_profile.get_avatar_thumbnail_url', # note: receiver avatar, not creator's!
             'alert_image_url': 'get_icon',
-            'sub_image_url': 'creator.cosinnus_profile.get_avatar_thumbnail_url', # the comment creators
-            'sub_object_text': 'text',
+            'sub_object_name': 'offer.title', 
+            'sub_object_text': 'offer.note',
+            'sub_object_icon': 'offer.get_icon',
         },
     }, 
 }
