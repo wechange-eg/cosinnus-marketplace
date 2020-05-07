@@ -72,6 +72,7 @@
     	{% endif %}
     	
     	{% if not SETTINGS.COSINNUS_IS_INTEGRATED_PORTAL %}
+        {% if not 'cosinnus_message' in SETTINGS.COSINNUS_DISABLED_COSINNUS_APPS %}
 	        <button type="button" class="btn btn-emphasized" style="float: none; margin: 0;" {% if not offer.creator == user %}href="{% if SETTINGS.COSINNUS_ROCKET_ENABLED %}{% url 'cosinnus:message-write' username=offer.creator.username %}{% else %}{% url 'postman:write' recipients=offer.creator.username %}{% endif %}"{% else %}disabled="true"{% endif %}>
 	            <ul class="media-list">
 	                <li class="media">
@@ -84,6 +85,7 @@
 	                </li>
 	            </ul>
 	        </button>
+        {% endif %}
         {% endif %}
     </div>
     

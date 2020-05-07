@@ -40,12 +40,14 @@
 					{{ item.phone_number.as_international }}
 				</span>
 			{% endif %}
+            {% if not 'cosinnus_message' in SETTINGS.COSINNUS_DISABLED_COSINNUS_APPS %}
 			<span class="">
 				<a {% if not item.creator == user %}href="{% if SETTINGS.COSINNUS_ROCKET_ENABLED %}{% url 'cosinnus:message-write' username=item.creator.username %}{% else %}{% url 'postman:write' recipients=item.creator.username %}{% endif %}"{% else %}disabled="true" class="pale-color no-select"{% endif %}>
 					<i class="fas fa-fw fa-envelope"></i>
 		            {% trans "Send Message" %}
 				</a>
 			</span>
+            {% endif %}
 		</div>
 	</div>
 {% endblock %}
