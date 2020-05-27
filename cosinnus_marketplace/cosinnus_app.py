@@ -14,7 +14,8 @@ def register():
     from cosinnus.core.registries import (app_registry,
         attached_object_registry, url_registry, widget_registry)
 
-    app_registry.register('cosinnus_marketplace', 'marketplace', _('Marketplace'), deactivatable=True, active_by_default=False, activatable_for_groups_only=True)
+    active_by_default = "cosinnus_marketplace" in settings.COSINNUS_DEFAULT_ACTIVE_GROUP_APPS
+    app_registry.register('cosinnus_marketplace', 'marketplace', _('Marketplace'), deactivatable=True, active_by_default=active_by_default, activatable_for_groups_only=True)
     attached_object_registry.register('cosinnus_marketplace.Offer',
                              'cosinnus_marketplace.utils.renderer.OfferRenderer')
     url_registry.register_urlconf('cosinnus_marketplace', 'cosinnus_marketplace.urls')
