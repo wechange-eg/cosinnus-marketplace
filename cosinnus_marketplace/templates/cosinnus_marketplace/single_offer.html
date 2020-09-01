@@ -5,9 +5,9 @@
         <div class="btn btn-emphasized w100" href="{{ offer.get_absolute_url }}">
             <ul class="media-list {% if no_space %}fine-space{% else %}large-space{% endif %}">
                 <li class="media">
-                    <span>
+                    <a class="pull-left" href="#">
                         {% include 'cosinnus_marketplace/offer_icon.html' %}
-                    </span>
+                    </a>
                     <div class="media-body {% if not hide_group_name %}no-vertical-padding{% endif %} ">
                         <span class="annotation mobile-hidden">
                             {% with creator=offer.creator %}

@@ -9,7 +9,7 @@
                         {% include 'cosinnus_marketplace/offer_icon.html' %}
                     </a>
                     <div class="media-body no-vertical-padding ">
-                        <strong><a href="{{ offer.get_absolute_url }}">{{ offer.title|truncatechars:25 }}</a></strong>
+                        <strong><a href="{{ offer.get_absolute_url }}">{{ offer.title }}</a></strong>
                         {% with creator=offer.creator %}
                             <div class="group-annotation">
                                 <a href="{{ creator|profile_url }}">
