@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 13:06+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2020-07-02 20:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -35,10 +35,6 @@ msgstr "%(sender_name)s utworzyła nową ofertę %(object_name)s"
 #, python-format
 msgid "%(sender_name)s created %(count)d offers"
 msgstr "%(sender_name)s utworzył/a nowe oferty %(count)d"
-
-#, python-format
-msgid "New offer by %(sender_name)s"
-msgstr "Nowa oferta utworzona przez %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new offer"
@@ -88,10 +84,6 @@ msgstr "%(sender_name)s skomentował/a Twoją ofertę"
 msgid "%(sender_name)s commented on one of your offers"
 msgstr "%(sender_name)s skomentował/a jedną z Twoich ofert"
 
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
-
 msgid "A user commented on an offer you were tagged in"
 msgstr "Użytkownik skomentował/a ofertę, w której zostałeś/aś oznaczony/a"
 
@@ -119,10 +111,6 @@ msgstr "%(sender_name)s skomentował/a ofertę, w której zostałeś/aś oznaczo
 
 msgid "A user created a new offer in a team you are following"
 msgstr "Użytkownik utworzył nową ofertę w zespole, który śledzisz"
-
-#, python-format
-msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Nowa oferta utworzona przez %(sender_name)s w %(team_name)s (którą śledzisz)"
 
 #, python-format
 msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
@@ -445,3 +433,12 @@ msgstr "Twój komentarz został dodany pomyślnie."
 
 msgid "Your comment was deleted successfully."
 msgstr "Twój komentarz został usunięty pomyślnie."
+
+#~ msgid "New offer by %(sender_name)s"
+#~ msgstr "Nowa oferta utworzona przez %(sender_name)s"
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Nowa oferta utworzona przez %(sender_name)s w %(team_name)s (którą śledzisz)"

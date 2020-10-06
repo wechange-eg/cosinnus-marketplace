@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-23 12:30+0100\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2020-04-01 12:24+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.3\n"
 
 msgid "Marketplace"
@@ -35,10 +35,6 @@ msgstr "%(sender_name)s -ը ստեղծել է %(object_name)s առաջարկը"
 #, python-format
 msgid "%(sender_name)s created %(count)d offers"
 msgstr "%(sender_name)s-ը ստեղծել է %(count)d առաջարկ"
-
-#, python-format
-msgid "New offer by %(sender_name)s"
-msgstr "Նոր առաջարկ %(sender_name)s -ից"
 
 #, python-format
 msgid "%(sender_name)s created a new offer"
@@ -87,10 +83,6 @@ msgstr "%(sender_name)s -ը մեկնաբանել է ձեր առաջարկը"
 msgid "%(sender_name)s commented on one of your offers"
 msgstr "%(sender_name)s-ը մեկնաբանել է ձեր առաջարկներից մեկը"
 
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
-
 msgid "A user commented on an offer you were tagged in"
 msgstr "Օգտատերը մեկնաբանել է առաջարկը, որում դուք նշված եք"
 
@@ -117,10 +109,6 @@ msgstr "%(sender_name)s -ը մեկնաբանել է առաջարկը, որում
 
 msgid "A user created a new offer in a team you are following"
 msgstr "Օգտատերը նոր առաջարկ է ստեղծել այն թիմում, որին դուք հետևում եք"
-
-#, python-format
-msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Նոր առաջարկ %(sender_name)s- ից %(team_name)s -ում (որին հետևում եք)"
 
 #, python-format
 msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
@@ -443,3 +431,12 @@ msgstr "Ձեր մեկնաբանությունը հաջողությամբ ավե�
 
 msgid "Your comment was deleted successfully."
 msgstr "Ձեր մեկնաբանությունը հաջողությամբ ջնջվել է."
+
+#~ msgid "New offer by %(sender_name)s"
+#~ msgstr "Նոր առաջարկ %(sender_name)s -ից"
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Նոր առաջարկ %(sender_name)s- ից %(team_name)s -ում (որին հետևում եք)"

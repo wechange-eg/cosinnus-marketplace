@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 13:06+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2019-07-03 17:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -37,10 +37,6 @@ msgstr "%(sender_name)s створив(ла) нове оголошення"
 #| msgid "%(sender_name)s created a new offer"
 msgid "%(sender_name)s created %(count)d offers"
 msgstr "%(sender_name)s створив(ла) нове оголошення"
-
-#, python-format
-msgid "New offer by %(sender_name)s"
-msgstr "Нове оголошення від %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new offer"
@@ -94,10 +90,6 @@ msgstr "%(sender_name)s прокоментував Ваше оголошення
 msgid "%(sender_name)s commented on one of your offers"
 msgstr "%(sender_name)s прокоментував одне з Ваших оголошень"
 
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
-
 msgid "A user commented on an offer you were tagged in"
 msgstr "Користувач прокоментував оголошення, в якому Ви були позначені"
 
@@ -129,10 +121,6 @@ msgstr "%(sender_name)s прокоментував оголошення, в як
 
 msgid "A user created a new offer in a team you are following"
 msgstr "Користувач створив(ла) нову пропозицію в команді, за якою Ви слідкуєте"
-
-#, python-format
-msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Нова пропозиція від %(sender_name)s в %(team_name)s (за якою Ви слідкуєте)"
 
 #, python-format
 msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
@@ -456,6 +444,15 @@ msgstr "Ваш коментар було успішно додано."
 
 msgid "Your comment was deleted successfully."
 msgstr "Ваш коментар було успішно видалено."
+
+#~ msgid "New offer by %(sender_name)s"
+#~ msgstr "Нове оголошення від %(sender_name)s"
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Нова пропозиція від %(sender_name)s в %(team_name)s (за якою Ви слідкуєте)"
 
 #~ msgid "Phone number (optional)"
 #~ msgstr "Телефонний номер (необов’язково)"

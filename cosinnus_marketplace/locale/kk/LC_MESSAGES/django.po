@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-25 12:12+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2020-04-06 09:22+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: kk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "X-Generator: Poedit 2.3\n"
 
 msgid "Marketplace"
@@ -28,9 +28,15 @@ msgstr "маркетплейс"
 msgid "A user created a new offer"
 msgstr "Пайдаланушы жаңа ұсыныс жасады"
 
-#, python-format
-msgid "New offer by %(sender_name)s"
-msgstr "Ұсыныс %(sender_name)s"
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new offer"
+msgid "%(sender_name)s created the offer %(object_name)s"
+msgstr "%(sender_name)s жаңа ұсыныс жасады"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s created a new offer"
+msgid "%(sender_name)s created %(count)d offers"
+msgstr "%(sender_name)s жаңа ұсыныс жасады"
 
 #, python-format
 msgid "%(sender_name)s created a new offer"
@@ -43,6 +49,16 @@ msgstr "Жаңа ұсыныс: „%(object_name)s“ %(team_name)s де жаса
 msgid "One of your offers expired"
 msgstr "Сіздің ұсыныстарыңыздың біреуінің мерзімі аяқталды"
 
+#, fuzzy, python-format
+#| msgid "Offer \"%(object_name)s\" has expired."
+msgid "Your offer %(object_name)s expired"
+msgstr "„%(object_name)s“ ұсынысының мерзімі аяқталды."
+
+#, fuzzy, python-format
+#| msgid "One of your offers expired"
+msgid "%(count)d of your offers expired"
+msgstr "Сіздің ұсыныстарыңыздың біреуінің мерзімі аяқталды"
+
 msgid "Your offer has expired"
 msgstr "Ұсынысыңыздың мерзімі аяқталды"
 
@@ -53,6 +69,17 @@ msgstr "„%(object_name)s“ ұсынысының мерзімі аяқталд
 msgid "A user commented on one of your offers"
 msgstr "Пайдаланушы сіздің ұсыныстарыңыздың біреуіне пікір қалдырды"
 
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid "%(sender_name)s commented on your offer %(object_name)s"
+msgstr "%(sender_name)s сіздің ұсынысыңызға пікір қалдырды"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on one of your offers"
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your offer %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your offer %(object_name)s"
+msgstr[0] "%(sender_name)s сіздің ұсыныстарыңызға пікір қалдырды"
+
 #, python-format
 msgid "%(sender_name)s commented on your offer"
 msgstr "%(sender_name)s сіздің ұсынысыңызға пікір қалдырды"
@@ -61,12 +88,23 @@ msgstr "%(sender_name)s сіздің ұсынысыңызға пікір қал�
 msgid "%(sender_name)s commented on one of your offers"
 msgstr "%(sender_name)s сіздің ұсыныстарыңызға пікір қалдырды"
 
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
-
 msgid "A user commented on an offer you were tagged in"
 msgstr "Пайдаланушы сіз белгіленген ұсынысқа пікір қалдырды"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s commented on your offer"
+msgid "%(sender_name)s commented on the offer %(object_name)s"
+msgstr "%(sender_name)s сіздің ұсынысыңызға пікір қалдырды"
+
+#, python-format
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the offer %(object_name)s"
+msgstr[0] ""
+
+#, fuzzy
+#| msgid "You created an offer"
+msgid "You were tagged in this offer"
+msgstr "Сіз ұсыныс жасадыңыз"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
@@ -80,10 +118,6 @@ msgid "A user created a new offer in a team you are following"
 msgstr "Пайдаланушы сіз бақылайтын топта жаңа шара жасады"
 
 #, python-format
-msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "%(sender_name)s үшін жаңа ұсыныс %(team_name)s (сіз бақылап отырған)"
-
-#, python-format
 msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
 msgstr "%(sender_name)s %(team_name)s ішінде жаңа ұсыныс жасады (сіз бақылап отырған)"
 
@@ -93,6 +127,14 @@ msgstr "Жаңа ұсыныс: „%(object_name)s“ %(team_name)s де жаса
 
 msgid "A user updated an offer you are following"
 msgstr "Пайдаланушы сіз бақылап отырған ұсынысты жаңартты"
+
+#, fuzzy, python-format
+#| msgid "%(sender_name)s updated an offer you are following"
+msgid "%(sender_name)s updated the offer %(object_name)s"
+msgstr "%(sender_name)s сіз бақылайтын ұсынысты жаңартты"
+
+msgid "You are following this offer"
+msgstr ""
 
 #, python-format
 msgid "%(sender_name)s updated an offer you are following"
@@ -397,3 +439,12 @@ msgstr "Сіздің пікіріңіз сәтті қосылды."
 
 msgid "Your comment was deleted successfully."
 msgstr "Пікіріңіз сәтті өшірілді."
+
+#~ msgid "New offer by %(sender_name)s"
+#~ msgstr "Ұсыныс %(sender_name)s"
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "%(sender_name)s үшін жаңа ұсыныс %(team_name)s (сіз бақылап отырған)"
