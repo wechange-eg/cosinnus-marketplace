@@ -41,7 +41,7 @@
                         </span>
                     {% endwith %}
                     <a href="{{ offer.get_absolute_url }}">
-                        {% include 'cosinnus/common/likefollow/following_title_indicator.html' with object=offer %}
+                        {% include 'cosinnus/common/likefollowstar/following_title_indicator.html' with object=offer %}
                         {{ offer.title }}
                         {% if not offer.is_active %}
                         	({% trans "Inactive" %})
