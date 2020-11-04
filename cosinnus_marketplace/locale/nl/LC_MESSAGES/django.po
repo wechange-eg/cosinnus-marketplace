@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 13:06+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2019-09-19 22:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -37,10 +37,6 @@ msgstr "%(sender_name)s heeft een nieuwe aanbieding aangemaakt"
 #| msgid "%(sender_name)s created a new offer"
 msgid "%(sender_name)s created %(count)d offers"
 msgstr "%(sender_name)s heeft een nieuwe aanbieding aangemaakt"
-
-#, python-format
-msgid "New offer by %(sender_name)s"
-msgstr "Nieuwe aanbieding door %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new offer"
@@ -93,10 +89,6 @@ msgstr "%(sender_name)s heeft gereageerd op uw aanbieding"
 msgid "%(sender_name)s commented on one of your offers"
 msgstr "%(sender_name)s heeft gereageerd op één van uw aanbiedingen"
 
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
-
 msgid "A user commented on an offer you were tagged in"
 msgstr "Een gebruiker heeft gereageerd op een aanbieding waarin u bent getagt"
 
@@ -127,10 +119,6 @@ msgstr "%(sender_name)s heeft gereageerd op een aanbieding waarin u bent getagt 
 
 msgid "A user created a new offer in a team you are following"
 msgstr "Een gebruiker heeft een nieuwe aanbieding aangemaakt in een team die u volgt"
-
-#, python-format
-msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Nieuwe aanbieding door %(sender_name)s in %(team_name)s (die u volgt)"
 
 #, python-format
 msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
@@ -454,3 +442,12 @@ msgstr "Uw opmerking is succesvol toegevoegd."
 
 msgid "Your comment was deleted successfully."
 msgstr "Uw opmerking is succesvol verwijderd."
+
+#~ msgid "New offer by %(sender_name)s"
+#~ msgstr "Nieuwe aanbieding door %(sender_name)s"
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Nieuwe aanbieding door %(sender_name)s in %(team_name)s (die u volgt)"

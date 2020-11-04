@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 13:06+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
 "PO-Revision-Date: 2018-09-14 18:29+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -37,10 +37,6 @@ msgstr "%(sender_name)s a créé une nouvelle offre"
 #| msgid "%(sender_name)s created a new offer"
 msgid "%(sender_name)s created %(count)d offers"
 msgstr "%(sender_name)s a créé une nouvelle offre"
-
-#, python-format
-msgid "New offer by %(sender_name)s"
-msgstr "Nouvelle offre de %(sender_name)s"
 
 #, python-format
 msgid "%(sender_name)s created a new offer"
@@ -93,10 +89,6 @@ msgstr "%(sender_name)s a commenté ton offre"
 msgid "%(sender_name)s commented on one of your offers"
 msgstr "%(sender_name)s a commenté une de tes offres"
 
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
-
 msgid "A user commented on an offer you were tagged in"
 msgstr "Un utilisateur a commenté une offre sur laquelle tu es tagué"
 
@@ -129,11 +121,6 @@ msgstr "%(sender_name)s a commenté une offre sur laquelle tu es tagué dans %(t
 #| msgid "A user created a new offer"
 msgid "A user created a new offer in a team you are following"
 msgstr "Un utilisateur a créé une nouvelle offre"
-
-#, fuzzy, python-format
-#| msgid "New offer by %(sender_name)s"
-msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Nouvelle offre de %(sender_name)s"
 
 #, fuzzy, python-format
 #| msgid "%(sender_name)s created a new offer"
@@ -470,3 +457,14 @@ msgstr "Ton commentaire a été ajouté."
 
 msgid "Your comment was deleted successfully."
 msgstr "Ton commentaire a été supprimé."
+
+#~ msgid "New offer by %(sender_name)s"
+#~ msgstr "Nouvelle offre de %(sender_name)s"
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#, fuzzy
+#~| msgid "New offer by %(sender_name)s"
+#~ msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Nouvelle offre de %(sender_name)s"

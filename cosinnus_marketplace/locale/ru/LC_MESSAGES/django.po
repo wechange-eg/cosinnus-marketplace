@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 13:06+0200\n"
-"PO-Revision-Date: 2019-07-03 17:40+0100\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
+"PO-Revision-Date: 2020-10-11 15:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.4.1\n"
 
 msgid "Marketplace"
 msgstr "Доска объявлений"
@@ -27,19 +27,13 @@ msgstr "доска объявлений"
 msgid "A user created a new offer"
 msgstr "Пользователь создал новое объявление"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s created a new offer"
+#, python-format
 msgid "%(sender_name)s created the offer %(object_name)s"
-msgstr "%(sender_name)s создал новое объявление"
-
-#, fuzzy, python-format
-#| msgid "%(sender_name)s created a new offer"
-msgid "%(sender_name)s created %(count)d offers"
-msgstr "%(sender_name)s создал новое объявление"
+msgstr "%(sender_name)s создал(а) предлоежение %(object_name)s"
 
 #, python-format
-msgid "New offer by %(sender_name)s"
-msgstr "Новое объявление у %(sender_name)s"
+msgid "%(sender_name)s created %(count)d offers"
+msgstr "%(sender_name)s создал(а) %(count)d предложений"
 
 #, python-format
 msgid "%(sender_name)s created a new offer"
@@ -52,15 +46,13 @@ msgstr "Новое объявление \"%(object_name)s\" было созда�
 msgid "One of your offers expired"
 msgstr "Истёк срок одного из Ваших предложений"
 
-#, fuzzy, python-format
-#| msgid "Offer \"%(object_name)s\" has expired."
+#, python-format
 msgid "Your offer %(object_name)s expired"
-msgstr "Объявление \"%(object_name)s\" истекло."
+msgstr "Ваше предложение \"%(object_name)s\" истекло"
 
-#, fuzzy, python-format
-#| msgid "One of your offers expired"
+#, python-format
 msgid "%(count)d of your offers expired"
-msgstr "Истёк срок одного из Ваших предложений"
+msgstr "%(count)d Ваших предложений истекли"
 
 msgid "Your offer has expired"
 msgstr "Ваше объявление истекло"
@@ -72,18 +64,16 @@ msgstr "Объявление \"%(object_name)s\" истекло."
 msgid "A user commented on one of your offers"
 msgstr "Пользователь прокомментировал одно из Ваших предложений"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on your offer"
+#, python-format
 msgid "%(sender_name)s commented on your offer %(object_name)s"
-msgstr "%(sender_name)s прокомментировал Ваше объявление"
+msgstr "%(sender_name)s прокомментировал Ваше предложение %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on your offer"
+#, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your offer %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your offer %(object_name)s"
-msgstr[0] "%(sender_name)s прокомментировал Ваше объявление"
-msgstr[1] "%(sender_name)s прокомментировал Ваше объявление"
-msgstr[2] "%(sender_name)s прокомментировал Ваше объявление"
+msgstr[0] "%(sender_name)s и %(count_minus_one)d прокомментировал(а) Ваше предложение %(object_name)s"
+msgstr[1] "%(sender_name)s и %(count_minus_one)d прокомментировало Ваше предложение %(object_name)s"
+msgstr[2] "%(sender_name)s и %(count_minus_one)d прокомментировали Ваше предложение %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on your offer"
@@ -93,30 +83,22 @@ msgstr "%(sender_name)s прокомментировал Ваше объявле
 msgid "%(sender_name)s commented on one of your offers"
 msgstr "%(sender_name)s прокомментировал одно из Ваших предложений"
 
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
-
 msgid "A user commented on an offer you were tagged in"
 msgstr "Пользователь прокомментировал объявление, в котором Вы были отмечены"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on your offer"
+#, python-format
 msgid "%(sender_name)s commented on the offer %(object_name)s"
-msgstr "%(sender_name)s прокомментировал Ваше объявление"
+msgstr "%(sender_name)s прокомментировал(а) предложение %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on your offer"
+#, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the offer %(object_name)s"
-msgstr[0] "%(sender_name)s прокомментировал Ваше объявление"
-msgstr[1] "%(sender_name)s прокомментировал Ваше объявление"
-msgstr[2] "%(sender_name)s прокомментировал Ваше объявление"
+msgstr[0] "%(sender_name)s и %(count_minus_one)d прокомментировал(а) предложение %(object_name)s"
+msgstr[1] "%(sender_name)s и %(count_minus_one)d прокомментировало предложение %(object_name)s"
+msgstr[2] "%(sender_name)s и %(count_minus_one)d прокомментировали предложение %(object_name)s"
 
-#, fuzzy
-#| msgid "You created an offer"
 msgid "You were tagged in this offer"
-msgstr "Ты создал(а) новое объявление"
+msgstr "Вы были отмечены в этом предложении"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
@@ -130,10 +112,6 @@ msgid "A user created a new offer in a team you are following"
 msgstr "Пользователь создал новое предложение в команде, за которой Вы следите"
 
 #, python-format
-msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Новое объявление у %(sender_name)s в %(team_name)s (за которой Вы следите)"
-
-#, python-format
 msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
 msgstr "%(sender_name)s создал новое предложение в %(team_name)s (за которой Вы следите)"
 
@@ -144,13 +122,12 @@ msgstr "Новое предложение: \"%(object_name)s\" было созд
 msgid "A user updated an offer you are following"
 msgstr "Пользователь обновил предложение, за которым Вы следите"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s updated an offer you are following"
+#, python-format
 msgid "%(sender_name)s updated the offer %(object_name)s"
-msgstr "%(sender_name)s обновил событие, за которым Вы следите"
+msgstr "%(sender_name)s обновил(а) обновил предложение %(object_name)s"
 
 msgid "You are following this offer"
-msgstr ""
+msgstr "Вы следите за этим предложением"
 
 #, python-format
 msgid "%(sender_name)s updated an offer you are following"
@@ -174,7 +151,7 @@ msgid "No current offers"
 msgstr "Актуальных предложений нет"
 
 msgid "Created By"
-msgstr "Создатель:"
+msgstr "Создатель"
 
 msgid "Type"
 msgstr "Тип"
@@ -390,7 +367,7 @@ msgstr "Ты создал(а) новое объявление"
 
 msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "created an offer"
-msgstr "Созданное объявление"
+msgstr "созданное предложение"
 
 msgid "Contact"
 msgstr "Контакт"
@@ -455,6 +432,15 @@ msgstr "Ваш комментарий был успешно добавлен."
 
 msgid "Your comment was deleted successfully."
 msgstr "Ваш комментарий был успешно удалён."
+
+#~ msgid "New offer by %(sender_name)s"
+#~ msgstr "Новое объявление у %(sender_name)s"
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Новое объявление у %(sender_name)s в %(team_name)s (за которой Вы следите)"
 
 #~ msgid "Phone number (optional)"
 #~ msgstr "Номер телефона (необязательно)"

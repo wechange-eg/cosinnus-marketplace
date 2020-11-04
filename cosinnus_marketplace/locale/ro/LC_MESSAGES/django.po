@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-22 13:06+0200\n"
-"PO-Revision-Date: 2019-11-06 03:02+0200\n"
+"POT-Creation-Date: 2020-10-06 16:06+0200\n"
+"PO-Revision-Date: 2020-10-11 19:55+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ro\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 2.2.4\n"
 
 msgid "Marketplace"
 msgstr "Piața de desfacere"
@@ -28,19 +28,13 @@ msgstr "piața de desfacere"
 msgid "A user created a new offer"
 msgstr "Un utilizator a creat o nouă ofertă"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s created a new offer"
+#, python-format
 msgid "%(sender_name)s created the offer %(object_name)s"
-msgstr "%(sender_name)s  a creat o nouă ofertă"
-
-#, fuzzy, python-format
-#| msgid "%(sender_name)s created a new offer"
-msgid "%(sender_name)s created %(count)d offers"
-msgstr "%(sender_name)s  a creat o nouă ofertă"
+msgstr "%(sender_name)s a creat oferta %(object_name)s"
 
 #, python-format
-msgid "New offer by %(sender_name)s"
-msgstr "Ofertă nouă de %(sender_name)s"
+msgid "%(sender_name)s created %(count)d offers"
+msgstr "%(sender_name)s a creat %(count)d promoții"
 
 #, python-format
 msgid "%(sender_name)s created a new offer"
@@ -53,15 +47,13 @@ msgstr "O nouă ofertă: ”%(object_name)s” a fost creat în %(team_name)s."
 msgid "One of your offers expired"
 msgstr "Una dintre ofertele tale a expirat"
 
-#, fuzzy, python-format
-#| msgid "Offer \"%(object_name)s\" has expired."
+#, python-format
 msgid "Your offer %(object_name)s expired"
-msgstr "Oferi ”%(object_name)s” a expirat."
+msgstr "Oferi %(object_name)s a expirat"
 
-#, fuzzy, python-format
-#| msgid "One of your offers expired"
+#, python-format
 msgid "%(count)d of your offers expired"
-msgstr "Una dintre ofertele tale a expirat"
+msgstr "%(count)d dintre ofertele dvs., a expirat"
 
 msgid "Your offer has expired"
 msgstr "Oferta ta a expirat"
@@ -73,18 +65,16 @@ msgstr "Oferi ”%(object_name)s” a expirat."
 msgid "A user commented on one of your offers"
 msgstr "Un utilizator a comentat una dintre ofertele dvs"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on your offer"
+#, python-format
 msgid "%(sender_name)s commented on your offer %(object_name)s"
-msgstr "%(sender_name)s a comentat ofertele tale"
+msgstr "%(sender_name)s a comentat ofertele tale %(object_name)s"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on one of your offers"
+#, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your offer %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your offer %(object_name)s"
-msgstr[0] "%(sender_name)s a comentat una dintre ofertele tale"
-msgstr[1] "%(sender_name)s a comentat una dintre ofertele tale"
-msgstr[2] "%(sender_name)s a comentat una dintre ofertele tale"
+msgstr[0] "%(sender_name)s și %(count_minus_one)d altele au comentat oferta ta %(object_name)s"
+msgstr[1] "%(sender_name)s și %(count_minus_one)d alții au comentat oferta dvs., %(object_name)s"
+msgstr[2] "%(sender_name)s și %(count_minus_one)d alții au comentat oferta dvs., %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on your offer"
@@ -94,29 +84,22 @@ msgstr "%(sender_name)s a comentat ofertele tale"
 msgid "%(sender_name)s commented on one of your offers"
 msgstr "%(sender_name)s a comentat una dintre ofertele tale"
 
-#, python-format
-msgid "%(sender_name)s"
-msgstr "%(sender_name)s"
-
 msgid "A user commented on an offer you were tagged in"
 msgstr "Un utilizator a comentat o ofertă la care ați fost etichetat"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s commented on your offer"
+#, python-format
 msgid "%(sender_name)s commented on the offer %(object_name)s"
-msgstr "%(sender_name)s a comentat ofertele tale"
+msgstr "%(sender_name)s a comentat oferta ta %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the offer %(object_name)s"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%(sender_name)s și %(count_minus_one)d altele au comentat oferta %(object_name)s"
+msgstr[1] "%(sender_name)s și %(count_minus_one)d alții au comentat oferta %(object_name)s"
+msgstr[2] "%(sender_name)s și %(count_minus_one)d alții au comentat oferta %(object_name)s"
 
-#, fuzzy
-#| msgid "You created an offer"
 msgid "You were tagged in this offer"
-msgstr "Ai creat o ofertă"
+msgstr "Ai fost etichetat în această ofertă"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
@@ -130,10 +113,6 @@ msgid "A user created a new offer in a team you are following"
 msgstr "Un utilizator a creat o nouă ofertă într-o echipă pe care o urmărești"
 
 #, python-format
-msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
-msgstr "Ofertă nouă de %(sender_name)s în %(team_name)s (care urmează)"
-
-#, python-format
 msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
 msgstr "%(sender_name)s a creat o nouă ofertă în %(team_name)s (care urmează)"
 
@@ -144,13 +123,12 @@ msgstr "O nouă ofertă: ”%(object_name)s” a fost creat în %(team_name)s (c
 msgid "A user updated an offer you are following"
 msgstr "Un utilizator a actualizat o ofertă pe care o urmărești"
 
-#, fuzzy, python-format
-#| msgid "%(sender_name)s updated an offer you are following"
+#, python-format
 msgid "%(sender_name)s updated the offer %(object_name)s"
-msgstr "%(sender_name)s a actualizat o ofertă pe care o urmărești"
+msgstr "%(sender_name)s a actualizat oferta %(object_name)s"
 
 msgid "You are following this offer"
-msgstr ""
+msgstr "Urmăriți această ofertă"
 
 #, python-format
 msgid "%(sender_name)s updated an offer you are following"
@@ -337,7 +315,7 @@ msgid "Upload a file or image or attach an existing one"
 msgstr "Încărcați un fișier sau o imagine sau atașați una existentă"
 
 msgid "The first uploaded image will be displayed as a wallpaper"
-msgstr "Prima imagine încărcată va fi afișată ca tapet "
+msgstr "Prima imagine încărcată va fi afișată ca tapet"
 
 msgid "Offer is active"
 msgstr "Oferta este activă"
@@ -404,7 +382,7 @@ msgstr "Oferi ”%(title)s” a fost editat cu succes."
 
 #, python-format
 msgid "Offer \"%(title)s\" could not be edited."
-msgstr "Oferi ”%(title)s” nu a putut fi editat"
+msgstr "Oferi ”%(title)s” cloud să nu fi editat."
 
 #, python-format
 msgid "Offer \"%(title)s\" was added successfully."
@@ -455,3 +433,12 @@ msgstr "Comentariul dvs. a fost adăugat cu succes."
 
 msgid "Your comment was deleted successfully."
 msgstr "Comentariul dvs. a fost șters cu succes."
+
+#~ msgid "New offer by %(sender_name)s"
+#~ msgstr "Ofertă nouă de %(sender_name)s"
+
+#~ msgid "%(sender_name)s"
+#~ msgstr "%(sender_name)s"
+
+#~ msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
+#~ msgstr "Ofertă nouă de %(sender_name)s în %(team_name)s (care urmează)"
