@@ -19,6 +19,9 @@ class DeactivateExpiredOffers(CosinnusCronJobBase):
     cosinnus_code = 'marketplace.deactivate_expired_offers'
     
     def do(self):
+        if getattr(settings, 'COSINNUS_MARKETPLACE_OFFER_EXPIRY_DISABLED', False):
+            return
+        
         expiry_days = getattr(settings, 'COSINNUS_MARKETPLACE_OFFER_ACTIVITY_DURATION_DAYS', 30)
         expired_offers = Offer.objects.filter(group__portal=CosinnusPortal.get_current(),
               is_active=True, created__lte=(now() - timedelta(days=expiry_days)))

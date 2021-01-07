@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-06 16:06+0200\n"
+"POT-Creation-Date: 2021-01-07 12:34+0100\n"
 "PO-Revision-Date: 2020-04-06 09:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -325,6 +325,9 @@ msgstr "Алғашқы жүктелген сурет тұсқағаз ретін
 
 msgid "Offer is active"
 msgstr "Ұсыныс белсенді"
+
+msgid "Only active offers will be listed in the Marketplace."
+msgstr ""
 
 msgid "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
 msgstr "Маркетплейсте тек белсенді ұсыныстар көрсетіледі. Сіздің ұсынысыңыз 4 апта бойы жарамды болады. Содан кейін сіз оны кез-келген уақытта қайтадан іске қоса аласыз."

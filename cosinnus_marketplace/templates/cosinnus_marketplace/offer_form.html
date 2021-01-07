@@ -125,7 +125,11 @@
         
         {# Checkbox Field #}
 		{% trans "Offer is active" as active_label %}
-		{% trans "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time." as active_legend %}
+		{% if SETTINGS.COSINNUS_MARKETPLACE_OFFER_EXPIRY_DISABLED %}
+		    {% trans "Only active offers will be listed in the Marketplace." as active_legend %}
+	    {% else %}
+		    {% trans "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time." as active_legend %}
+		{% endif %}
 		{% include 'cosinnus/fields/checkbox_field.html' with field=form.forms.obj.is_active label=active_label legend=active_legend checkbox_label=active_label %}
 					                    
     </div><!-- content-box -->

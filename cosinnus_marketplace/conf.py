@@ -6,5 +6,15 @@ from appconf import AppConf
 
 
 class CosinnusMarketplaceConf(AppConf):
-    pass
+    
+    class Meta(object):
+        prefix = 'COSINNUS_MARKETPLACE'
+    
+    
+    # default number of days offers in the Marketplace stay active
+    OFFER_ACTIVITY_DURATION_DAYS = 30
+    
+    # if False, offers will expire after `COSINNUS_MARKETPLACE_OFFER_ACTIVITY_DURATION_DAYS`
+    # (set to inactive by a cronjob)
+    OFFER_EXPIRY_DISABLED = False
     

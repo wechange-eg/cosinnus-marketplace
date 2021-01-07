@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-06 16:06+0200\n"
+"POT-Creation-Date: 2021-01-07 12:34+0100\n"
 "PO-Revision-Date: 2019-09-19 22:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -328,6 +328,9 @@ msgstr "De eerste geüploade afbeelding wordt als achtergrond weergegeven"
 
 msgid "Offer is active"
 msgstr "Aanbieding is actief"
+
+msgid "Only active offers will be listed in the Marketplace."
+msgstr ""
 
 msgid "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
 msgstr "Alleen actieve aanbiedingen worden op de Marktplaats weergegeven. Uw aanbieding blijft 4 weken actief. Daarna kunt u het op elk gewenst moment opnieuw activeren."
