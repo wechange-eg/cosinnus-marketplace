@@ -4,12 +4,12 @@ from __future__ import unicode_literals
 from django.contrib import admin
 
 from cosinnus_marketplace.models import Offer, OfferCategory, OfferCategoryGroup
-from cosinnus.admin import BaseTaggableAdminMixin
+from cosinnus.admin import BaseTaggableAdmin
 
 
-class OfferAdmin(BaseTaggableAdminMixin, admin.ModelAdmin):
-    list_display = BaseTaggableAdminMixin.list_display + ['is_active', 'type',]
-    list_filter = BaseTaggableAdminMixin.list_filter + ['is_active', 'type',]
+class OfferAdmin(BaseTaggableAdmin):
+    list_display = BaseTaggableAdmin.list_display + ['is_active', 'type',]
+    list_filter = BaseTaggableAdmin.list_filter + ['is_active', 'type',]
 
 admin.site.register(Offer, OfferAdmin)
 
