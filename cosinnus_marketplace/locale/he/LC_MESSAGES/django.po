@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-23 18:24+0100\n"
-"PO-Revision-Date: 2020-09-29 18:04+0100\n"
+"POT-Creation-Date: 2021-03-12 17:55+0100\n"
+"PO-Revision-Date: 2021-03-11 16:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: he\n"
@@ -16,29 +16,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.4.2\n"
 
 msgid "Marketplace"
-msgstr "זירת המסחר"
+msgstr "מרקט-פלייס"
 
 msgctxt "the_app"
 msgid "marketplace"
 msgstr "זירת המסחר"
 
 msgid "A user created a new offer"
-msgstr "משתמש יצר הצעה חדשה"
+msgstr "משתמש יצר/ה הצעה חדשה"
 
 #, python-format
 msgid "%(sender_name)s created the offer %(object_name)s"
-msgstr "%(sender_name)s יצר'ה את ההצעה %(object_name)s"
+msgstr "%(sender_name)s יצר/ה את ההצעה %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s created %(count)d offers"
-msgstr "%(sender_name)s יצר'ה %(count)d events"
+msgstr "%(sender_name)s יצר/ה %(count)d events"
 
 #, python-format
 msgid "%(sender_name)s created a new offer"
-msgstr "%(sender_name)s יצר'ה קובץ חדש"
+msgstr "%(sender_name)s יצר/ה קובץ חדש"
 
 #, python-format
 msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
@@ -67,7 +67,7 @@ msgstr "משתמש הגיב על אחת מההצעות שלך"
 
 #, python-format
 msgid "%(sender_name)s commented on your offer %(object_name)s"
-msgstr "%(sender_name)s הגיב'ה על אחת מההצעות שלך %(object_name)s"
+msgstr "%(sender_name)s הגיב/ה על אחת מההצעות שלך %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your offer %(object_name)s"
@@ -77,18 +77,18 @@ msgstr[1] "%(sender_name)s ו-%(count_minus_one)d הגיבו על הצעה של�
 
 #, python-format
 msgid "%(sender_name)s commented on your offer"
-msgstr "%(sender_name)s הגיב'ה על הצעה שלך"
+msgstr "%(sender_name)s הגיב/ה על הצעה שלך"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your offers"
-msgstr "%(sender_name)s הגיב'ה על אחד מהפוסטים שלך"
+msgstr "%(sender_name)s הגיב/ה על אחד מהפוסטים שלך"
 
 msgid "A user commented on an offer you were tagged in"
 msgstr "משתמש הגיב על הצעה שתויגת בה"
 
 #, python-format
 msgid "%(sender_name)s commented on the offer %(object_name)s"
-msgstr "%(sender_name)s הגיב'ה על אחת מההצעות שלך %(object_name)s"
+msgstr "%(sender_name)s הגיב/ה על אחת מההצעות שלך %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s"
@@ -101,47 +101,47 @@ msgstr "תויגת בהצעה זו"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
-msgstr "%(sender_name)s הגיב'ה על הצעה שתויגת בה"
+msgstr "%(sender_name)s הגיב/ה על הצעה שתויגת בה"
 
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
-msgstr "%(sender_name)s הגיב'ה על אירוע שתויגתם בו ב-%(team_name)s"
+msgstr "%(sender_name)s הגיב/ה על אירוע שתויגתם בו ב-%(team_name)s"
 
 msgid "A user created a new offer in a team you are following"
 msgstr "משתמש יצר הצעה חדשה בצוות שאתם עוקבים אחריו"
 
 #, python-format
 msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
-msgstr "%(sender_name)s יצר'ה הצעה חדשה ב-%(team_name)s (שאתם עוקבים)"
+msgstr "%(sender_name)s יצר/ה הצעה חדשה ב-%(team_name)s (שאתם עוקבים אחריו)"
 
 #, python-format
 msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
-msgstr "הצעה חדשה: \"%(object_name)s\" נוצרה ב-%(team_name)s (שאתם עוקבים)"
+msgstr "הצעה חדשה: \"%(object_name)s\" נוצרה ב-%(team_name)s (שאתם עוקבים אחריו)"
 
 msgid "A user updated an offer you are following"
-msgstr "משתמש עדכן הצעה שאתה עוקב אחריה"
+msgstr "משתמש עדכן הצעה שאת/ה עוקב אחריה"
 
 #, python-format
 msgid "%(sender_name)s updated the offer %(object_name)s"
-msgstr "%(sender_name)s עדכן'ה את ההצעה %(object_name)s"
+msgstr "%(sender_name)s עדכן/ה את ההצעה %(object_name)s"
 
 msgid "You are following this offer"
 msgstr "אתם עוקבים אחר הצעה זו"
 
 #, python-format
 msgid "%(sender_name)s updated an offer you are following"
-msgstr "%(sender_name)s עדכן'ה הצעה שאתם עוקבים אחריה"
+msgstr "%(sender_name)s עדכן/ה הצעה שאתם עוקבים אחריה"
 
 #, python-format
 msgid "An offer you are following: \"%(object_name)s\" was updated in %(team_name)s."
-msgstr "הצעה שאתם עוקבים אחריה: \"%(object_name)s\" עודכנה ב-%(team_name)s."
+msgstr "ההצעה שאתם עוקבים אחריה: \"%(object_name)s\" עודכנה ב-%(team_name)s."
 
 msgid "A user commented on an offer you are following"
-msgstr "משתמש הגיב על הצעה שאתם עוקבים אחריה"
+msgstr "משתמש הגיב/ה על הצעה שאתם עוקבים אחריה"
 
 #, python-format
 msgid "%(sender_name)s commented on on an offer you are following"
-msgstr "%(sender_name)s הגיב'ה על הצעה שאתם עוקבים אחריה"
+msgstr "%(sender_name)s הגיב/ה על הצעה שאתם עוקבים אחריה"
 
 msgid "Current Offers"
 msgstr "הצעות נוכחיות"
@@ -165,10 +165,10 @@ msgid "Order Key"
 msgstr "מפתח סדר"
 
 msgid "Looking for"
-msgstr "מחפש'ת"
+msgstr "מחפש/ת"
 
 msgid "Offering"
-msgstr "מציע'ה"
+msgstr "מציע/ה"
 
 msgid "Offer currently active?"
 msgstr "ההצעה פעילה כעת?"
@@ -190,7 +190,7 @@ msgid "Offer: %(offer)s (%(type)s)"
 msgstr "הצעה: (%(type)s) %(offer)s"
 
 msgid "Creator"
-msgstr "יוצר"
+msgstr "יוצר/ת"
 
 msgid "Created"
 msgstr "נוצר"
@@ -277,7 +277,7 @@ msgid "Activate offer"
 msgstr "הפוך הצעה לפעילה"
 
 msgid "Write comment..."
-msgstr "כתוב תגובה..."
+msgstr "כתוב/י תגובה..."
 
 msgid "Post"
 msgstr "פרסם"
@@ -292,7 +292,7 @@ msgid "Offer type"
 msgstr "סוג ההצעה"
 
 msgid "Offer Title"
-msgstr "כותרת המוצר"
+msgstr "כותרת ההצעה"
 
 msgid "Enter a description for your offer."
 msgstr "הזינו תיאור עבור הצעתכם."
@@ -319,7 +319,7 @@ msgid "Offer is active"
 msgstr "ההצעה פעילה"
 
 msgid "Only active offers will be listed in the Marketplace."
-msgstr ""
+msgstr "רק הצעות פעילות יופיעו בזירת המסחר."
 
 msgid "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
 msgstr "רק הצעות פעילות יופיעו בזירת המסחר. ההצעה שלכם תישאר פעילה במשך 4 שבועות. לאחר מכן, אתם יכולים להפעיל אותה מחדש בכל עת."
@@ -369,7 +369,7 @@ msgstr "יצרת הצעה"
 
 msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "created an offer"
-msgstr "יצר'ה הצעה חדשה"
+msgstr "יצר/ה הצעה חדשה"
 
 msgid "Contact"
 msgstr "פרטי יצירת קשר"
