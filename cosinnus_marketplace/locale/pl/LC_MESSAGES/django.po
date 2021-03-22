@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 17:55+0100\n"
+"POT-Creation-Date: 2021-02-23 18:24+0100\n"
 "PO-Revision-Date: 2020-07-02 20:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -67,36 +67,36 @@ msgstr "Użytkownik skomentował/a jedną z Twoich ofert"
 
 #, python-format
 msgid "%(sender_name)s commented on your offer %(object_name)s"
-msgstr "%(sender_name)s skomentował/a Twoją ofertę %(object_name)s"
+msgstr "%(sender_name)s skomentował/-a Twoją ofertę %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on your offer %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your offer %(object_name)s"
-msgstr[0] "%(sender_name)s i %(count_minus_one)d skomentowali Twoją ofertę %(object_name)s"
-msgstr[1] "%(sender_name)s i %(count_minus_one)d skomentowali Twoją ofertę %(object_name)s"
-msgstr[2] "%(sender_name)s i %(count_minus_one)d skomentowali Twoją ofertę %(object_name)s"
+msgstr[0] "%(sender_name)s i inna/-a %(count_minus_one)d skomentował/-a Twoją ofertę %(object_name)s"
+msgstr[1] "%(sender_name)s i inni/-e %(count_minus_one)d skomentowali/-ły Twoją ofertę %(object_name)s"
+msgstr[2] "%(sender_name)s i inni/-e %(count_minus_one)d skomentowali/-ły Twoją ofertę %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s commented on your offer"
-msgstr "%(sender_name)s skomentował/a Twoją ofertę"
+msgstr "%(sender_name)s skomentował/-a Twoją ofertę"
 
 #, python-format
 msgid "%(sender_name)s commented on one of your offers"
-msgstr "%(sender_name)s skomentował/a jedną z Twoich ofert"
+msgstr "%(sender_name)s skomentował/-a jedną z Twoich ofert"
 
 msgid "A user commented on an offer you were tagged in"
 msgstr "Użytkownik skomentował/a ofertę, w której zostałeś/aś oznaczony/a"
 
 #, python-format
 msgid "%(sender_name)s commented on the offer %(object_name)s"
-msgstr "%(sender_name)s skomentował/a Twoją ofertę %(object_name)s"
+msgstr "%(sender_name)s skomentował/-a ofertę %(object_name)s"
 
 #, python-format
 msgid "%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s"
 msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the offer %(object_name)s"
-msgstr[0] "%(sender_name)s i %(count_minus_one)d skomentował/a Twoją ofertę %(object_name)s"
-msgstr[1] "%(sender_name)s i %(count_minus_one)d skomentowali Twoją ofertę %(object_name)s"
-msgstr[2] "%(sender_name)s i %(count_minus_one)d skomentowali Twoją ofertę %(object_name)s"
+msgstr[0] "%(sender_name)s i inny/-a %(count_minus_one)d skomentował/-a Twoją ofertę %(object_name)s"
+msgstr[1] "%(sender_name)s i inni/-e%(count_minus_one)d skomentowali/-ły Twoją ofertę %(object_name)s"
+msgstr[2] "%(sender_name)s i inni/-e%(count_minus_one)d skomentowali/-ły Twoją ofertę %(object_name)s"
 
 msgid "You were tagged in this offer"
 msgstr "Zostałeś/aś oznaczony w tej ofercie"
@@ -158,7 +158,7 @@ msgid "Type"
 msgstr "Rodzaj"
 
 msgid "Newest Created"
-msgstr "Najnowsze Utworzone"
+msgstr "Ostatnio Utworzone"
 
 msgid "Title"
 msgstr "Tytuł"
@@ -195,13 +195,13 @@ msgid "Creator"
 msgstr "Twórca"
 
 msgid "Created"
-msgstr "Stworzył/a"
+msgstr "Utworzył/-a"
 
 msgid "Last modified"
 msgstr "Data ostatniej modyfikacji"
 
 msgid "Text"
-msgstr "Treść"
+msgstr "Tekst"
 
 msgid "Comment"
 msgstr "Komentarz"
@@ -279,7 +279,7 @@ msgid "Activate offer"
 msgstr "Aktywuj ofertę"
 
 msgid "Write comment..."
-msgstr "Dodaj komentarz..."
+msgstr "Napisz komentarz..."
 
 msgid "Post"
 msgstr "Opublikuj"
@@ -321,7 +321,7 @@ msgid "Offer is active"
 msgstr "Oferta aktywna"
 
 msgid "Only active offers will be listed in the Marketplace."
-msgstr ""
+msgstr "Tylko aktywne oferty będą wyświetlone na Rynku."
 
 msgid "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
 msgstr "Tylko aktywne oferty będą wyświetlone na Rynku. Twoja oferta pozostanie aktywna przez 4 tygodnie. Po tym czasie możesz ponownie ją aktywować."
@@ -345,7 +345,7 @@ msgid "There are no offers"
 msgstr "Nie ma ofert"
 
 msgid "(No description set)"
-msgstr "(Brak opisu)"
+msgstr "(Brak ustawienia opisu)"
 
 msgid "offered in"
 msgstr "oferowane w"
@@ -411,7 +411,7 @@ msgid "The offer you requested is no longer active. Sorry!"
 msgstr "Wybrana przez Ciebie oferta nie jest już aktywna. Przepraszamy!"
 
 msgid "The complete request can only be sent via POST!"
-msgstr "Kompletne żądanie może być wysłane tylko przez POCZTĘ!"
+msgstr "Kompletne żądanie można wysłać tylko POCZTĄ!"
 
 msgid "Invalid action for this offer. The request could not be completed!"
 msgstr "Nieprawidłowe działanie dla tej oferty. Żądanie nie mogło zostać spełnione!"
