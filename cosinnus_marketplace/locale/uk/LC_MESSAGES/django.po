@@ -7,642 +7,435 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-04 10:12+0200\n"
+"POT-Creation-Date: 2021-10-01 15:01+0200\n"
 "PO-Revision-Date: 2020-10-13 18:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 2.4.1\n"
 
-#: cosinnus_marketplace/cosinnus_app.py:18
-#: cosinnus_marketplace/templates/cosinnus_marketplace/base.html:6
 msgid "Marketplace"
 msgstr "Дошка оголошень"
 
-#: cosinnus_marketplace/cosinnus_app.py:25
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_list_standalone.html:11
 msgctxt "the_app"
 msgid "marketplace"
 msgstr "дошка оголошень"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:44
 msgid "A user created a new offer"
 msgstr "Користувач(ка) створив(ла) нову пропозицію"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:51
-#: cosinnus_marketplace/cosinnus_notifications.py:150
 #, python-format
 msgid "%(sender_name)s created the offer %(object_name)s"
 msgstr "%(sender_name)s створив(-ла) оголошення %(object_name)s"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:52
-#: cosinnus_marketplace/cosinnus_notifications.py:151
 #, python-format
 msgid "%(sender_name)s created %(count)d offers"
 msgstr "%(sender_name)s створив(-ла) %(count)d пропозиції"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:56
 #, python-format
 msgid "%(sender_name)s created a new offer"
 msgstr "%(sender_name)s створив(ла) нову пропозицію"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:57
 #, python-format
 msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s."
 msgstr "Нове оголошення: \"%(object_name)s\" було створено в %(team_name)s."
 
-#: cosinnus_marketplace/cosinnus_notifications.py:66
 msgid "One of your offers expired"
 msgstr "Закінчився термін дії однієї з Ваших пропозицій"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:73
 #, python-format
 msgid "Your offer %(object_name)s expired"
 msgstr "Термін дії пропозиції \"%(object_name)s\" минув"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:74
 #, python-format
 msgid "%(count)d of your offers expired"
 msgstr "%(count) d ваших пропозицій минули"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:78
 msgid "Your offer has expired"
 msgstr "Термін дії вашої пропозиції минув"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:79
 #, python-format
 msgid "Offer \"%(object_name)s\" has expired."
 msgstr "Термін дії пропозиції \"%(object_name)s\" минув."
 
-#: cosinnus_marketplace/cosinnus_notifications.py:87
 msgid "A user commented on one of your offers"
 msgstr "Користувач прокоментував одну з Ваших пропозицій"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:94
 #, python-format
 msgid "%(sender_name)s commented on your offer %(object_name)s"
 msgstr "%(sender_name)s прокоментував Вашу пропозицію %(object_name)s"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:95
 #, python-format
-msgid ""
-"%(sender_name)s and %(count_minus_one)d other commented on your offer "
-"%(object_name)s"
-msgid_plural ""
-"%(sender_name)s and %(count_minus_one)d others commented on your offer "
-"%(object_name)s"
+msgid "%(sender_name)s and %(count_minus_one)d other commented on your offer %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on your offer %(object_name)s"
 msgstr[0] "%(sender_name)s і %(count_minus_one)d інший(-а) прокоментували Вашу пропозицію %(object_name)s"
-msgstr[1] ""
-"%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше оголошення "
-"%(object_name)s"
-msgstr[2] ""
-"%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше оголошення "
-"%(object_name)s"
+msgstr[1] "%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше оголошення %(object_name)s"
+msgstr[2] "%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше оголошення %(object_name)s"
 msgstr[3] ""
 
-#: cosinnus_marketplace/cosinnus_notifications.py:100
 #, python-format
 msgid "%(sender_name)s commented on your offer"
 msgstr "%(sender_name)s прокоментував Вашу пропозицію"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:101
 #, python-format
 msgid "%(sender_name)s commented on one of your offers"
 msgstr "%(sender_name)s прокоментував оду з Ваших пропозицій"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:115
 msgid "A user commented on an offer you were tagged in"
 msgstr "Користувач прокоментував пропозицію, в якій Ви були позначені"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:121
-#: cosinnus_marketplace/cosinnus_notifications.py:192
 #, python-format
 msgid "%(sender_name)s commented on the offer %(object_name)s"
 msgstr "%(sender_name)s прокоментував(-ла) Вашу пропозицію %(object_name)s"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:122
-#: cosinnus_marketplace/cosinnus_notifications.py:193
 #, python-format
-msgid ""
-"%(sender_name)s and %(count_minus_one)d other commented on the offer "
-"%(object_name)s"
-msgid_plural ""
-"%(sender_name)s and %(count_minus_one)d others commented on the offer "
-"%(object_name)s"
+msgid "%(sender_name)s and %(count_minus_one)d other commented on the offer %(object_name)s"
+msgid_plural "%(sender_name)s and %(count_minus_one)d others commented on the offer %(object_name)s"
 msgstr[0] "%(sender_name)s і %(count_minus_one)d інший(-а) прокоментували Вашу пропозицію %(object_name)s"
-msgstr[1] ""
-"%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше оголошення "
-"%(object_name)s"
-msgstr[2] ""
-"%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше оголошення "
-"%(object_name)s"
+msgstr[1] "%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше оголошення %(object_name)s"
+msgstr[2] "%(sender_name)s і %(count_minus_one)d інших прокоментували Ваше оголошення %(object_name)s"
 msgstr[3] ""
 
-#: cosinnus_marketplace/cosinnus_notifications.py:125
 msgid "You were tagged in this offer"
 msgstr "Вас було позначено в цій пропозиції"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:128
 #, python-format
 msgid "%(sender_name)s commented on an offer you were tagged in"
 msgstr "%(sender_name)s прокоментував пропозицію, в якій Ви були позначені"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:129
 #, python-format
-msgid ""
-"%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
+msgid "%(sender_name)s commented on an offer you were tagged in in %(team_name)s"
 msgstr "%(sender_name)s прокоментував пропозицію, в якій Ви були відзначені в %(team_name)s"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:143
 msgid "A user created a new offer in a team you are following"
 msgstr "Користувач створив(ла) нову пропозицію в команді, за якою Ви слідкуєте"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:155
 #, python-format
 msgid "%(sender_name)s created a new offer in %(team_name)s (which you follow)"
 msgstr "%(sender_name)s створив(ла) нову пропозицію в %(team_name)s (за якою Ви слідкуєте)"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:156
 #, python-format
-msgid ""
-"A new offer: \"%(object_name)s\" was created in %(team_name)s (which you "
-"follow)."
+msgid "A new offer: \"%(object_name)s\" was created in %(team_name)s (which you follow)."
 msgstr "Нова пропозіція: \"%(object_name)s\" була створена в %(team_name)s (за якою Ви слідкуєте)."
 
-#: cosinnus_marketplace/cosinnus_notifications.py:165
 msgid "A user updated an offer you are following"
 msgstr "Користувач оновив пропозицію, за якою Ви слідкуєте"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:171
 #, python-format
 msgid "%(sender_name)s updated the offer %(object_name)s"
 msgstr "%(sender_name)s оновив(-ла) пропозицію %(object_name)s"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:173
-#: cosinnus_marketplace/cosinnus_notifications.py:196
 msgid "You are following this offer"
 msgstr "Ви відстежуєте цю пропозицію"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:176
 #, python-format
 msgid "%(sender_name)s updated an offer you are following"
 msgstr "%(sender_name)s оновив(ла) пропозицію, за якою Ви слідкуєте"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:177
 #, python-format
-msgid ""
-"An offer you are following: \"%(object_name)s\" was updated in %(team_name)s."
+msgid "An offer you are following: \"%(object_name)s\" was updated in %(team_name)s."
 msgstr "Пропозицію, за якою Ви слідкуєте: \"%(object_name)s\" було оновлено в %(team_name)s."
 
-#: cosinnus_marketplace/cosinnus_notifications.py:185
 msgid "A user commented on an offer you are following"
 msgstr "Користувач прокоментував пропозицію, за якою Ви слідкуєте"
 
-#: cosinnus_marketplace/cosinnus_notifications.py:199
-#: cosinnus_marketplace/cosinnus_notifications.py:200
 #, python-format
 msgid "%(sender_name)s commented on on an offer you are following"
 msgstr "%(sender_name)s прокоментував пропозицію, за якою Ви слідкуєте"
 
-#: cosinnus_marketplace/dashboard.py:28
 msgid "Current Offers"
 msgstr "Актуальні пропозиції"
 
-#: cosinnus_marketplace/dashboard.py:49
 msgid "No current offers"
 msgstr "Актуальних пропозицій немає"
 
-#: cosinnus_marketplace/filters.py:18
 msgid "Created By"
 msgstr "Автор"
 
-#: cosinnus_marketplace/filters.py:19 cosinnus_marketplace/models.py:64
 msgid "Type"
 msgstr "Тип"
 
-#: cosinnus_marketplace/filters.py:27
 msgid "Newest Created"
 msgstr "Найновіші створені"
 
-#: cosinnus_marketplace/filters.py:28
 msgid "Title"
 msgstr "Назва"
 
-#: cosinnus_marketplace/models.py:39
 msgid "Order Key"
 msgstr "Ключ сортування"
 
-#: cosinnus_marketplace/models.py:59
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:6
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:18
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_icon.html:3
-#: cosinnus_marketplace/templates/cosinnus_marketplace/v2/dashboard/timeline_item.html:14
 msgid "Looking for"
 msgstr "Шукаю"
 
-#: cosinnus_marketplace/models.py:60
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:8
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:20
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_icon.html:5
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_list.html:86
-#: cosinnus_marketplace/templates/cosinnus_marketplace/v2/dashboard/timeline_item.html:16
 msgid "Offering"
 msgstr "Пропоную"
 
-#: cosinnus_marketplace/models.py:69
 msgid "Offer currently active?"
 msgstr "Пропозиція активна на даний момент?"
 
-#: cosinnus_marketplace/models.py:71
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:82
 msgid "Description"
 msgstr "Опис"
 
-#: cosinnus_marketplace/models.py:74
 msgid "Offer Category"
 msgstr "Категорія пропозиції"
 
-#: cosinnus_marketplace/models.py:84
 msgid "Offer"
 msgstr "Пропозиція"
 
-#: cosinnus_marketplace/models.py:85
-#: cosinnus_marketplace/templates/cosinnus_marketplace/leftnav.html:38
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_list.html:5
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_list.html:10
 msgid "Offers"
 msgstr "Пропозиції"
 
-#: cosinnus_marketplace/models.py:95
 #, python-format
 msgid "Offer: %(offer)s (%(type)s)"
 msgstr "Пропозиція: %(offer)s (%(type)s)"
 
-#: cosinnus_marketplace/models.py:157
 msgid "Creator"
 msgstr "Творець"
 
-#: cosinnus_marketplace/models.py:158
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:36
 msgid "Created"
 msgstr "Створено"
 
-#: cosinnus_marketplace/models.py:159
 msgid "Last modified"
 msgstr "Востаннє змінено"
 
-#: cosinnus_marketplace/models.py:161
 msgid "Text"
 msgstr "Текст"
 
-#: cosinnus_marketplace/models.py:165
 msgid "Comment"
 msgstr "Коментар"
 
-#: cosinnus_marketplace/models.py:166
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_comments.html:34
 msgid "Comments"
 msgstr "Коментарі"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/leftnav.html:18
 msgid "Back to Offers"
 msgstr "Повернутися до пропозицій"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/leftnav.html:60
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_list.html:5
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_list.html:10
 msgid "My Offers"
 msgstr "Мої пропозиції"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/leftnav.html:73
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:11
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:22
 msgid "Add Offer"
 msgstr "Додати пропозицію"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/leftnav.html:97
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:103
 msgid "Misc"
 msgstr "Різне"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/leftnav.html:117
 msgid "Filter"
 msgstr "Застосувати фільтри"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:30
-#: cosinnus_marketplace/templates/cosinnus_marketplace/single_offer_detailed.html:18
 #, python-format
 msgid "%(link_start)s%(username)s%(link_end)s is looking for"
 msgstr "%(link_start)s%(username)s%(link_end)s шукає"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:32
-#: cosinnus_marketplace/templates/cosinnus_marketplace/single_offer_detailed.html:20
 #, python-format
 msgid "%(link_start)s%(username)s%(link_end)s is offering"
 msgstr "%(link_start)s%(username)s%(link_end)s пропонує"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:47
 msgid "Inactive"
 msgstr "Неактивно"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:81
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_comments.html:71
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:68
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_list.html:62
 msgid "Delete"
 msgstr "Видалити"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:93
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:128
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:13
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:24
 msgid "Edit"
 msgstr "Змінити"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:107
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:90
 msgid "Deactivate"
 msgstr "Деактивувати"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:121
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:109
 msgid "Reactivate"
 msgstr "Відновити"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:121
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:109
 msgid "Activate"
 msgstr "Активувати"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:134
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:74
 #, python-format
 msgid "Do you really want to delete offer „%(title)s“?"
 msgstr "Ви дійсно бажаєте видалити пропозицію „%(title)s“?"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:135
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:75
 msgid "Delete offer"
 msgstr "Видалити пропозицію"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:140
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:96
 #, python-format
 msgid "Do you really want to deactivate offer „%(title)s“?"
 msgstr "Ви дійсно бажаєте деактивувати пропозицію „%(title)s“?"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:141
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:97
 msgid "Deactivate offer"
 msgstr "Деактивувати пропозицію"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:145
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:115
 #, python-format
 msgid "Do you really want to reactivate offer „%(title)s“?"
 msgstr "Ви дійсно бажаєте відновити пропозицію „%(title)s“?"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:145
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:115
 #, python-format
 msgid "Do you really want to activate offer „%(title)s“?"
 msgstr "Ви дійсно бажаєте активувати пропозицію „%(title)s“?"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:146
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:116
 msgid "Reactivate offer"
 msgstr "Відновити пропозицію"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/list_object.html:146
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:116
 msgid "Activate offer"
 msgstr "Активувати пропозицію"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_comments.html:95
 msgid "Write comment..."
 msgstr "Написати коментар..."
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_comments.html:108
 msgid "Post"
 msgstr "Опублікувати"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_detail.html:49
-msgid ""
-"This offer is inactive. It is only visible to you and not listed in the "
-"marketplace. You can reactivate it below."
+msgid "This offer is inactive. It is only visible to you and not listed in the marketplace. You can reactivate it below."
 msgstr "Ця пропозиція неактивна. Її бачите тільки Ви і вона не відображається на «Дошці оголошень». Ви можете відновити її нижче."
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:40
-msgid ""
-"There was an error in one of the fields you entered. Please correct it "
-"before saving!"
+msgid "There was an error in one of the fields you entered. Please correct it before saving!"
 msgstr "В одному із заповнюваних Вами полів сталася помилка. Будь ласка, виправте це перед збереженням!"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:54
 msgid "Offer type"
 msgstr "Тип пропозиції"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:77
 msgid "Offer Title"
 msgstr "Назва пропозиції"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:83
 msgid "Enter a description for your offer."
 msgstr "Введіть опис Вашої пропозиції."
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:87
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:89
-#: cosinnus_marketplace/templates/cosinnus_marketplace/single_offer_detailed.html:65
 msgid "Phone number"
 msgstr "Номер телефону"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:88
 msgid "Your phone number is only visible for registered users"
 msgstr "Ваш номер телефону відображається тільки для зареєстрованих користувачів"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:95
 msgid "Categories"
 msgstr "Категорії"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:96
 msgid "Check all categories that fit your offer"
 msgstr "Перевірте всі категорії, що підходять під Ваш запит"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:122
 msgid "Upload a file or image or attach an existing one"
 msgstr "Завантажити файл або зображення або вкласти уже наявні"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:122
 msgid "The first uploaded image will be displayed as a wallpaper"
 msgstr "Перше фото, яке Ви завантажете, буде відображатися як фон"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:127
 msgid "Offer is active"
 msgstr "Пропозиція активна"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:129
 msgid "Only active offers will be listed in the Marketplace."
 msgstr "На Дошці оголошень будуть відображені лише активні пропозиції."
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:131
-msgid ""
-"Only active offers will be listed in the Marketplace. Your offer will stay "
-"active for 4 weeks. After that, you can reactivate it at any time."
+msgid "Only active offers will be listed in the Marketplace. Your offer will stay active for 4 weeks. After that, you can reactivate it at any time."
 msgstr "На «Дошці оголошень» будуть відображені тільки активні пропозиції. Ваша пропозиція залишається активною протягом 4-х тижнів. Пізніше Ви зможете відновити пропозицію в будь-який момент."
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:145
 msgid "Create"
 msgstr "Створити"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_form.html:147
 msgid "Save"
 msgstr "Зберегти"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_list.html:74
 msgid "All"
 msgstr "Всі"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_list.html:80
 msgid "Wanted"
 msgstr "Розшукується"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_list.html:117
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_list.html:125
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_list.html:133
 msgid "No offers"
 msgstr "Пропозиції відсутні"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/offer_list_standalone.html:23
 msgid "There are no offers"
 msgstr "Немає пропозицій"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/single_offer_detailed.html:40
 msgid "(No description set)"
 msgstr "(Опис не надано)"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/single_offer_detailed.html:50
-#: cosinnus_marketplace/templates/cosinnus_marketplace/v2/dashboard/timeline_item.html:62
 msgid "offered in"
 msgstr "пропонується в"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/single_offer_detailed.html:61
 #, python-format
 msgid "Contact %(username)s directly"
 msgstr "Контактувати безпосередньо з %(username)s"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/single_offer_detailed.html:69
 msgid "Only shown for registered users"
 msgstr "Показано тільки для зареєстрованих користувачів"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/single_offer_detailed.html:83
-#: cosinnus_marketplace/templates/cosinnus_marketplace/v2/dashboard/timeline_item.html:47
 msgid "Send Message"
 msgstr "Відправити повідомлення"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/single_offer_detailed.html:101
 msgid "expires on"
 msgstr "закінчується"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/single_offer_detailed.html:103
 msgid "expired on"
 msgstr "закінчився"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/v2/dashboard/timeline_item.html:8
 msgid "You created an offer"
 msgstr "Ви створили пропозицію"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/v2/dashboard/timeline_item.html:10
-msgctxt ""
-"This appears next to new items in the timeline, as in '<Jane> created a new "
-"item'"
+msgctxt "This appears next to new items in the timeline, as in '<Jane> created a new item'"
 msgid "created an offer"
 msgstr "cтворено пропозицію"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/v2/dashboard/timeline_item.html:35
 msgid "Contact"
 msgstr "Контакт"
 
-#: cosinnus_marketplace/templates/cosinnus_marketplace/widgets/current.html:13
 msgid "There are no current offers"
 msgstr "Немає актуальних пропозицій"
 
-#: cosinnus_marketplace/views.py:117
 #, python-format
 msgid "Offer \"%(title)s\" was edited successfully."
 msgstr "Пропозицію \"%(title)s\" було успішно змінено."
 
-#: cosinnus_marketplace/views.py:118
 #, python-format
 msgid "Offer \"%(title)s\" could not be edited."
 msgstr "Пропозиція \"%(title)s\" не може бути змінена."
 
-#: cosinnus_marketplace/views.py:147
 #, python-format
 msgid "Offer \"%(title)s\" was added successfully."
 msgstr "Пропозицію \"%(title)s\" було успішно додано."
 
-#: cosinnus_marketplace/views.py:148
 #, python-format
 msgid "Offer \"%(title)s\" was saved successfully, but is not active yet."
 msgstr "Пропозиція \"%(title)s\" було успішно збережена, але ще не активна."
 
-#: cosinnus_marketplace/views.py:149
 #, python-format
 msgid "Offer \"%(title)s\" could not be added."
 msgstr "Пропозицію \"%(title)s\" не можна додати."
 
-#: cosinnus_marketplace/views.py:186
 #, python-format
 msgid "Offer \"%(title)s\" was deleted successfully."
 msgstr "Пропозицію \"%(title)s\" було успішно видалено."
 
-#: cosinnus_marketplace/views.py:187
 #, python-format
 msgid "Offer \"%(title)s\" could not be deleted."
 msgstr "Пропозиція \"%(title)s\" не може бути видалена."
 
-#: cosinnus_marketplace/views.py:207
 msgid "The offer you requested is no longer active. Sorry!"
 msgstr "Вибачте, пропозиція, на яку Ви надіслали запит, більше неактивна!"
 
-#: cosinnus_marketplace/views.py:241
 msgid "The complete request can only be sent via POST!"
 msgstr "Повний запит може бути відправлений тільки ПОШТОЮ!"
 
-#: cosinnus_marketplace/views.py:250
 msgid "Invalid action for this offer. The request could not be completed!"
 msgstr "Неприпустимі дії для цієї пропозиції. Запит не може бути завершеним!"
 
-#: cosinnus_marketplace/views.py:253
 msgid "The offer is already active"
 msgstr "Пропозиція вже активована"
 
-#: cosinnus_marketplace/views.py:256
 msgid "The offer is already deactivated"
 msgstr "Пропозиція вже деактивоване"
 
-#: cosinnus_marketplace/views.py:262
 msgid "The offer was deactivated successfully."
 msgstr "Пропозицію було успішно деактивовано."
 
-#: cosinnus_marketplace/views.py:269
 msgid "The offer was reactivated successfully."
 msgstr "Пропозицію було успішно відновлено."
 
-#: cosinnus_marketplace/views.py:271
 msgid "The offer was activated successfully."
 msgstr "Пропозицію було успішно активовано."
 
-#: cosinnus_marketplace/views.py:286
 msgid "Your comment was added successfully."
 msgstr "Ваш коментар було успішно додано."
 
-#: cosinnus_marketplace/views.py:328
 msgid "Your comment was deleted successfully."
 msgstr "Ваш коментар успішно видалено."
 
@@ -653,12 +446,10 @@ msgstr "Ваш коментар успішно видалено."
 #~ msgstr "%(sender_name)s"
 
 #~ msgid "New offer by %(sender_name)s in %(team_name)s (which you follow)"
-#~ msgstr ""
-#~ "Нова пропозиція від %(sender_name)s в %(team_name)s (за якою Ви слідкуєте)"
+#~ msgstr "Нова пропозиція від %(sender_name)s в %(team_name)s (за якою Ви слідкуєте)"
 
 #~ msgid "Phone number (optional)"
 #~ msgstr "Телефонний номер (необов’язково)"
 
 #~ msgid "Add Photos or Files"
 #~ msgstr "Додати зображення чи файли"
-
