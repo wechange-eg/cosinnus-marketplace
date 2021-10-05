@@ -8,17 +8,17 @@
                     {% include 'cosinnus/common/checkbox/checkbox_overlay_box.html' with input_name=input_name %}
                 {% endif %}
             
-                <span class="pull-left square-date-icon">
+                <a class="pull-left square-date-icon">
                 	{% if offer.attached_image %}
                 		<img class="image" src="{% thumbnail offer.attached_image.file 40x40 crop=1 upscale=1 %}" />
                 	{% else %}
                 		{% include 'cosinnus_marketplace/offer_icon.html' %}
                 	{% endif %}
                 	
-                </span>
-                <span class="pull-right fadedown-clickarea">
+                </a>
+                <a class="pull-right fadedown-clickarea">
                     <i class="fa fa-chevron-down"></i>
-                </span>
+                </a>
                 <div class="media-body">
                     {% with creator=offer.creator %}
                     	
@@ -40,13 +40,13 @@
                             {% endif %}
                         </span>
                     {% endwith %}
-                    <a href="{{ offer.get_absolute_url }}">
+                    <span href="{{ offer.get_absolute_url }}">
                         {% include 'cosinnus/common/likefollowstar/following_title_indicator.html' with object=offer %}
                         {{ offer.title }}
                         {% if not offer.is_active %}
                         	({% trans "Inactive" %})
                         {% endif %}
-                    </a>
+                    </span>
                 </div>
             </li>
         </ul>
