@@ -61,9 +61,9 @@
 				<button type="button" class="btn btn-emphasized pull-left" data-toggle="modal" data-target="#{{delete_modal_id}}" style="margin: 0;">
 					<ul class="media-list">
 					  <li class="media">
-					    <a class="pull-left" href="#">
+					    <span class="pull-left">
 					      <i class="fa fa-eraser"></i>
-					    </a>
+					    </span>
 					    <div class="media-body">
 					      {% trans "Delete" %}
 					    </div>
@@ -83,9 +83,9 @@
 		            <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{deactivate_modal_id}}">
 						<ul class="media-list">
 						  <li class="media">
-						    <a class="pull-left" href="#">
+						    <span class="pull-left">
 						      <i class="fa fa-eraser"></i>
-						    </a>
+						    </span>
 						    <div class="media-body">
 						      {% trans "Deactivate" %}
 						    </div>
@@ -102,9 +102,9 @@
 		            <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{activate_modal_id}}">
 						<ul class="media-list">
 						  <li class="media">
-						    <a class="pull-left" href="#">
+						    <span class="pull-left">
 						      <i class="fa fa-eraser"></i>
-						    </a>
+						    </span>
 						    <div class="media-body">
 	                          {% if offer.has_expired %}{% trans "Reactivate" %}{% else %}{% trans "Activate" %}{% endif %}
 						    </div>
@@ -121,9 +121,9 @@
 		        <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:marketplace:edit" group=group slug=offer.slug %}">
 					<ul class="media-list">
 					  <li class="media">
-					    <a class="pull-left" href="#">
+					    <span class="pull-left">
 					      <i class="fa fa-pencil"></i>
-					    </a>
+					    </span>
 					    <div class="media-body">
                           {% trans "Edit" %}
 					    </div>

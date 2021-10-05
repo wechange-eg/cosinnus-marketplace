@@ -76,9 +76,9 @@
 	        <button type="button" class="btn btn-emphasized" style="float: none; margin: 0;" {% if not offer.creator == user %}href="{% if SETTINGS.COSINNUS_ROCKET_ENABLED %}{% url 'cosinnus:message-write' username=offer.creator.username %}{% else %}{% url 'postman:write' recipients=offer.creator.username %}{% endif %}"{% else %}disabled="true"{% endif %}>
 	            <ul class="media-list">
 	                <li class="media">
-	                    <a class="pull-left" href="#">
+	                    <span class="pull-left">
 	                        <i class="fa fa-envelope"></i>
-	                    </a>
+	                    </span>
 	                    <div class="media-body">
 	                        {% trans "Send Message" %}
 	                    </div>
