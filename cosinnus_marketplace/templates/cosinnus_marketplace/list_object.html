@@ -8,14 +8,14 @@
                     {% include 'cosinnus/common/checkbox/checkbox_overlay_box.html' with input_name=input_name %}
                 {% endif %}
             
-                <span class="pull-left square-date-icon">
+                <a class="pull-left square-date-icon">
                 	{% if offer.attached_image %}
                 		<img class="image" src="{% thumbnail offer.attached_image.file 40x40 crop=1 upscale=1 %}" />
                 	{% else %}
                 		{% include 'cosinnus_marketplace/offer_icon.html' %}
                 	{% endif %}
                 	
-                </span>
+                </a>
                 <a class="pull-right fadedown-clickarea">
                     <i class="fa fa-chevron-down"></i>
                 </a>
@@ -40,13 +40,13 @@
                             {% endif %}
                         </span>
                     {% endwith %}
-                    <a href="{{ offer.get_absolute_url }}">
+                    <span href="{{ offer.get_absolute_url }}">
                         {% include 'cosinnus/common/likefollowstar/following_title_indicator.html' with object=offer %}
                         {{ offer.title }}
                         {% if not offer.is_active %}
                         	({% trans "Inactive" %})
                         {% endif %}
-                    </a>
+                    </span>
                 </div>
             </li>
         </ul>
@@ -74,9 +74,9 @@
         <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{delete_modal_id}}">
             <ul class="media-list">
                 <li class="media">
-                    <a class="pull-left" href="#">
+                    <span class="pull-left">
                         <i class="fa fa-eraser"></i>
-                    </a>
+                    </span>
                     <div class="media-body">
                         {% trans "Delete" %}
                     </div>
@@ -86,9 +86,9 @@
         <button type="button" class="btn btn-emphasized" href="{% group_url "cosinnus:marketplace:edit" group=group slug=offer.slug %}">
             <ul class="media-list">
                 <li class="media">
-                    <a class="pull-left" href="#">
+                    <span class="pull-left">
                         <i class="fa fa-pencil"></i>
-                    </a>
+                    </span>
                     <div class="media-body">
                         {% trans "Edit" %}
                     </div>
@@ -100,9 +100,9 @@
             <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{deactivate_modal_id}}">
                 <ul class="media-list">
                     <li class="media">
-                        <a class="pull-left" href="#">
+                        <span class="pull-left">
                             <i class="fa fa-eraser"></i>
-                        </a>
+                        </span>
                         <div class="media-body">
                             {% trans "Deactivate" %}
                         </div>
@@ -114,9 +114,9 @@
             <button type="button" class="btn btn-emphasized" data-toggle="modal" data-target="#{{activate_modal_id}}">
                 <ul class="media-list">
                     <li class="media">
-                        <a class="pull-left" href="#">
+                        <span class="pull-left">
                             <i class="fa fa-eraser"></i>
-                        </a>
+                        </span>
                         <div class="media-body">
                         	{% if offer.has_expired %}{% trans "Reactivate" %}{% else %}{% trans "Activate" %}{% endif %}
                         </div>

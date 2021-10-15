@@ -10,10 +10,10 @@
     <button type="button" class="btn w100 btn-emphasized" href="{% group_url 'cosinnus:marketplace:list' group=group %}">
         <ul class="media-list">
             <li class="media">
-                <a class="pull-left">
+                <span class="pull-left">
                     <i class="fa fa-reply"></i>
-                </a>
-                <a class="pull-right"></a><!-- only block width -->
+                </span>
+                <span class="pull-right"></span><!-- only block width -->
                 <div class="media-body">
                     {% trans "Back to Offers" %}
                 </div>
@@ -26,13 +26,13 @@
     <button type="button" class="btn w100 btn-{% if request.path == marketplace_list_page %}extra-{% endif %}emphasized fine-space" href="{{ marketplace_list_page }}">
         <ul class="media-list">
             <li class="media">
-                <a class="pull-left">
+                <span class="pull-left">
                     <i class="fa fa-exchange"></i>
-                </a>
+                </span>
                 {% if request.path == marketplace_list_page %}
-                    <a class="pull-right">
+                    <span class="pull-right">
                         <i class="fa fa-caret-right"></i>
-                    </a>
+                    </span>
                 {% endif %}
                 <div class="media-body">
                     {% trans "Offers" %}
@@ -44,18 +44,18 @@
     <button type="button" class="btn w100 btn-{% if request.path == marketplace_list_mine_page %}extra-{% endif %}emphasized large-space" href="{{ marketplace_list_mine_page }}">
         <ul class="media-list">
             <li class="media">
-                <a class="pull-left">
+                <span class="pull-left">
                     {% if my_offer_count or my_offer_count == 0 %}
                         {{ my_offer_count }}
                     {% else %}
                         <i class="fa fa-exchange"></i>
                     {% endif %}
-                </a>
-                <a class="pull-right">
+                </span>
+                <span class="pull-right">
                     {% if request.path == marketplace_list_mine_page %}
                         <i class="fa fa-caret-right"></i>
                     {% endif %}
-                </a>
+                </span>
                 <div class="media-body">
                     {% trans "My Offers" %}
                 </div>
@@ -66,9 +66,9 @@
     <button type="button" class="btn w100 btn-emphasized large-space" href="{{ marketplace_add_page }}">
         <ul class="media-list">
             <li class="media">
-                <a class="pull-left">
+                <span class="pull-left">
                     <i class="fa fa-plus"></i>
-                </a>
+                </span>
                 <div class="media-body">
                     {% trans "Add Offer" %}
                 </div>
@@ -110,9 +110,9 @@
 			<button type="submit" class="btn btn-emphasized large-space">
 	            <ul class="media-list">
 	                <li class="media">
-	                    <a class="pull-left">
+	                    <span class="pull-left">
 	                        <i class="fa fa-filter"></i>
-	                    </a>
+	                    </span>
 	                    <div class="media-body">
 	                        {% trans "Filter" %}
 	                    </div>
