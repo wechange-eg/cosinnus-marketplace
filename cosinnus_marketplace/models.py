@@ -3,11 +3,12 @@ from __future__ import unicode_literals
 
 from builtins import object
 import datetime
+import six
 
 from collections import defaultdict
 
 from django.db import models
-from django.utils.encoding import force_text, python_2_unicode_compatible
+from django.utils.encoding import force_text
 from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
 
@@ -45,7 +46,7 @@ class OfferCategory(MultiLanguageFieldMagicMixin, CosinnusBaseCategory):
     category_group = models.ForeignKey(OfferCategoryGroup, related_name='categories', null=True, blank=True, on_delete=models.CASCADE)
     
 
-@python_2_unicode_compatible
+@six.python_2_unicode_compatible
 class Offer(LikeableObjectMixin, BaseTaggableObjectModel):
 
     SORT_FIELDS_ALIASES = [
@@ -152,7 +153,7 @@ class Offer(LikeableObjectMixin, BaseTaggableObjectModel):
         return group_aware_reverse('cosinnus:marketplace:comment', kwargs={'group': self.group, 'offer_slug': self.slug})
     
 
-@python_2_unicode_compatible
+@six.python_2_unicode_compatible
 class Comment(models.Model):
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('Creator'), on_delete=models.PROTECT, related_name='marketplace_comments')
     created_on = models.DateTimeField(_('Created'), default=now, editable=False)
