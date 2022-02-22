@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 15:01+0200\n"
+"POT-Creation-Date: 2022-02-18 09:12+0100\n"
 "PO-Revision-Date: 2020-04-01 12:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -287,6 +287,14 @@ msgstr "Այս առաջարկը ակտիվ չէ: Այն միայն տեսանե�
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
 msgstr "Ձեր մուտքագրած դաշտերից մեկում առկա է սխալ: Խնդրում ենք ուղղել այն նախքան պահպանելը!"
+
+#, python-format
+msgid ""
+"\n"
+"                        Note: after this offer will be posted, each user of %(forum_name)s may be able to see it.<br>\n"
+"                        If you do not want this, please, use another group or project of your choice.\n"
+"                        "
+msgstr ""
 
 msgid "Offer type"
 msgstr "Առաջարկի տեսակը"

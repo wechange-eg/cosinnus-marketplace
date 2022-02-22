@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 15:01+0200\n"
+"POT-Creation-Date: 2022-02-18 09:12+0100\n"
 "PO-Revision-Date: 2020-10-11 19:55+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -289,6 +289,14 @@ msgstr "Această ofertă este inactivă. Este doar vizibil pentru dvs. și nu es
 
 msgid "There was an error in one of the fields you entered. Please correct it before saving!"
 msgstr "A existat o eroare într-unul din câmpurile pe care le-ați introdus. Vă rugăm să îl corectați înainte de a salva!"
+
+#, python-format
+msgid ""
+"\n"
+"                        Note: after this offer will be posted, each user of %(forum_name)s may be able to see it.<br>\n"
+"                        If you do not want this, please, use another group or project of your choice.\n"
+"                        "
+msgstr ""
 
 msgid "Offer type"
 msgstr "Tipul ofertei"
